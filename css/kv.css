@@ -1,0 +1,39 @@
+.kv{
+  background-image: url(../img/kv_bg.png);
+  height: 900px;
+  mix-blend-mode: multiply;
+}
+
+.kv .kv_water{
+  background-image: url(../img/kv_bg_water.png);
+  height: 900px;
+  mix-blend-mode: screen;
+}
+
+.kv .kv_water .kv_flex{
+  padding: 120px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kv .kv_water .kv_flex .kv_contents h1 img{
+  width: 425px;
+  height: 30px;
+}
+
+.kv .kv_water .kv_flex .kv_contents div img{
+  width: 747px;
+  height: 268px;
+  mix-blend-mode: screen;
+}
+
+.kv .kv_water .kv_flex .kv_contents p{
+  color: #FFF;
+  width: 747px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#WebGL-output{
+  width: 600px;
+}
