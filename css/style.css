@@ -91,6 +91,7 @@ body {
 
 .kv_mobile {
   display: none;
+  padding-bottom: 3px;
   background-image: url(../img/kv_bg_mobile.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -159,7 +160,7 @@ body {
   background-size: cover;
   mix-blend-mode: overlay;
   opacity: 0.7;
-  top: -32px;
+  top: -33px;
   right: 42px;
   width: 252px;
   height: 120px;
@@ -180,6 +181,10 @@ body {
 }
 .kv_mobile .kv_mobile_contents_text .kv_mobile_contents_text_first_line {
   position: relative;
+  letter-spacing: 0.11em;
   top: 1px;
-  left: 2px;
+  left: 1px;
+}
+.kv_mobile .kv_mobile_contents_text .kv_mobile_contents_text_first_line .kv_mobile_contents_text_first_line_fi {
+  letter-spacing: 0.02em;
 }/*# sourceMappingURL=style.css.map */
