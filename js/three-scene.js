@@ -41,6 +41,8 @@ async function initCanScene(canvasSelector) {
 
   const controls = new OrbitControls(camera, canvasElement);
   controls.target.set(0, 0, 0);
+  controls.enableZoom = false;
+  controls.enablePan = false;
   controls.update();
 
   const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.9);
