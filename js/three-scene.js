@@ -41,17 +41,19 @@ async function initCanScene(canvasSelector) {
 
   const controls = new OrbitControls(camera, canvasElement);
   controls.target.set(0, 0, 0);
+  controls.enableZoom = false;
+  controls.enablePan = false;
   controls.update();
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.9);
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.7);
   hemiLight.position.set(0, 1, 0);
   scene.add(hemiLight);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
   dirLight.position.set(3, 5, 2);
   scene.add(dirLight);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
   scene.add(ambientLight);
 
   const pmremGenerator = new THREE.PMREMGenerator(renderer);
