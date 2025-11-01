@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="./css/kv.css"> -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="./js/three-scene.js"></script>
+</head>
+
+<body>
+  <section class="kv">
+    <div class="kv_flex">
+      <div class="kv_contents">
+        <h1><img src="./img/kv_title.png" alt="#"></h1>
+        <div class="kv_contents_catchcopy">
+          <img src="./img/kv_catchcopy_text.png" alt="#">
+        </div>
+        <p class="kv_contents_text"><span class="kv_contents_text_first_line">「In<span class="kv_contents_text_first_line_fi">fi</span>nity Energy」は、無限の活力を提供し、限界を超える</span>力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！</p>
+      </div>
+      <canvas id="WebGL-output"></canvas>
+    </div>
+  </section>
+  <section class="kv_mobile">
+    <div class="kv_mobile_contents">
+      <h1><img src="./img/kv_title.png" alt="#"></h1>
+      <canvas id="WebGL-output-mobile"></canvas>
+      <div class="kv_mobile_contents_catchcopy">
+        <img src="./img/kv_catchcopy_text.png" alt="#">
+      </div>
+      <p class="kv_mobile_contents_text"><span class="kv_mobile_contents_text_first_line">「In<span class="kv_mobile_contents_text_first_line_fi">fi</span>nity Energy」は、無限の活力</span>を提供し、限界を超える力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！</p>
+    </div>
+  </section>
+</body>
+
+</html>
