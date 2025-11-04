@@ -45,7 +45,7 @@ async function initCanScene(canvasSelector) {
   controls.enablePan = false;
   controls.update();
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.3);
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.9);
   hemiLight.position.set(0, 1, 0);
   scene.add(hemiLight);
 
@@ -53,19 +53,19 @@ async function initCanScene(canvasSelector) {
   dirLight.position.set(3, 5, 2);
   scene.add(dirLight);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
   scene.add(ambientLight);
 
-  // const pmremGenerator = new THREE.PMREMGenerator(renderer);
-  // pmremGenerator.compileEquirectangularShader();
-  // const hdrLoader = new RGBELoader().setDataType(THREE.FloatType);
-  // const hdrEquirect = await hdrLoader.loadAsync(
-  //   "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r164/examples/textures/equirectangular/royal_esplanade_1k.hdr"
-  // );
-  // const envRT = pmremGenerator.fromEquirectangular(hdrEquirect);
-  // scene.environment = envRT.texture;
-  // hdrEquirect.dispose();
-  // pmremGenerator.dispose();
+  const pmremGenerator = new THREE.PMREMGenerator(renderer);
+  pmremGenerator.compileEquirectangularShader();
+  const hdrLoader = new RGBELoader().setDataType(THREE.FloatType);
+  const hdrEquirect = await hdrLoader.loadAsync(
+    "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r164/examples/textures/equirectangular/royal_esplanade_1k.hdr"
+  );
+  const envRT = pmremGenerator.fromEquirectangular(hdrEquirect);
+  scene.environment = envRT.texture;
+  hdrEquirect.dispose();
+  pmremGenerator.dispose();
 
   const loader = new GLTFLoader();
   const gltf = await loader.loadAsync("./3Dmodel/can_kv.gltf");
