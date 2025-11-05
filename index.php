@@ -46,6 +46,104 @@
       <p class="kv_mobile_contents_text"><span class="kv_mobile_contents_text_first_line">「In<span class="kv_mobile_contents_text_first_line_fi">fi</span>nity Energy」は、無限の活力</span>を提供し、限界を超える力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！</p>
     </div>
   </section>
+
+  <section class="kinds">
+    <div class="wrapper">
+      <div class="kinds_content">
+        <div class="kinds_title">
+          <img src="./img/kinds_main.png" alt="INFINITY EMERGY">
+        </div>
+        <div class="kinds_list">
+          <div class="kinds_item">
+            <div class="kinds_item_title">
+              <picture>
+                <source media="(max-width: 400px)" srcset="./img/kinds_Mixed_Berry_Delight_mobile.png">
+                <img src="./img/kinds_Mixed_Berry_Delight.png" alt="ミクストベリーディライト">
+              </picture>
+            </div>
+            <div class="kinds_item_info">
+              <div class="kinds_item_can_container">
+                <div class="kinds_item_can kinds_item_mixed_berry_triangle">
+                  <img src="img/kinds_kan1.png" class="can_label" alt="#">
+                </div>
+              </div>
+              <div class="kinds_item_details">
+                <div class="kinds_item_details_name">ミクストベリー<br class="mobile_line_break">ディライト</div>
+                <p class="kinds_item_details_description">ブルーベリー、ストロベ<br class="mobile_line_break">リー、ブラックベリーのブレンド。甘さと爽やかさが絶妙。</p>
+                <div class="kinds_item_details_buttons">
+                  <button class="kinds_item_details_btn mixed_berry_btn">
+                    <p class="kinds_item_details_btn_text">集中力を高めたい</p>
+                  </button>
+                  <button class="kinds_item_details_btn mixed_berry_btn">
+                    <p class="kinds_item_details_btn_text">気持ちをリセットしたい</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kinds_item">
+            <div class="kinds_item_title">
+              <picture>
+                <source media="(max-width: 400px)" srcset="./img/kinds_Green_Fusion_Blast_mobile.png">
+                <img src="./img/kinds_Green_Fusion_Blast.png" alt="#">
+              </picture>
+            </div>
+            <div class="kinds_item_info">
+              <div class="kinds_item_can_container">
+                <div class="kinds_item_can kinds_item_green_fusion_triangle">
+                  <img src="img/kinds_kan2.png" class="can_label" alt="#">
+                </div>
+              </div>
+              <div class="kinds_item_details">
+                <div class="kinds_item_details_name">グリーンフュー<br class="mobile_line_break">ジョンブラスト</div>
+                <p class="kinds_item_details_description">フレッシュなミントと爽やかなライムをブレンド。夏の暑い日に最適。</p>
+                <div class="kinds_item_details_buttons">
+                  <button class="kinds_item_details_btn green_fusion_btn">
+                    <p class="kinds_item_details_btn_text">リフレッシュしたい</p>
+                  </button>
+                  <button class="kinds_item_details_btn green_fusion_btn">
+                    <p class="kinds_item_details_btn_text">気分を高めたい</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="kinds_item">
+            <div class="kinds_item_title">
+              <picture>
+                <source media="(max-width: 400px)" srcset="./img/kinds_Hot_Blaze_Inferno_mobile.png">
+                <img src="./img/kinds_Hot_Blaze_Inferno.png" alt="#">
+              </picture>
+            </div>
+            <div class="kinds_item_info">
+              <div class="kinds_item_can_container">
+                <div class="kinds_item_can kinds_item_hot_blaze_triangle">
+                  <img src="img/kinds_kan3.png" class="can_label" alt="#">
+                </div>
+              </div>
+              <div class="kinds_item_details">
+                <div class="kinds_item_details_name">ホットブレイズ<br class="mobile_line_break">インフェルノ</div>
+                <p class="kinds_item_details_description">シナモン、チリペッパーをブレンドした、スパイシーな風味。エナジードリンクの新たな次元を開拓。</p>
+                <div class="kinds_item_details_buttons">
+                  <button class="kinds_item_details_btn hot_blaze_btn">
+                    <p class="kinds_item_details_btn_text">気持ちを高ぶらせたい</p>
+                  </button>
+                  <button class="kinds_item_details_btn hot_blaze_btn">
+                    <p class="kinds_item_details_btn_text">恋人と熱くなりたい</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/index.js"></script>
+
 </body>
 
 </html>
