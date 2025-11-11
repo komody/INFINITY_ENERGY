@@ -142,6 +142,54 @@
     </div>
   </section>
 
+  <section class="now_you">
+    <h2 class="now_you_title">今のあなたは？</h2>
+    <div class="wrapper">
+      <div class="now_you_container">
+        <div class="now_you_panel">
+          <ul class="now_you_switches">
+            <li class="now_you_switch">
+              <label class="now_you_switch_label">
+                <span class="now_you_label">疲れている</span>
+                <input type="checkbox" class="switch" data-target="condition">
+                <span class="now_you_switch_slider" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li class="now_you_switch">
+              <label class="now_you_switch_label">
+                <span class="now_you_label">週末にイベントに参加予定</span>
+                <input type="checkbox" class="switch" data-target="weekend">
+                <span class="now_you_switch_slider" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li class="now_you_switch">
+              <label class="now_you_switch_label">
+                <span class="now_you_label">頑張り時だから眠気を抑えたい</span>
+                <input type="checkbox" class="switch" data-target="sleep_time">
+                <span class="now_you_switch_slider" aria-hidden="true"></span>
+              </label>
+            </li>
+            <li class="now_you_switch">
+              <label class="now_you_switch_label">
+                <span class="now_you_label">とにかくテンションを上げたい</span>
+                <input type="checkbox" class="switch" data-target="tension">
+                <span class="now_you_switch_slider" aria-hidden="true"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="now_you_bubbles" aria-live="polite">
+          <img src="./img/now_you/now_you_man.png" alt="キャラクター" class="now_you_character">
+          <img src="./img/now_you/now_you_condition.png" alt="最近、調子が良くないなー" class="bubble bubble_condition" data-name="condition">
+          <img src="./img/now_you/now_you_weekend.png" alt="週末を元気に迎えたい…！" class="bubble bubble_weekend" data-name="weekend">
+          <img src="./img/now_you/now_you_sleep_time.png" alt="睡眠時間が取れないけど頑張りたい…！" class="bubble bubble_sleep_time" data-name="sleep_time">
+          <img src="./img/now_you/now_you_tension.png" alt="テンションを上げて、休日を楽しむぞ！" class="bubble bubble_tension" data-name="tension">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="./js/index.js"></script>
 
 </body>

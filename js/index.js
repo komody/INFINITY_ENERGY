@@ -55,3 +55,29 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
 
 kindsItems.forEach((item) => io.observe(item));
+
+document.addEventListener('DOMContentLoaded', () => {
+  const switches = document.querySelectorAll('input.switch');
+  const bubbles = document.querySelectorAll('.now_you_bubbles .bubble');
+
+  function updateBubbles() {
+    const activeNames = Array.from(switches)
+      .filter(input => input.checked)
+      .map(input => input.dataset.target);
+
+    bubbles.forEach(img => {
+      const name = img.dataset.name;
+      const shouldShow = activeNames.includes(name);
+      img.classList.toggle('is-visible', shouldShow);
+      img.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+    });
+  }
+
+  switches.forEach(input => {
+    input.addEventListener('change', updateBubbles);
+  });
+
+  updateBubbles();
+});
+
+
