@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>INFINITY ENERGY</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
@@ -185,6 +185,51 @@
           <img src="./img/now_you/now_you_weekend.png" alt="週末を元気に迎えたい…！" class="bubble bubble_weekend" data-name="weekend">
           <img src="./img/now_you/now_you_sleep_time.png" alt="睡眠時間が取れないけど頑張りたい…！" class="bubble bubble_sleep_time" data-name="sleep_time">
           <img src="./img/now_you/now_you_tension.png" alt="テンションを上げて、休日を楽しむぞ！" class="bubble bubble_tension" data-name="tension">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="result">
+    <div class="wrapper">
+      <h2 class="result_title">インフィニティエナジーを<br class="mobile_line_break">飲んだらどうなる？</h2>
+      <div class="result_container">
+        <div class="result_comparison_slider">
+          <div class="result_comparison_container">
+            <div class="result_before_image">
+              <picture>
+                <source media="(max-width: 400px)" srcset="./img/result/result_before_mobile.png">
+                <img src="./img/result/result_before.png" alt="#">
+              </picture>
+            </div>
+            <div class="result_after_image">
+              <picture>
+                <source media="(max-width: 400px)" srcset="./img/result/result_after_mobile.png">
+                <img src="./img/result/result_after.png" alt="#">
+              </picture>
+            </div>
+            <div class="result_slider_handle">
+              <div class="result_handle_circle">
+                <img src="./img/result/result_slider_handle.png" alt="Slider Handle">
+              </div>
+              <div class="result_handle_line"></div>
+            </div>
+          </div>
+        </div>
+        <p class="result_slider_description">※スライダーを動かすと「Before」と「After」が切り替わります</p>
+      </div>
+      <div class="result_description">
+        <div class="result_description_flex">
+          <div class="result_description_flex_image">
+            <img src="./img/result/result_can.png" alt="#">
+          </div>
+          <ul class="result_description_flex_text">
+            <li>退屈な日常が充実した<br class="mobile_line_break">日々の連続に</li>
+            <li>あなたの眠れる才能が覚醒</li>
+            <li>脳の回転、キレが向上</li>
+            <li>あらゆるシーンで<br class="mobile_line_break">高パフォーマンスを持続</li>
+            <li>限界？知らないなー。</li>
+          </ul>
         </div>
       </div>
     </div>

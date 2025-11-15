@@ -81,3 +81,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.result_comparison_container');
+  const afterImage = document.querySelector('.result_after_image');
+  const sliderHandle = document.querySelector('.result_slider_handle');
+  
+  let isDragging = false;
+
+  function updateSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let position = ((x - rect.left) / rect.width) * 100;
+    
+    position = Math.max(0, Math.min(100, position));
+    
+    const beforeImage = document.querySelector('.result_before_image');
+    beforeImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+    
+    afterImage.style.clipPath = `inset(0 0 0 ${position}%)`;
+    
+    sliderHandle.style.left = `${position}%`;
+  }
+
+  function startDrag(e) {
+    isDragging = true;
+    container.style.cursor = 'col-resize';
+    updateSlider(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+  }
+
+  function drag(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    updateSlider(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+  }
+
+  function stopDrag() {
+    isDragging = false;
+    container.style.cursor = 'col-resize';
+  }
+
+  container.addEventListener('mousedown', startDrag);
+  container.addEventListener('touchstart', startDrag, { passive: false });
+
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('touchmove', drag, { passive: false });
+
+  document.addEventListener('mouseup', stopDrag);
+  document.addEventListener('touchend', stopDrag);
+
+  container.addEventListener('click', (e) => {
+    if (!isDragging) {
+      updateSlider(e.clientX);
+    }
+  });
+
+  const rect = container.getBoundingClientRect();
+  let offset;
+  const windowWidth = window.innerWidth;
+  
+  if (windowWidth >= 1050) {
+    offset = 615;
+  } else if (windowWidth <= 500) {
+    offset = 218;
+  } else {
+    offset = rect.width * 0.6;
+  }
+  
+  const initialX = rect.right - offset;
+  updateSlider(initialX);
+});
+
