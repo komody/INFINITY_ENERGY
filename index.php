@@ -6,12 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INFINITY ENERGY</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png">
+  <meta property="og:title" content="INFINITY ENERGY">
+  <meta property="og:description" content="「Infinity Energy」は、無限の活力を提供し、限界を超える力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！">
+  <meta property="og:image" content="./img/OGP.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./img/OGP.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
-  <!-- <link rel="stylesheet" href="./css/kv.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script type="importmap">
     {
       "imports": {
@@ -235,6 +243,137 @@
     </div>
   </section>
 
+  <section class="product">
+    <h2 class="product_title">インフィニティエナジー製品</h2>
+    <div class="slider_PC">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/product/product_left_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_left_2.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/product/product_middle_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_middle_2.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/product/product_right_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_right_2.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider_SP">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/product/product_left_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_left_2.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_middle_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_middle_2.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_right_1.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/product/product_right_2.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product_list">
+      <div class="product_list_wrapper">
+        <div class="product_item">
+          <div class="product_item_top">
+            <div class="product_item_top_flex">
+              <div class="product_item_top_detail">
+                <div class="product_item_top_detail_title mixed_berry_title">Mixed<br>Berry<br>Delight</div>
+                <div class="product_item_top_detail_area">販売地域：全国</div>
+                <div class="product_item_top_detail_amount">250ml</div>
+              </div>
+              <div class="product_item_top_image">
+                <img src="./img/product/product_can_1.png" alt="">
+              </div>
+            </div>
+            <div class="product_item_bottom">
+              <p class="product_item_bottom_title">ミクストベリーディライト</p>
+              <p class="product_item_bottom_detail">このフレーバーは、深紅のブルーベリー、ストロベリー、ブラックベ<br class="PC_line_break">リーのブレンドから成り立っています。ミクストベリーディライトは、甘さと爽やかさが絶妙に組み合わさり、フルー<br class="mobile_line_break">ティーな味わいを提供します。これは運動前やアウトドアアクティビティのお供に最適です。</p>
+              <div class="product_item_bottom_flex">
+                <p class="product_item_bottom_flex_amount">250ml×20本セット</p>
+                <p class="product_item_bottom_flex_price">¥4,200 <span>(税込)</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_item">
+          <div class="product_item_top">
+            <div class="product_item_top_flex">
+              <div class="product_item_top_detail">
+                <div class="product_item_top_detail_title green_fusion_blast_title">Green<br>Fusion<br>Blast</div>
+                <div class="product_item_top_detail_area">販売地域：全国</div>
+                <div class="product_item_top_detail_amount">250ml</div>
+              </div>
+              <div class="product_item_top_image">
+                <img src="./img/product/product_can_2.png" alt="">
+              </div>
+            </div>
+            <div class="product_item_bottom">
+              <p class="product_item_bottom_title">グリーンフュージョンブラスト</p>
+              <p class="product_item_bottom_detail">このフレーバーは、フレッシュなミントと爽やかなライムが組み合わ<br class="PC_line_break">さったものです。グリーンフュー<br class="PC_line_break">ジョンブラストは、気分をリフレッシュし、エネルギーを高めるのに最適です。緑色の液体が魅力的で、夏の暑い日に最適な選択肢です。</p>
+              <div class="product_item_bottom_flex">
+                <p class="product_item_bottom_flex_amount">250ml×20本セット</p>
+                <p class="product_item_bottom_flex_price">¥4,200 <span>(税込)</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product_item">
+          <div class="product_item_top">
+            <div class="product_item_top_flex">
+              <div class="product_item_top_detail">
+                <div class="product_item_top_detail_title  hot_blaze_inferno_title">Hot<br>Blaze<br>Inferno</div>
+                <div class="product_item_top_detail_area">販売地域：全国</div>
+                <div class="product_item_top_detail_amount">250ml</div>
+              </div>
+              <div class="product_item_top_image">
+                <img src="./img/product/product_can_3.png" alt="">
+              </div>
+            </div>
+            <div class="product_item_bottom">
+              <p class="product_item_bottom_title">ホットブレイズインフェルノ</p>
+              <p class="product_item_bottom_detail">このフレーバーは、シナモン、チリペッパーをブレンドした、スパイ<br class="PC_line_break">シーな風味で、まるで燃え盛る情熱を感じるかのような味わいです。エナジードリンクの新たな次元を開拓し、情熱的なエネルギーを注入します。</p>
+              <div class="product_item_bottom_flex">
+                <p class="product_item_bottom_flex_amount">250ml×20本セット</p>
+                <p class="product_item_bottom_flex_price">¥4,200 <span>(税込)</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/index.js"></script>
 
 </body>
