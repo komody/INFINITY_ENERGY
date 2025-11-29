@@ -373,6 +373,52 @@
     </div>
   </section>
 
+  <section class="promotion">
+    <div class="promotion_bg">
+      <div class="promotion_bg_left">
+        <div class="promotion_bg_left_top_flex">
+          <div class="promotion_bg_left_top_flex_left">
+            <div class="promotion-reveal-left"></div>
+            <picture>
+              <source media="(max-width: 740px)" srcset="./img/promotion/promotion_bg_mobile_1.png">
+              <img src="./img/promotion/promotion_bg_1.png" alt="#">
+            </picture>
+          </div>
+          <div class="promotion_bg_left_top_flex_right">
+            <div class="promotion-reveal-right"></div>
+            <picture>
+              <source media="(max-width: 740px)" srcset="./img/promotion/promotion_bg_mobile_2.png">
+              <img src="./img/promotion/promotion_bg_2.png" alt="#">
+            </picture>
+          </div>
+        </div>
+        <div class="promotion_bg_left_bottom">
+          <div class="promotion-reveal-bottom"></div>
+          <picture>
+            <source media="(max-width: 740px)" srcset="./img/promotion/promotion_bg_mobile_3.png">
+            <img src="./img/promotion/promotion_bg_3.png" alt="#">
+          </picture>
+        </div>
+      </div>
+      <div class="promotion_bg_right">
+        <div class="promotion-reveal-bg-right"></div>
+        <picture>
+          <source media="(max-width: 740px)" srcset="./img/promotion/promotion_bg_mobile_4.png">
+          <img src="./img/promotion/promotion_bg_4.png" alt="#">
+        </picture>
+      </div>
+    </div>
+    <div class="promotion_can">
+      <img src="./img/promotion/promotion_can.png" alt="#">
+    </div>
+    <div class="promotion_catchcopy">
+      <picture>
+        <source media="(max-width: 740px)" srcset="./img/promotion/promotion_catchcopy.png">
+        <img src="./img/promotion/promotion_text.png" alt="#">
+      </picture>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/index.js"></script>
 
