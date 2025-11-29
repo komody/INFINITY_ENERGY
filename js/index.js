@@ -168,3 +168,52 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // すべてのreveal要素を取得
+  const revealElements = document.querySelectorAll('.promotion-reveal-left, .promotion-reveal-right, .promotion-reveal-bottom, .promotion-reveal-bg-right, .promotion-reveal-mobile');
+  
+  console.log('Found elements:', revealElements.length);
+  console.log('Elements:', revealElements);
+  
+  if (revealElements.length === 0) {
+    console.error('No reveal elements found!');
+    return;
+  }
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+  
+  const observerCallback = (entries) => {
+    console.log('Observer callback triggered:', entries);
+    entries.forEach(entry => {
+      console.log('Entry:', entry.target, 'isIntersecting:', entry.isIntersecting);
+      if (entry.isIntersecting) {
+        console.log('Adding active class to:', entry.target);
+        entry.target.classList.add('active');
+        
+        // 親要素にactiveクラスを追加
+        const parentElement = entry.target.parentElement;
+        if (parentElement) {
+          parentElement.classList.add('active');
+        }
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  revealElements.forEach(element => {
+    console.log('Observing element:', element);
+    observer.observe(element);
+  });
+  
+  window.addEventListener('scroll', () => {
+    console.log('Scroll position:', window.scrollY);
+  });
+});
