@@ -419,7 +419,97 @@
     </div>
   </section>
 
+  <section class="aria">
+    <h2 class="aria_title">インフィニティエナジー販売店舗</h2>
+    <div class="aria_container">
+      <div class="aria_container_flex">
+        <div class="aria_container_flex_left">
+          <div class="shop_slide">
+            <div class="shop_image">
+              <img src="./img/aria/aria_shop_1.png" alt="#">
+            </div>
+            <div class="shop_detail">
+              <p class="shop_detail_title">店舗名</p>
+              <p class="shop_detail_address">住所</p>
+              <p class="shop_detail_phone">電話番号</p>
+              <p class="shop_detail_URL">URL</p>
+              <button class="shop_detail_button">店舗情報を見る</button>
+            </div>
+          </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+        <div class="aria_container_flex_right">
+          <div class="aria_container_flex_right_infinity_energy"></div>
+          <div class="aria_container_flex_right_can"></div>
+          <div class="aria_container_flex_right_japan_map">
+            <div class="aria_japan_map_hokkaido">
+              <?php echo file_get_contents('./img/aria/aria_hokaido.svg'); ?>
+            </div>
+            <div class="aria_japan_map_touhoku">
+              <?php echo file_get_contents('./img/aria/aria_touhoku.svg'); ?>
+            </div>
+            <div class="aria_japan_map_kantou">
+              <?php echo file_get_contents('./img/aria/aria_kantou.svg'); ?>
+            </div>
+            <div class="aria_japan_map_hokuriku">
+              <?php echo file_get_contents('./img/aria/aria_hokuriku.svg'); ?>
+            </div>
+            <div class="aria_japan_map_toukai">
+              <?php echo file_get_contents('./img/aria/aria_toukai.svg'); ?>
+            </div>
+            <div class="aria_japan_map_kansai">
+              <?php echo file_get_contents('./img/aria/aria_kansai.svg'); ?>
+            </div>
+            <div class="aria_japan_map_tyugoku">
+              <?php echo file_get_contents('./img/aria/aria_tyugoku.svg'); ?>
+            </div>
+            <div class="aria_japan_map_sikoku">
+              <?php echo file_get_contents('./img/aria/aria_sikoku.svg'); ?>
+            </div>
+            <div class="aria_japan_map_kyusyu">
+              <?php echo file_get_contents('./img/aria/aria_kyusyu.svg'); ?>
+            </div>
+            <div class="aria_japan_map_okinawa">
+              <?php echo file_get_contents('./img/aria/aria_okinawa.svg'); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="data">
+    <h2>データから見るインフィニティエナジー</h2>
+    <div class="data_container">
+      <div class="data_chart_flex">
+        <div class="data_pie_chart">
+          <p class="data_pie_chart_title">インフィニティエナジーの<br>
+            購買者層</p>
+          <div class="data_pie_chart_gender">
+            <canvas id="genderChart"></canvas>
+          </div>
+        </div>
+        <div class="data_bar_chart">
+          <p class="data_bar_chart_title">インフィニティエナジーの<br>
+            売上</p>
+          <div class="data_bar_chart_sales">
+            <canvas id="salesChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="./js/index.js"></script>
 
 </body>

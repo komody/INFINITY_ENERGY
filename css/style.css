@@ -2281,4 +2281,130 @@ body {
     left: 27px;
     transform: none;
   }
+}
+
+.aria {
+  height: 934px;
+  padding: 120px 0;
+  background-color: #F5F5F5;
+}
+.aria .aria_title {
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.aria .aria_container {
+  display: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #fff;
+}
+.aria .aria_container_flex {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  align-items: center;
+}
+.aria .aria_container_flex_right {
+  position: relative;
+}
+.aria .aria_container_flex_right_japan_map {
+  position: relative;
+  width: 100%;
+}
+.aria .aria_container_flex_right_japan_map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.aria .aria_container_flex_right_japan_map svg path {
+  fill: #E0E0E0;
+  stroke: white;
+  stroke-width: 0.6;
+  cursor: pointer;
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+.aria .aria_container_flex_right_japan_map .aria_japan_map_hokkaido svg path {
+  fill: #DBFF00;
+}
+.aria .aria_container_flex_right_japan_map .aria_japan_map_hokkaido svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_touhoku svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_hokuriku svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_tyugoku svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_sikoku svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_kyusyu svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_kantou svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_toukai svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_kansai svg path:hover,
+.aria .aria_container_flex_right_japan_map .aria_japan_map_okinawa svg path:hover {
+  fill: #DBFF00;
+}
+
+.data {
+  padding: 120px 0;
+  height: 924px;
+}
+.data h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  letter-spacing: 0.1em;
+}
+.data .data_container {
+  display: none;
+  max-width: 1000px;
+  height: 558px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(150deg, #128FCD 5%, #B3D6E0 50%, #DC24B1 95%);
+  border-radius: 16px;
+}
+.data .data_container .data_chart_flex {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-radius: 16px;
+}
+.data .data_container .data_chart_flex .data_pie_chart {
+  height: 518px;
+  background-color: #fff;
+  padding: 50px 30px 60px;
+}
+.data .data_container .data_chart_flex .data_pie_chart .data_pie_chart_title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 46px;
+}
+.data .data_container .data_chart_flex .data_pie_chart .data_pie_chart_gender {
+  position: relative;
+  left: 11px;
+  width: 291px;
+  height: 291px;
+}
+.data .data_container .data_chart_flex .data_bar_chart {
+  width: 400px;
+  background-color: #fff;
+  padding: 50px 0;
+  border-radius: 8px;
+}
+.data .data_container .data_chart_flex .data_bar_chart .data_bar_chart_title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 39px;
+}
+.data .data_container .data_chart_flex .data_bar_chart .data_bar_chart_sales {
+  position: relative;
+  left: 18px;
+  width: 370px;
+  height: 307px;
 }/*# sourceMappingURL=style.css.map */
