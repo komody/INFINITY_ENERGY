@@ -508,6 +508,173 @@
     </div>
   </section>
 
+  <section class="flavor">
+    <h2 class="flavor_title">あなたに合うフレーバーは？</h2>
+    <p class="flavor_catchcopy">インフィニティエナジーでは3種類のフレーバーをご用意♪<br> 今のあなたに合うフレーバーを探っちゃおう！</p>
+    <div class="flavor_yes_sample_flex">
+      <div class="yes_arrow_sample"></div>
+      <div class="yes_sample_text">YES</div>
+    </div>
+    <div class="flavor_no_sample_flex">
+      <div class="no_arrow_sample"></div>
+      <div class="no_sample_text">NO</div>
+    </div>
+    <div class="flavor_flowchart">
+      <div class="flavor_flowchart_first_question">
+        <div class="flavor_flowchart_first_question_container">
+          <p class="flavor_flowchart_first_question_text">
+            待ちに待った週末！休日はとにかくテンションを上げたい！
+          </p>
+        </div>
+        <div class="flavor_flowchart_first_question_arrows">
+          <div class="flavor_flowchart_first_question_yes_arrow"></div>
+          <div class="flavor_flowchart_first_question_no_arrow"></div>
+        </div>
+      </div>
+
+      <div class="flavor_flowchart_flex">
+        <div class="flavor_flowchart_left">
+          <div class="flavor_flowchart_second_question_container">
+            <p class="flavor_flowchart_second_question_text">
+              何かのイベントに参加予定
+            </p>
+          </div>
+          <div class="flavor_flowchart_second_question_arrows">
+            <div class="flavor_flowchart_second_question_yes_arrow"></div>
+            <div class="flavor_flowchart_second_question_no_arrow"></div>
+          </div>
+          <div class="flavor_flowchart_third_question_flex">
+            <div class="flavor_flowchart_third_question">
+              <div class="flavor_flowchart_third_question_container">
+                <p class="flavor_flowchart_third_question_text">
+                  彼女と一緒？
+                </p>
+              </div>
+              <div class="flavor_flowchart_result">
+                <div class="flavor_flowchart_result_yes">
+                  <div class="flavor_flowchart_third_question_yes_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can3.png" alt="#">
+                </div>
+                <div class="flavor_flowchart_result_no">
+                  <div class="flavor_flowchart_third_question_no_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can1.png" alt="#">
+                </div>
+              </div>
+            </div>
+            <div class="flavor_flowchart_third_question">
+              <div class="flavor_flowchart_third_question_container">
+                <p class="flavor_flowchart_third_question_text">
+                  特に予定はない？
+                </p>
+              </div>
+              <div class="flavor_flowchart_result">
+                <div class="flavor_flowchart_result_yes">
+                  <div class="flavor_flowchart_third_question_yes_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can1.png" alt="#">
+                </div>
+                <div class="flavor_flowchart_result_no">
+                  <div class="flavor_flowchart_third_question_no_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can3.png" alt="#">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="flavor_flowchart_right">
+          <div class="flavor_flowchart_second_question_container">
+            <p class="flavor_flowchart_second_question_text">
+              十分な睡眠は取れてる？
+            </p>
+          </div>
+          <div class="flavor_flowchart_second_question_arrows">
+            <div class="flavor_flowchart_second_question_yes_arrow"></div>
+            <div class="flavor_flowchart_second_question_no_arrow"></div>
+          </div>
+          <div class="flavor_flowchart_third_question_flex">
+            <div class="flavor_flowchart_third_question">
+              <div class="flavor_flowchart_third_question_container">
+                <p class="flavor_flowchart_third_question_text">
+                  精神的に疲れてる？
+                </p>
+              </div>
+              <div class="flavor_flowchart_result">
+                <div class="flavor_flowchart_result_yes">
+                  <div class="flavor_flowchart_third_question_yes_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can2.png" alt="#">
+                </div>
+                <div class="flavor_flowchart_result_no">
+                  <div class="flavor_flowchart_third_question_no_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can1.png" alt="#">
+                </div>
+              </div>
+            </div>
+            <div class="flavor_flowchart_third_question">
+              <div class="flavor_flowchart_third_question_container">
+                <p class="flavor_flowchart_third_question_text">
+                  休みは取れてる？
+                </p>
+              </div>
+              <div class="flavor_flowchart_result">
+                <div class="flavor_flowchart_result_yes">
+                  <div class="flavor_flowchart_third_question_yes_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can3.png" alt="#">
+                </div>
+                <div class="flavor_flowchart_result_no">
+                  <div class="flavor_flowchart_third_question_no_arrow"></div>
+                  <img src="./img/flavor/flavor_result_can2.png" alt="#">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flavor_detail">
+      <div class="flavor_detail_list">
+        <div class="flavor_detail_item">
+          <div class="flavor_detail_item_top">
+            <div class="flavor_detail_item_title mixed_berry_title">
+              Mixed<br>Berry<br>Delight
+            </div>
+            <div class="flavor_detail_item_image">
+              <img src="./img/flavor/flavor_detail_can1.png" alt="#">
+            </div>
+          </div>
+          <div class="flavor_detail_item_name">ミクストベリーディライト</div>
+          <div class="flavor_detail_item_detail">ベリーがブレンドされたフレーバーは、甘さと爽やかさが絶妙に組み合わさり、フルーティーな味わい。気分を落ち着かせ、頭が冴え渡ります。
+          </div>
+        </div>
+        <div class="flavor_detail_item">
+          <div class="flavor_detail_item_top">
+            <div class="flavor_detail_item_title green_fusion_blast_title">
+              Green<br>Fusion<br>Blast
+            </div>
+            <div class="flavor_detail_item_image">
+              <img src="./img/flavor/flavor_detail_can2.png" alt="#">
+            </div>
+          </div>
+          <div class="flavor_detail_item_name">グリーンフュージョンブラスト</div>
+          <div class="flavor_detail_item_detail">フレッシュなミントと爽やかなライムのフレーバーにより、気分をリフレッシュさせ、生命エネルギーを高めるのに最適です。夏の暑い日の熱中症予防にも◎
+          </div>
+        </div>
+        <div class="flavor_detail_item">
+          <div class="flavor_detail_item_top">
+            <div class="flavor_detail_item_title hot_blaze_inferno_title">
+              Hot<br>Blaze<br>Inferno
+            </div>
+            <div class="flavor_detail_item_image">
+              <img src="./img/flavor/flavor_detail_can3.png" alt="#">
+            </div>
+          </div>
+          <div class="flavor_detail_item_name">ホットブレイズインフェルノ</div>
+          <div class="flavor_detail_item_detail">シナモン、チリペッパーをブレンドしたフレーバーは、これまでにないスパイシーで燃え盛る情熱を感じる味わい。情熱的なエネルギーをあなたに注入します。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="./js/index.js"></script>
