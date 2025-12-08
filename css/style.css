@@ -2357,7 +2357,6 @@ body {
   letter-spacing: 0.1em;
 }
 .data .data_container {
-  display: none;
   max-width: 1000px;
   height: 558px;
   margin: 0 auto;

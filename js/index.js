@@ -172,11 +172,7 @@ var swiper = new Swiper(".mySwiper", {
 document.addEventListener('DOMContentLoaded', function() {
   const revealElements = document.querySelectorAll('.promotion-reveal-left, .promotion-reveal-right, .promotion-reveal-bottom, .promotion-reveal-bg-right, .promotion-reveal-mobile');
   
-  console.log('Found elements:', revealElements.length);
-  console.log('Elements:', revealElements);
-  
   if (revealElements.length === 0) {
-    console.error('No reveal elements found!');
     return;
   }
   
@@ -187,11 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   
   const observerCallback = (entries) => {
-    console.log('Observer callback triggered:', entries);
     entries.forEach(entry => {
-      console.log('Entry:', entry.target, 'isIntersecting:', entry.isIntersecting);
       if (entry.isIntersecting) {
-        console.log('Adding active class to:', entry.target);
         entry.target.classList.add('active');
         
         // 親要素にactiveクラスを追加
@@ -208,12 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   
   revealElements.forEach(element => {
-    console.log('Observing element:', element);
     observer.observe(element);
-  });
-  
-  window.addEventListener('scroll', () => {
-    console.log('Scroll position:', window.scrollY);
   });
 });
 
@@ -221,6 +209,12 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   let genderChart = null;
   let salesChart = null;
+
+  // 画像を事前にロード
+  const manImage = new Image();
+  manImage.src = './img/data/data_man.png';
+  const womanImage = new Image();
+  womanImage.src = './img/data/data_woman.png';
 
   // 円グラフ（性別分布）- 時計回りに表示
   const genderCtx = document.getElementById('genderChart');
@@ -251,20 +245,38 @@ document.addEventListener('DOMContentLoaded', function() {
           const radius = element.outerRadius;
           
           // セグメントの中心位置を計算（半径の50%の位置でセグメントの中心に配置）
-          const labelRadius = radius * 0.5;
+          const labelRadius = radius * 0.45;
           const x = centerX + Math.cos(angle) * labelRadius;
           const y = centerY + Math.sin(angle) * labelRadius;
           
-          // テキストを描画
           ctx.save();
-          ctx.fillStyle = '#fff';
-          ctx.font = '700 24px Orbitron';
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
           
-          // ラベルとパーセンテージを2行で表示（間隔を調整）
-          ctx.fillText(label, x, y - 15);
-          ctx.fillText(data + '%', x, y + 15);
+          // 画像を描画（ラベルの代わり）
+          const image = label === '男性' ? manImage : womanImage;
+          
+          // 男性と女性で別々にサイズを調整
+          const manImageWidth = 94;
+          const manImageHeight = 50;
+          const womanImageWidth = 94;
+          const womanImageHeight = 50;
+          
+          // 男性と女性で別々に位置を調整（オフセット）
+          const manOffsetX = -3;  // 男性画像のX方向オフセット
+          const manOffsetY = -2;  // 男性画像のY方向オフセット
+          const womanOffsetX = -7;  // 女性画像のX方向オフセット
+          const womanOffsetY = -10;  // 女性画像のY方向オフセット
+          
+          const imageWidth = label === '男性' ? manImageWidth : womanImageWidth;
+          const imageHeight = label === '男性' ? manImageHeight : womanImageHeight;
+          const offsetX = label === '男性' ? manOffsetX : womanOffsetX;
+          const offsetY = label === '男性' ? manOffsetY : womanOffsetY;
+          
+          const imageX = x - imageWidth / 2 + offsetX;
+          const imageY = y - imageHeight / 2 + offsetY; // 中央に配置 + オフセット
+          
+          if (image.complete) {
+            ctx.drawImage(image, imageX, imageY, imageWidth, imageHeight);
+          }
           
           ctx.restore();
         });
@@ -306,7 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
           duration: 2000,
           easing: 'easeOutQuart',
           onComplete: function() {
-            console.log('Animation completed');
           }
         }
       },
@@ -332,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        aspectRatio: 1.2, // 幅が高さの1.2倍（数値を大きくすると高さが低くなる）
+        aspectRatio: 1.2,
         plugins: {
           legend: {
             display: true,
@@ -393,23 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         animation: {
           duration: 2000,
-          easing: 'easeOutQuart',
-          onComplete: function() {
-            const chart = this.chart;
-            const ctx = chart.ctx;
-            ctx.save();
-            ctx.font = 'bold 12px Arial';
-            ctx.fillStyle = '#666';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'bottom';
-            chart.data.datasets.forEach((dataset, i) => {
-              chart.getDatasetMeta(i).data.forEach((bar, index) => {
-                const value = dataset.data[index];
-                ctx.fillText(value, bar.x, bar.y - 5);
-              });
-            });
-            ctx.restore();
-          }
+          easing: 'easeOutQuart'
         }
       }
     });
@@ -420,34 +415,26 @@ document.addEventListener('DOMContentLoaded', function() {
   if (dataSection) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        console.log('Intersection Observer triggered:', entry.isIntersecting, entry.intersectionRatio);
-        console.log('genderChart:', genderChart);
-        console.log('salesChart:', salesChart);
         if (entry.isIntersecting) {
-          // 円グラフのデータを更新してアニメーション開始
+          // 円グラフのデータを更新してアニメーション開始（2秒かけてアニメーション）
           if (genderChart) {
-            console.log('Updating genderChart data');
             genderChart.data.datasets[0].data = [63.4, 36.6];
-            genderChart.update('active');
-            console.log('genderChart data after update:', genderChart.data.datasets[0].data);
-          } else {
-            console.log('genderChart is null');
+            // 2秒かけてアニメーション表示
+            genderChart.update();
           }
-          // 棒グラフのデータを更新してアニメーション開始
+          // 棒グラフのデータを更新してアニメーション開始（2秒かけてアニメーション）
           if (salesChart) {
-            console.log('Updating salesChart data');
             salesChart.data.datasets[0].data = [4400, 5600, 6100];
-            salesChart.update('active');
-            console.log('salesChart data after update:', salesChart.data.datasets[0].data);
-          } else {
-            console.log('salesChart is null');
+            // 2秒かけてアニメーション表示
+            salesChart.update();
           }
           observer.unobserve(entry.target);
         }
       });
     }, {
 
-      rootMargin: '200px',
+      rootMargin: '400px 0px 0px 0px', // 上方向に400pxのマージン（スクロールして400px表示されたら検知）
+      threshold: 0.1 // 要素の10%が見えたら検知
     });
     
     observer.observe(dataSection);
