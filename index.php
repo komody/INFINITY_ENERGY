@@ -630,6 +630,7 @@
         </div>
       </div>
     </div>
+    <div class="flavor_flowchart_mobile"></div>
     <div class="flavor_detail">
       <div class="flavor_detail_list">
         <div class="flavor_detail_item">
