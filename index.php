@@ -501,10 +501,63 @@
           <p class="data_bar_chart_title">インフィニティエナジーの<br>
             売上</p>
           <div class="data_bar_chart_sales">
-            <canvas id="salesChart"></canvas>
+            <div class="data_bar_chart_top">
+              <div class="data_bar_chart_top_left">
+                <p class="data_bar_chart_top_left_text">百万ドル</p>
+              </div>
+              <div class="data_bar_chart_top_right">
+                <span class="data_bar_chart_top_right_color"></span>
+                <p class="data_bar_chart_top_right_text">売上高</p>
+              </div>
+            </div>
+            <div class="data_bar_chart_memorys">
+              <div class="data_bar_chart_memory_8000">
+                <p class="data_bar_chart_memory_8000_text">8000</p>
+                <div class="data_bar_chart_memory_8000_line"></div>
+              </div>
+              <div class="data_bar_chart_memory_6000">
+                <p class="data_bar_chart_memory_6000_text">6000</p>
+                <div class="data_bar_chart_memory_6000_line"></div>
+              </div>
+              <div class="data_bar_chart_memory_4000">
+                <p class="data_bar_chart_memory_4000_text">4000</p>
+                <div class="data_bar_chart_memory_4000_line"></div>
+              </div>
+              <div class="data_bar_chart_memory_2000">
+                <p class="data_bar_chart_memory_2000_text">2000</p>
+                <div class="data_bar_chart_memory_2000_line"></div>
+              </div>
+              <div class="data_bar_chart_memory_0">
+                <p class="data_bar_chart_memory_0_text">0</p>
+                <div class="data_bar_chart_memory_0_line"></div>
+              </div>
+            </div>
+            <div class="bar_chart_content">
+              <div class="bar_chart_bars">
+                <div class="bar_wrapper">
+                  <div class="bar" data-height="135">
+                  </div>
+                </div>
+                <div class="bar_wrapper">
+                  <div class="bar" data-height="170">
+                  </div>
+                </div>
+                <div class="bar_wrapper">
+                  <div class="bar" data-height="187">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="data_bar_chart_bottom">
+              <div class="data_bar_chart_bottom_text">21/12</div>
+              <div class="data_bar_chart_bottom_text">22/12</div>
+              <div class="data_bar_chart_bottom_text">23/12</div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
 
