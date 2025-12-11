@@ -1711,45 +1711,45 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .promotion {
-  @property --r {
-    syntax: '<length>';
-    inherits: false;
-    initial-value: 0px;
+@property --r {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+@keyframes topLeftCircleMaskVar {
+  to {
+    --r: 127px;
+    --cx: 223px;
+    --cy: 180px;
   }
+}
 
-  @keyframes topLeftCircleMaskVar {
-    to {
-      --r: 127px;
-      --cx: 223px;
-      --cy: 180px;
-    } 
+
+@keyframes topRightCircleMaskVar {
+  to {
+    --r: 82px;
+    --cx: 204px;
+    --cy: 239px;
   }
+}
 
 
-  @keyframes topRightCircleMaskVar {
-    to {
-      --r: 82px;
-      --cx: 204px;
-      --cy: 239px;
-    }
+@keyframes bottomCircleMaskVar {
+  to {
+    --r: 207px;
+    --cx: 440px;
+    --cy: 242px;
   }
+}
 
-
-  @keyframes bottomCircleMaskVar {
-    to {
-      --r: 207px;
-      --cx: 440px;
-      --cy: 242px;
-    }
+@keyframes bgRightCircleMaskVar {
+  to {
+    --r: 231px;
+    --cx: 244px;
+    --cy: 310px;
   }
-
-  @keyframes bgRightCircleMaskVar {
-    to {
-      --r: 231px;
-      --cx: 244px;
-      --cy: 310px;
-    }
-  }
+}
 
   @media (max-width: 1400px) {
     @keyframes topLeftCircleMaskVar {
@@ -2357,7 +2357,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   }
 
   .aria_container {
-    display: none;
+      display: none;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
@@ -2467,10 +2467,9 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       }
       
       .data_bar_chart {
-        width: 400px;
-        background-color: #fff;
-        padding: 50px 0;
+        padding: 51px 11px;
         border-radius: 8px;
+        position: relative;
 
         .data_bar_chart_title {
           text-align: center;
@@ -2482,12 +2481,407 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 
         .data_bar_chart_sales {
           position: relative;
-          left: 18px;
+          top: 6px;
+          left: -8px;
           width: 370px;
           height: 307px;
         }
+
+        .data_bar_chart_top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .data_bar_chart_top_left {
+            .data_bar_chart_top_left_text {
+              position: relative;
+              top: 4px;
+              left: 19px;
+              font-size: 7px;
+              font-weight: 700;
+            }
+          }
+
+          .data_bar_chart_top_right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            
+            .data_bar_chart_top_right_color {
+              position: relative;
+              left: 3px;
+              width: 13.5px;
+              height: 13.5px;
+              background-color: #FF0211;
+              display: inline-block;
+            }
+
+            .data_bar_chart_top_right_text {
+              position: relative;
+              left: -1px;
+              font-size: 12px;
+              font-weight: 400;
+              color: #000;
+            }
+          }
+        }
+
+        .data_bar_chart {
+          position: relative;
+          height: 250px;
+        }
+
+        .data_bar_chart_memorys {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 250px;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .data_bar_chart_memory_8000 {
+          position: absolute;
+          top: 20px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+
+        .data_bar_chart_memory_8000_text {
+          position: relative;
+          top: -1px;
+          left: 16px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #000;
+        }
+
+        .data_bar_chart_memory_8000_line {
+          position: relative;
+          right: 5px;
+          width: 307px;
+          height: 1px;
+          background-color: #B3B3B3;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 1px;
+            background-color: #B3B3B3;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &::before {
+            left: -5px;
+          }
+
+          &::after {
+            right: -5px;
+          }
+        }
+
+        .data_bar_chart_memory_6000 {
+          position: absolute;
+          top: 80px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+
+        .data_bar_chart_memory_6000_text {
+          position: relative;
+          top: -1px;
+          left: 16px;
+          font-size: 12px;
+          font-weight: 400; 
+          letter-spacing: 0.1em;
+          color: #000;
+        }
+
+        .data_bar_chart_memory_6000_line {
+          position: relative;
+          right: 5px;
+          width: 307px;
+          height: 1px;
+          background-color: #B3B3B3;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 1px;
+            background-color: #B3B3B3;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &::before {
+            left: -5px;
+          }
+
+          &::after {
+            right: -5px;
+          }
+        }
+
+        .data_bar_chart_memory_4000 {
+          position: absolute;
+          top: 140px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+
+        .data_bar_chart_memory_4000_text {
+          position: relative;
+          top: -1px;
+          left: 16px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #000;
+        }
+        
+        .data_bar_chart_memory_4000_line {
+          position: relative;
+          right: 5px;
+          width: 307px;
+          height: 1px;
+          background-color: #B3B3B3;
+        }
+
+        .data_bar_chart_memory_4000_line::before,
+        .data_bar_chart_memory_4000_line::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 1px;
+          background-color: #B3B3B3;
+          border-radius: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .data_bar_chart_memory_4000_line::before {
+          left: -5px;
+        }
+
+        .data_bar_chart_memory_4000_line::after {
+          right: -5px;
+        }
+
+        .data_bar_chart_memory_2000 {
+          position: absolute;
+          top: 201px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+
+        .data_bar_chart_memory_2000_text {
+          position: relative;
+          top: -1px;
+          left: 16px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #000;
+        }
+
+        .data_bar_chart_memory_2000_line {
+          position: relative;
+          right: 5px;
+          width: 307px;
+          height: 1px;
+          background-color: #B3B3B3;
+        }
+
+        .data_bar_chart_memory_2000_line::before,
+        .data_bar_chart_memory_2000_line::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 1px;
+          background-color: #B3B3B3;
+          border-radius: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .data_bar_chart_memory_2000_line::before {
+          left: -5px;
+        }
+
+        .data_bar_chart_memory_2000_line::after {
+          right: -5px;
+        }
+
+        .data_bar_chart_memory_0 {
+          position: absolute;
+          bottom: -29px;
+          left: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0;
+        }
+
+        .data_bar_chart_memory_0_text {
+          position: relative;
+          left: 39px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #000;
+        }
+
+        .data_bar_chart_memory_0_line {
+          position: relative;
+          right: 2px;
+          width: 315px;
+          height: 1px;
+          background-color: #000;
+        }
+
+        .data_bar_chart_bottom {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          margin-bottom: 20px;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          position: relative;
+          bottom: -259px;
+          left: 18px;
+
+          .data_bar_chart_bottom_text:nth-child(2){
+            position: relative;
+            left: 6px;
+          }
+          .data_bar_chart_bottom_text:nth-child(3) {
+            position: relative;
+            left: 16px;
+          }
+        }
+
+        .bar_chart_content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 250px;
+          z-index: 2;
+
+          .bar_chart_grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: repeating-linear-gradient(
+              to bottom,
+              transparent,
+              transparent 49px,
+              #e0e0e0 49px,
+              #e0e0e0 50px
+            );
+            pointer-events: none;
+          }
+
+          .bar_chart_bars {
+            position: relative;
+            top: 20px;
+            left: 40px;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+
+            .bar_wrapper {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              flex: 1;
+              max-width: 80px;
+
+              .bar {
+                width: 72px;
+                background-color: #FF0211;
+                position: relative;
+                height: 0;
+                transform-origin: bottom;
+                animation: growBar 2s ease-out forwards;
+                animation-play-state: paused;
+
+                &.animate {
+                  animation-play-state: running;
+                }
+
+                .bar_value {
+                  position: absolute;
+                  top: -20px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #333;
+                  white-space: nowrap;
+                }
+              }
+
+              .bar_label {
+                margin-top: 8px;
+                font-size: 14px;
+                color: #333;
+                text-align: center;
+              }
+            }
+
+            .bar_wrapper:nth-child(2) {
+              position: relative;
+              right: 14px;
+            }
+
+            .bar_wrapper:nth-child(3) {
+              position: relative;
+              right: 28px;
+            }
+          }
+        }
       }
     }
+  }
+}
+
+@keyframes growBar {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--bar-height);
   }
 }
 

@@ -376,6 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
               font: {
                 size: 14
               },
+              padding: 5, // 左の数字の位置を調整（数値を大きくすると右に移動）
               callback: function(value) {
                 return value;
               }
@@ -392,21 +393,66 @@ document.addEventListener('DOMContentLoaded', function() {
             ticks: {
               font: {
                 size: 14
-              }
+              },
+              padding: 5 // 下の月日の位置を調整（数値を大きくすると下に移動）
             },
             title: {
               display: false
             },
             grid: {
               display: false
-            }
+            },
+            categoryPercentage: 0.3, // カテゴリ間のスペース（0.6 = 60%、バーを狭くする場合は小さく）
+            barPercentage: 0.4 // バーの幅（0.8 = 80%、バーを細くする場合は小さく）
           }
         },
         animation: {
           duration: 2000,
           easing: 'easeOutQuart'
+          // バーの上の数値を非表示にするため、onCompleteを削除
         }
       }
+    });
+  }
+
+  // カスタムバーチャートのアニメーション設定
+  const barChart = document.querySelector('.data_bar_chart');
+  if (barChart) {
+    const bars = barChart.querySelectorAll('.bar');
+    const maxValue = 8000; // Y軸の最大値
+    const chartHeight = 250; // グラフの高さ（px）
+
+    bars.forEach(bar => {
+      // data-height属性があれば直接使用、なければdata-valueで比率計算
+      let height;
+      if (bar.dataset.height) {
+        height = parseFloat(bar.dataset.height);
+      } else {
+        const value = parseInt(bar.dataset.value);
+        // 値に基づいて高さを計算（最大値8000に対して250px）
+        height = (value / maxValue) * chartHeight;
+      }
+      bar.style.setProperty('--bar-height', `${height}px`);
+    });
+  }
+
+  const barChartSample = document.querySelector('.data_bar_chart_sample');
+  if (barChartSample) {
+    const bars = barChartSample.querySelectorAll('.bar');
+    const maxValue = 8000; // Y軸の最大値
+    const chartHeight = 250; // グラフの高さ（px）
+
+    bars.forEach(bar => {
+      // data-height属性があれば直接使用、なければdata-valueで比率計算
+      let height;
+      if (bar.dataset.height) {
+        height = parseFloat(bar.dataset.height);
+      } else {
+        const value = parseInt(bar.dataset.value);
+        // 値に基づいて高さを計算（最大値8000に対して250px）
+        height = (value / maxValue) * chartHeight;
+      }
+      bar.style.setProperty('--bar-height', `${height}px`);
     });
   }
 
@@ -427,6 +473,20 @@ document.addEventListener('DOMContentLoaded', function() {
             salesChart.data.datasets[0].data = [4400, 5600, 6100];
             // 2秒かけてアニメーション表示
             salesChart.update();
+          }
+          // カスタムバーチャートのアニメーション開始
+          const barChart = document.querySelector('.data_bar_chart');
+          if (barChart) {
+            const bars = barChart.querySelectorAll('.bar');
+            bars.forEach(bar => {
+              bar.classList.add('animate');
+            });
+          }
+          if (barChartSample) {
+            const bars = barChartSample.querySelectorAll('.bar');
+            bars.forEach(bar => {
+              bar.classList.add('animate');
+            });
           }
           observer.unobserve(entry.target);
         }
