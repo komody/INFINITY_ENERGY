@@ -2348,20 +2348,59 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   padding: 120px 0;
   background-color: #F5F5F5;
 
+  @media (max-width: 1100px) {
+    height: auto;
+  }
+
+  @media (max-width: 400px) {
+    height: 1119px;
+    padding: 60px 0;
+  }
+
   .aria_title {
     margin-bottom: 80px;
     text-align: center;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.1em;
+
+    @media (max-width: 500px) {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .mobile_line_break {
+      display: none;
+
+      @media (max-width: 550px) {
+        display: block;
+      }
+    }
   }
 
   .aria_container {
-      display: none;
     max-width: 1000px;
+    height: 568px;
     margin: 0 auto;
     padding: 0 20px;
+    border-radius: 16px;
     background-color: #fff;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 1100px) {
+      width: 80%;
+      height: auto;
+      padding: 0 20px 60px;
+    }
+
+    @media (max-width: 650px) {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    @media (max-width: 500px) {
+      padding: 0 20px 40px;
+    }
   }
 
   .aria_container_flex {
@@ -2369,55 +2408,689 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     justify-content: space-around;
     gap: 40px;
     align-items: center;
+
+    @media (max-width: 1100px) {
+      flex-direction: column-reverse;
+    }
+
+    @media (max-width: 500px) {
+      gap: 0;
+    }
   }
 
   .aria_container_flex_left {
+    position: relative;
+    top: -1px;
+    left: 6px;
+    margin-left: 14px;
+    width: 386px;
+    height: 488px;
+    border-radius: 16px;
+    background-color: #F5F5F5;
+
+    @media (max-width: 500px) {
+      width: 335px;
+      height: 434px;
+      margin-left: 0;
+      top: 0;
+      left: 0;
+    }
+
+    .swiper_aria_hokkaido,
+    .swiper_aria_touhoku,
+    .swiper_aria_kantou,
+    .swiper_aria_toukai,
+    .swiper_aria_hokuriku,
+    .swiper_aria_kansai,
+    .swiper_aria_tyugoku,
+    .swiper_aria_sikoku,
+    .swiper_aria_kyusyu_okinawa {
+      display: none;
+    }
+
+    .swiper_aria_hokkaido {
+      display: block;
+    }
+
+    .aria_swiper {
+      width: 100%;
+      height: auto;
+      position: relative;
+      overflow: hidden;
+
+      .swiper-slide {
+        width: 100%;
+      }
+
+      .shop_slide {
+        width: 100%;
+        flex-shrink: 0;
+
+        .shop_detail {
+          padding: 13px 20px;
+
+          @media (max-width: 500px) {
+            padding: 9px 16px;
+          }
+
+          .shop_detail_title {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 7px;
+            line-height: 1.6;
+
+            @media (max-width: 500px) {
+              margin-bottom: 3px;
+            }
+          }
+          .shop_detail_address {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 7px;
+            line-height: 1.7;
+
+            @media (max-width: 500px) {
+              margin-bottom: 4px;
+            }
+          }
+          .shop_detail_phone {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+
+            @media (max-width: 500px) {
+              margin-bottom: 6px;
+            }
+          }
+          .shop_detail_URL {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+
+            @media (max-width: 500px) {
+              margin-bottom: 12px;
+            }
+
+            span {
+              color: #00B2FF;
+              text-decoration: underline;
+            }
+          }
+          .shop_detail_button {
+            display: flex;
+            align-items: center;
+            width: 346px;
+            height: 46px;
+            background: linear-gradient(105deg, #128FCD 5%, #B3D6E0 50%, #DC24B1 95%);
+            border-radius: 4px;
+
+            @media (max-width: 500px) {
+              width: 303px;
+            }
+
+            img {
+              width: 26px;
+              height: 30px;
+              margin-left: 24px;
+              text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+
+              @media (max-width: 500px) {
+                margin-left: 4px;
+              }
+            }
+
+            span {
+              margin: 0 0 2px 2px;
+              font-size: 16px;
+              font-weight: 700;
+              letter-spacing: 0.1em;
+              color: #fff;
+              text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+
+              @media (max-width: 500px) {
+                margin: 0 0 2px 0;
+              }
+            }
+          }
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: transparent;
+        cursor: pointer;
+        z-index: 10;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        height: auto;
+      }
+
+      .swiper-button-next {
+        top: 137px;
+        right: 0px;
+        width: 36px;
+        height: 36px;
+
+        @media (max-width: 500px) {
+          top: 122px;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-image: url('../img/aria/aria_next_button.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      .swiper-button-prev {
+        top: 137px;
+        left: 0px;
+        width: 36px;
+        height: 36px;
+
+        @media (max-width: 500px) {
+          top: 122px;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-image: url('../img/aria/aria_prev_button.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      .swiper-pagination {
+        position: relative;
+        margin-top: 20px;
+      }
+    }
   }
 
   .aria_container_flex_right {
     position: relative;
+    margin: 40px;
+    width: 600px;
+    height: 490px;
+
+    @media (max-width: 1100px) {
+      width: 440px;
+    }
+
+    @media (max-width: 500px) {
+      width: 320px;
+      height: 341px;
+    }
+
+    .aria_container_flex_right_map {
+      height: 100%;
+    }
+
+    .aria_container_flex_right_infinity_energy {
+      position: absolute;
+      top: 58px;
+      left: -19px;
+      width: 240px;
+      height: 17px;
+
+      @media (max-width: 650px) {
+        width: 168px;
+        height: 12px;
+      }
+
+      @media (max-width: 500px) {
+        top: 34px;
+        left: -8px;
+      }
+    }
+
+    .aria_container_flex_right_can {
+      position: absolute;
+      top: 107px;
+      left: 23px;
+      width: 156px;
+      height: 109px;
+
+      @media (max-width: 650px) {
+        width: 109px;
+        height: 76px;
+      }
+
+      @media (max-width: 500px) {
+        top: 75px;
+        left: 22px;
+      }
+    }
+
+    .aria_japan_map_aria_name {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
+
+      .aria_japan_map_aria_name_hokkaido_touhoku {
+        position: absolute;
+        top: 140px;
+        right: -7px;
+
+        @media (max-width: 500px) {
+          top: 97px;
+          right: -9px;
+        }
+      }
+      .aria_japan_map_aria_name_kantou {
+        position: absolute;
+        bottom: 160px;
+        right: 83px;
+
+        @media (max-width: 500px) {
+          bottom: 109px;
+          right: 59px;
+        }
+      }
+      .aria_japan_map_aria_name_hokuriku {
+        position: absolute;
+        bottom: 240px;
+        left: 198px;
+
+        @media (max-width: 500px) {
+          bottom: 163px;
+          left: 141px;
+        }
+      }
+      .aria_japan_map_aria_name_toukai {
+        position: absolute;
+        bottom: 95px;
+        left: 217px;
+
+        @media (max-width: 500px) {
+          bottom: 62px;
+          left: 154px;
+        }
+      }
+      .aria_japan_map_aria_name_kansai {
+        position: absolute;
+        bottom: 178px;
+        left: 143px;
+
+        @media (max-width: 500px) {
+          bottom: 121px;
+          left: 101px;
+        }
+      }
+      .aria_japan_map_aria_name_tyugoku {
+        position: absolute;
+        bottom: 155px;
+        left: 55px;
+
+        @media (max-width: 500px) {
+          bottom: 104px;
+          left: 36px;
+        }
+      }
+      .aria_japan_map_aria_name_sikoku {
+        position: absolute;
+        bottom: 60px;
+        left: 133px;
+
+        @media (max-width: 500px) {
+          bottom: 38px;
+          left: 97px;
+        }
+      }
+      .aria_japan_map_aria_name_kyusyu_okinawa {
+        position: absolute;
+        bottom: 16px;
+        left: 80px;
+
+        @media (max-width: 500px) {
+          bottom: 8px;
+          left: 58px;
+        }
+      }
+    }
   }
 
   .aria_container_flex_right_japan_map {
     position: relative;
     width: 100%;
+    height: 100%;
     
-    // すべてのSVG要素のスタイル
     svg {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    // すべてのpath要素の基本スタイル
     svg path {
-      fill: #E0E0E0; // デフォルト：グレー
+      fill: #D2DFD5;
       stroke: white;
       stroke-width: 0.6;
       cursor: pointer;
       transition: fill 0.3s ease, stroke 0.3s ease;
     }
 
-    .aria_japan_map_hokkaido svg path {
-      fill: #DBFF00;
+    .aria_japan_map_hokkaido {
+      position: absolute;
+      top: -2px;
+      right: -21px;
+
+      @media (max-width: 500px) {
+        top: 0px;
+        right: -8px;
+      }
+
+      svg {
+        width: 180px;
+        height: 145px;
+
+        @media (max-width: 500px) {
+          width: 126px;
+          height: 100px;
+        }
+      }
     }
 
-    .aria_japan_map_hokkaido svg path:hover,
-    .aria_japan_map_touhoku svg path:hover,
-    .aria_japan_map_hokuriku svg path:hover,
-    .aria_japan_map_tyugoku svg path:hover,
-    .aria_japan_map_sikoku svg path:hover,
-    .aria_japan_map_kyusyu svg path:hover,
-    .aria_japan_map_kantou svg path:hover,
-    .aria_japan_map_toukai svg path:hover,
-    .aria_japan_map_kansai svg path:hover,
-    .aria_japan_map_okinawa svg path:hover {
+    .aria_japan_map_touhoku {
+      position: absolute;
+      top: 134px;
+      right: 100px;
+
+      @media (max-width: 500px) {
+        top: 96px;
+        right: 76px;
+      }
+
+      svg {
+        width: 74px;
+        height: 160px;
+
+        @media (max-width: 500px) {
+          width: 52px;
+          height: 108px;
+        }
+      }
+    }
+
+    .aria_japan_map_kantou {
+      position: absolute;
+      top: 279px;
+      right: 131px;
+
+      @media (max-width: 500px) {
+        top: 195px;
+        right: 97px;
+      }
+
+      svg {
+        width: 62px;
+        height: 71px;
+
+        @media (max-width: 500px) {
+          width: 45px;
+          height: 50px;
+        }
+      }
+    }
+
+    .aria_japan_map_hokuriku {
+      position: absolute;
+      top: 235px;
+      right: 154px;
+
+      @media (max-width: 500px) {
+        top: 164px;
+        right: 114px;
+      }
+
+      svg {
+        width: 112px;
+        height: 104px;
+
+        @media (max-width: 500px) {
+          width: 79px;
+          height: 75px;
+        }
+      }
+    }
+
+    .aria_japan_map_toukai {
+      position: absolute;
+      bottom: 106px;
+      right: 174px;
+
+      @media (max-width: 500px) {
+        bottom: 71px;
+        right: 128px;
+      }
+
+      svg {
+        width: 82px;
+        height: 84px;
+
+        @media (max-width: 500px) {
+          width: 58px;
+          height: 60px;
+        }
+      }
+    }
+
+    .aria_japan_map_kansai {
+      position: absolute;
+      bottom: 99px;
+      left: 144px;
+
+      @media (max-width: 500px) {
+        bottom: 66px;
+        left: 106px;
+      }
+
+      svg {
+        width: 55px;
+        height: 70px;
+
+        @media (max-width: 500px) {
+          width: 39px;
+          height: 50px;
+        }
+      }
+    }
+
+    .aria_japan_map_tyugoku {
+      position: absolute;
+      bottom: 109px;
+      left: 60px;
+
+      @media (max-width: 500px) {
+        bottom: 73px;
+        left: 46px;
+      }
+
+      svg {
+        width: 91px;
+        height: 76px;
+
+        @media (max-width: 500px) {
+          width: 66px;
+          height: 55px;
+        }
+      }
+    }
+
+    .aria_japan_map_sikoku {
+      position: absolute;
+      bottom: 74px;
+      left: 87px;
+
+      @media (max-width: 500px) {
+        bottom: 50px;
+        left: 66px;
+      }
+
+      svg {
+        width: 70px;
+        height: 57px;
+
+        @media (max-width: 500px) {
+          width: 49px;
+          height: 40px;
+        }
+      }
+    }
+
+    .aria_japan_map_kyusyu {
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+
+      @media (max-width: 500px) {
+        bottom: -2px;
+        left: 6px;
+      }
+
+      svg {
+        width: 87px;
+        height: 132px;
+
+        @media (max-width: 500px) {
+          width: 63px;
+          height: 94px;
+        }
+      }
+    }
+
+    .aria_japan_map_okinawa {
+      position: absolute;
+      bottom: 18px;
+      left: 189px;
+
+      @media (max-width: 500px) {
+        bottom: 11px;
+        left: 138px;
+      }
+
+      svg {
+        width: 17px;
+        height: 22px;
+
+        @media (max-width: 500px) {
+          width: 12px;
+          height: 16px;
+        }
+      }
+    }
+
+    .aria_japan_map_hokkaido svg path.hover,
+    .aria_japan_map_touhoku svg path.hover,
+    .aria_japan_map_hokuriku svg path.hover,
+    .aria_japan_map_tyugoku svg path.hover,
+    .aria_japan_map_sikoku svg path.hover,
+    .aria_japan_map_kyusyu svg path.hover,
+    .aria_japan_map_kantou svg path.hover,
+    .aria_japan_map_toukai svg path.hover,
+    .aria_japan_map_kansai svg path.hover,
+    .aria_japan_map_okinawa svg path.hover {
       fill: #DBFF00;
+    }
+  }
+
+
+  .aria_container_flex_right_root {
+    display: none;
+
+    
+
+    @media (max-width: 600px) {
+      right: 0;
+    }
+
+    @media (max-width: 400px) {
+      right: 7px;
+    }
+
+    .aria_map_container {
+      position: relative;
+      width: 479px;
+      height: 410px;
+      border-radius: 16px;
+      background-color: #F5F5F5;
+    
+      @media (max-width: 600px) {
+        width: 440px;
+        height: 410px;
+      }
+
+      @media (max-width: 500px) {
+        width: 334px;
+        height: 281px;
+      }
+
+      iframe {
+        width: 100%;
+        border: none;
+
+        @media (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .aria_map_container_mobile {
+        display: none;
+        width: 100%;
+        height: 100%;
+        border: none;
+
+        @media (max-width: 600px) {
+          display: block;
+        }
+      }
+      .aria_distance_text {
+        position: relative;
+        top: -4px;
+        left: 0;
+        height: 78px;
+        text-align: center;
+        align-items: center;
+        padding: 24px;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        background-color: #F5F5F5;
+
+        @media (max-width: 600px) {
+          font-size: 16px;
+          height: 60px;
+        }
+
+        @media (max-width: 400px) {
+          top: 0;
+          padding: 18px;
+        }
+      }
     }
   }
 }
 
 .data {
+  display: none;
   padding: 120px 0;
   height: 924px;
 
@@ -2886,6 +3559,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .flavor {
+  display: none;
   padding: 120px 0;
   height: 1794px;
   background-color: #000;

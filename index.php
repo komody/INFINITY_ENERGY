@@ -420,65 +420,544 @@
   </section>
 
   <section class="aria">
-    <h2 class="aria_title">インフィニティエナジー販売店舗</h2>
+    <h2 class="aria_title">インフィニティエナジー<br class="mobile_line_break">販売店舗</h2>
     <div class="aria_container">
       <div class="aria_container_flex">
         <div class="aria_container_flex_left">
-          <div class="shop_slide">
-            <div class="shop_image">
-              <img src="./img/aria/aria_shop_1.png" alt="#">
-            </div>
-            <div class="shop_detail">
-              <p class="shop_detail_title">店舗名</p>
-              <p class="shop_detail_address">住所</p>
-              <p class="shop_detail_phone">電話番号</p>
-              <p class="shop_detail_URL">URL</p>
-              <button class="shop_detail_button">店舗情報を見る</button>
+          <div class="swiper_aria_hokkaido">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>札幌店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>札幌店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>札幌店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
+          <div class="swiper_aria_touhoku">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>仙台店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>札幌店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>札幌店</p>
+                    <p class="shop_detail_address">〒060-0001　北海道札幌市中央区ユートピア大通1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+          </div>
+          <div class="swiper_aria_kantou">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>東京店</p>
+                    <p class="shop_detail_address">〒100-0001　東京都千代田区千代田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>東京店</p>
+                    <p class="shop_detail_address">〒100-0001　東京都千代田区千代田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>東京店</p>
+                    <p class="shop_detail_address">〒100-0001　東京都千代田区千代田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_toukai">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>名古屋店</p>
+                    <p class="shop_detail_address">〒460-0001　愛知県名古屋市中区三の丸1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>名古屋店</p>
+                    <p class="shop_detail_address">〒460-0001　愛知県名古屋市中区三の丸1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>名古屋店</p>
+                    <p class="shop_detail_address">〒460-0001　愛知県名古屋市中区三の丸1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_hokuriku">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>金沢店</p>
+                    <p class="shop_detail_address">〒920-0001　石川県金沢市尾山町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>金沢店</p>
+                    <p class="shop_detail_address">〒920-0001　石川県金沢市尾山町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>金沢店</p>
+                    <p class="shop_detail_address">〒920-0001　石川県金沢市尾山町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_kansai">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>大阪店</p>
+                    <p class="shop_detail_address">〒530-0001　大阪府大阪市北区梅田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>大阪店</p>
+                    <p class="shop_detail_address">〒530-0001　大阪府大阪市北区梅田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>大阪店</p>
+                    <p class="shop_detail_address">〒530-0001　大阪府大阪市北区梅田1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_tyugoku">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>広島店</p>
+                    <p class="shop_detail_address">〒730-0001　広島県広島市中区基町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>広島店</p>
+                    <p class="shop_detail_address">〒730-0001　広島県広島市中区基町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>広島店</p>
+                    <p class="shop_detail_address">〒730-0001　広島県広島市中区基町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_sikoku">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>高松店</p>
+                    <p class="shop_detail_address">〒760-0001　香川県高松市番町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>高松店</p>
+                    <p class="shop_detail_address">〒760-0001　香川県高松市番町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>高松店</p>
+                    <p class="shop_detail_address">〒760-0001　香川県高松市番町1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="swiper_aria_kyusyu_okinawa">
+            <div class="aria_swiper aria_mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_2.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>福岡店</p>
+                    <p class="shop_detail_address">〒810-0001　福岡県福岡市中央区天神1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_3.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>福岡店</p>
+                    <p class="shop_detail_address">〒810-0001　福岡県福岡市中央区天神1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="swiper-slide shop_slide">
+                  <div class="shop_image">
+                    <img src="./img/aria/aria_shop_1.png" alt="#">
+                  </div>
+                  <div class="shop_detail">
+                    <p class="shop_detail_title">グローバル・グルメ・マーケット<br>福岡店</p>
+                    <p class="shop_detail_address">〒810-0001　福岡県福岡市中央区天神1-2-3</p>
+                    <p class="shop_detail_phone">TEL:000-0000-0000</p>
+                    <p class="shop_detail_URL">URL:<span>xxxxxxxxxxxx.jp</span></p>
+                    <button class="shop_detail_button" data-latitude="43.0642" data-longitude="141.3469" data-shop-name="グローバル・グルメ・マーケット 札幌店">
+                      <img src="./img/aria/aria_button_icon.png" alt="#">
+                      <span>あなたの現在地からの距離を見る</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
           </div>
         </div>
         <div class="aria_container_flex_right">
-          <div class="aria_container_flex_right_infinity_energy"></div>
-          <div class="aria_container_flex_right_can"></div>
-          <div class="aria_container_flex_right_japan_map">
-            <div class="aria_japan_map_hokkaido">
-              <?php echo file_get_contents('./img/aria/aria_hokaido.svg'); ?>
+          <div class="aria_container_flex_right_map">
+            <div class="aria_container_flex_right_infinity_energy">
+              <img src="./img/aria/aria_infinity_energy.png" alt="#">
             </div>
-            <div class="aria_japan_map_touhoku">
-              <?php echo file_get_contents('./img/aria/aria_touhoku.svg'); ?>
+            <div class="aria_container_flex_right_can">
+              <img src="./img/aria/aria_can.png" alt="#">
             </div>
-            <div class="aria_japan_map_kantou">
-              <?php echo file_get_contents('./img/aria/aria_kantou.svg'); ?>
+            <div class="aria_container_flex_right_japan_map">
+              <div class="aria_japan_map_aria_name">
+                <p class="aria_japan_map_aria_name_hokkaido_touhoku">北海道・東北</p>
+                <p class="aria_japan_map_aria_name_kantou">関東</p>
+                <p class="aria_japan_map_aria_name_toukai">東海</p>
+                <p class="aria_japan_map_aria_name_hokuriku">北陸</p>
+                <p class="aria_japan_map_aria_name_kansai">関西</p>
+                <p class="aria_japan_map_aria_name_tyugoku">中国</p>
+                <p class="aria_japan_map_aria_name_sikoku">四国</p>
+                <p class="aria_japan_map_aria_name_kyusyu_okinawa">九州・沖縄</p>
+              </div>
+              <div class="aria_japan_map_hokkaido">
+                <?php echo file_get_contents('./img/aria/aria_hokaido.svg'); ?>
+              </div>
+              <div class="aria_japan_map_touhoku">
+                <?php echo file_get_contents('./img/aria/aria_touhoku.svg'); ?>
+              </div>
+              <div class="aria_japan_map_kantou">
+                <?php echo file_get_contents('./img/aria/aria_kantou.svg'); ?>
+              </div>
+              <div class="aria_japan_map_hokuriku">
+                <?php echo file_get_contents('./img/aria/aria_hokuriku.svg'); ?>
+              </div>
+              <div class="aria_japan_map_toukai">
+                <?php echo file_get_contents('./img/aria/aria_toukai.svg'); ?>
+              </div>
+              <div class="aria_japan_map_kansai">
+                <?php echo file_get_contents('./img/aria/aria_kansai.svg'); ?>
+              </div>
+              <div class="aria_japan_map_tyugoku">
+                <?php echo file_get_contents('./img/aria/aria_tyugoku.svg'); ?>
+              </div>
+              <div class="aria_japan_map_sikoku">
+                <?php echo file_get_contents('./img/aria/aria_sikoku.svg'); ?>
+              </div>
+              <div class="aria_japan_map_kyusyu">
+                <?php echo file_get_contents('./img/aria/aria_kyusyu.svg'); ?>
+              </div>
+              <div class="aria_japan_map_okinawa">
+                <?php echo file_get_contents('./img/aria/aria_okinawa.svg'); ?>
+              </div>
             </div>
-            <div class="aria_japan_map_hokuriku">
-              <?php echo file_get_contents('./img/aria/aria_hokuriku.svg'); ?>
-            </div>
-            <div class="aria_japan_map_toukai">
-              <?php echo file_get_contents('./img/aria/aria_toukai.svg'); ?>
-            </div>
-            <div class="aria_japan_map_kansai">
-              <?php echo file_get_contents('./img/aria/aria_kansai.svg'); ?>
-            </div>
-            <div class="aria_japan_map_tyugoku">
-              <?php echo file_get_contents('./img/aria/aria_tyugoku.svg'); ?>
-            </div>
-            <div class="aria_japan_map_sikoku">
-              <?php echo file_get_contents('./img/aria/aria_sikoku.svg'); ?>
-            </div>
-            <div class="aria_japan_map_kyusyu">
-              <?php echo file_get_contents('./img/aria/aria_kyusyu.svg'); ?>
-            </div>
-            <div class="aria_japan_map_okinawa">
-              <?php echo file_get_contents('./img/aria/aria_okinawa.svg'); ?>
+          </div>
+          <div class="aria_container_flex_right_root">
+            <div class="aria_map_container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.998138878552!2d141.34746604067132!3d43.06250669671356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b299d1d7659a1%3A0xda51cf721a685041!2z44CSMDYwLTAwMDEg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65YyX77yR5p2h6KW_77yT5LiB55uu!5e0!3m2!1sja!2sjp!4v1765620426157!5m2!1sja!2sjp" width="479" height="410" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe class="aria_map_container_mobile" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.998138878552!2d141.34746604067132!3d43.06250669671356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b299d1d7659a1%3A0xda51cf721a685041!2z44CSMDYwLTAwMDEg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65YyX77yR5p2h6KW_77yT5LiB55uu!5e0!3m2!1sja!2sjp!4v1765629780810!5m2!1sja!2sjp" width="334" height="281" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <p class="aria_distance_text">あなたの現在位置から<span id="aria_distance_value">0000</span>km</p>
             </div>
           </div>
         </div>

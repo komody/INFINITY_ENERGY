@@ -205,6 +205,111 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+var aria_swiper = new Swiper(".aria_mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  allowTouchMove: false,
+  autoplay: false,
+  pagination: {
+    el: ".aria_mySwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".aria_mySwiper .swiper-button-next",
+    prevEl: ".aria_mySwiper .swiper-button-prev",
+  },
+});
+
+// 地図のSVG要素にホバー処理を追加
+const mapRegions = [
+  'hokkaido',
+  'touhoku',
+  'kantou',
+  'hokuriku',
+  'toukai',
+  'kansai',
+  'tyugoku',
+  'sikoku',
+  'kyusyu',
+  'okinawa'
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+  // SVG要素が読み込まれるまで少し待つ
+  setTimeout(() => {
+    // 地図のクラス名とスライダーのクラス名の対応関係
+    const mapToSwiperMap = {
+      'hokkaido': 'swiper_aria_hokkaido',
+      'touhoku': 'swiper_aria_touhoku',
+      'kantou': 'swiper_aria_kantou',
+      'toukai': 'swiper_aria_toukai',
+      'hokuriku': 'swiper_aria_hokuriku',
+      'kansai': 'swiper_aria_kansai',
+      'tyugoku': 'swiper_aria_tyugoku',
+      'sikoku': 'swiper_aria_sikoku',
+      'kyusyu': 'swiper_aria_kyusyu_okinawa',
+      'okinawa': 'swiper_aria_kyusyu_okinawa'
+    };
+
+    // 全てのスライダー要素を取得
+    const allSwipers = Object.values(mapToSwiperMap).map(swiperClass => {
+      return document.querySelector(`.${swiperClass}`);
+    }).filter(el => el !== null);
+
+    // 全てのpath要素を取得（地図要素との対応関係も保持）
+    const allPaths = [];
+    mapRegions.forEach(region => {
+      const mapElement = document.querySelector(`.aria_japan_map_${region}`);
+      if (mapElement) {
+        const paths = mapElement.querySelectorAll('svg path');
+        paths.forEach(path => {
+          allPaths.push({
+            path: path,
+            region: region,
+            swiperClass: mapToSwiperMap[region]
+          });
+        });
+      }
+    });
+
+    // スライダーを切り替える関数
+    function showSwiper(swiperClass) {
+      // 全てのスライダーを非表示
+      allSwipers.forEach(swiper => {
+        if (swiper) {
+          swiper.style.display = 'none';
+        }
+      });
+      // 指定されたスライダーを表示
+      const targetSwiper = document.querySelector(`.${swiperClass}`);
+      if (targetSwiper) {
+        targetSwiper.style.display = 'block';
+      }
+    }
+
+    // 初期状態で北海道のpath要素にhoverクラスを追加し、スライダーを表示
+    const hokkaidoMapElement = document.querySelector('.aria_japan_map_hokkaido');
+    if (hokkaidoMapElement) {
+      const hokkaidoPaths = hokkaidoMapElement.querySelectorAll('svg path');
+      hokkaidoPaths.forEach(path => path.classList.add('hover'));
+      showSwiper('swiper_aria_hokkaido');
+    }
+
+    // 全ての地区のpath要素にホバー処理を追加
+    allPaths.forEach(({ path, region, swiperClass }) => {
+      path.addEventListener('mouseenter', function() {
+        // 全てのpath要素からhoverクラスを削除
+        allPaths.forEach(({ path: p }) => p.classList.remove('hover'));
+        // ホバーされたpath要素にhoverクラスを追加
+        this.classList.add('hover');
+        // 対応するスライダーを表示
+        showSwiper(swiperClass);
+      });
+    });
+  }, 100);
+});
+
 // Chart.js アニメーション
 document.addEventListener('DOMContentLoaded', function() {
   let genderChart = null;
@@ -498,5 +603,176 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     observer.observe(dataSection);
+  }
+
+  // Googleマップiframeと距離表示の処理
+  // 距離を計算する関数（ハーバーサイン公式）
+  function calculateDistance(lat1, lon1, lat2, lon2) {
+    const R = 6371; // 地球の半径（km）
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  // GoogleマップのiframeのURLを生成
+  function generateMapUrl(lat, lng) {
+    return `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${lat},${lng}&zoom=15`;
+  }
+
+  // 地図を表示する関数
+  function showShopMap(shopLat, shopLng, shopName) {
+    console.log('showShopMap開始:', { shopLat, shopLng, shopName });
+    
+    const japanMapContainer = document.querySelector('.aria_container_flex_right_map');
+    const mapRootContainer = document.querySelector('.aria_container_flex_right_root');
+    const mapContainerWrapper = document.querySelector('.aria_map_container');
+    
+    console.log('要素確認:', {
+      japanMapContainer: !!japanMapContainer,
+      mapRootContainer: !!mapRootContainer,
+      mapContainerWrapper: !!mapContainerWrapper
+    });
+
+    if (!mapContainerWrapper) {
+      console.error('地図コンテナが見つかりません');
+      return;
+    }
+
+    const mapIframes = mapContainerWrapper.querySelectorAll('iframe');
+    console.log('iframe数:', mapIframes.length);
+
+    if (!mapIframes || mapIframes.length === 0) {
+      console.error('iframeが見つかりません');
+      return;
+    }
+
+    if (!mapRootContainer) {
+      console.error('地図ルートコンテナが見つかりません');
+      return;
+    }
+
+    // 日本地図を非表示、Googleマップを表示
+    if (japanMapContainer) {
+      japanMapContainer.style.display = 'none';
+      console.log('日本地図を非表示にしました');
+    }
+    mapRootContainer.style.display = 'block';
+    console.log('Googleマップを表示しました');
+
+    // iframeのsrcを更新（緯度経度で指定）
+    // 注意: Google Maps Embed APIを使う場合はAPIキーが必要ですが、
+    // 緯度経度を直接URLに含める方法でも表示可能です
+    const mapUrl = `https://www.google.com/maps?q=${shopLat},${shopLng}&output=embed`;
+    console.log('地図URL:', mapUrl);
+    
+    // PC用とモバイル用の両方のiframeを更新
+    mapIframes.forEach((iframe, index) => {
+      iframe.src = mapUrl;
+      console.log(`iframe ${index} を更新しました`);
+    });
+  }
+
+  // 現在地を取得して距離を計算・表示
+  function showDistance(shopLat, shopLng) {
+    if (!navigator.geolocation) {
+      alert('位置情報を取得できません。お使いのブラウザが位置情報に対応していません。');
+      return;
+    }
+
+    console.log('位置情報の取得を開始します');
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        console.log('位置情報を取得しました:', position.coords);
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+
+        // 距離を計算
+        const distance = calculateDistance(userLat, userLng, shopLat, shopLng);
+        console.log('距離:', distance, 'km');
+        
+        // 距離を表示（小数点第1位まで）
+        const distanceElement = document.getElementById('aria_distance_value');
+        if (distanceElement) {
+          distanceElement.textContent = distance.toFixed(1);
+        }
+      },
+      (error) => {
+        console.error('位置情報取得エラー:', error);
+        let errorMessage = '位置情報を取得できませんでした。';
+        
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            errorMessage = '位置情報の使用が拒否されました。ブラウザの設定で位置情報を許可してください。';
+            break;
+          case error.POSITION_UNAVAILABLE:
+            errorMessage = '位置情報を取得できませんでした。位置情報サービスが利用できない可能性があります。';
+            break;
+          case error.TIMEOUT:
+            errorMessage = '位置情報の取得がタイムアウトしました。もう一度お試しください。';
+            break;
+          default:
+            errorMessage = '位置情報を取得できませんでした。エラーコード: ' + error.code;
+            break;
+        }
+        
+        alert(errorMessage);
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 10000,
+        maximumAge: 0
+      }
+    );
+  }
+
+  // ボタンクリックイベントを追加
+  function initMapButtonEvents() {
+    console.log('ボタンイベントを設定します');
+    
+    // 全てのボタンに直接イベントを追加
+    const shopButtons = document.querySelectorAll('.shop_detail_button');
+    console.log('ボタン数:', shopButtons.length);
+    
+    shopButtons.forEach((button, index) => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(`ボタン ${index} がクリックされました`);
+        
+        const shopLat = parseFloat(this.dataset.latitude);
+        const shopLng = parseFloat(this.dataset.longitude);
+        const shopName = this.dataset.shopName || '店舗';
+
+        console.log('店舗情報:', { shopLat, shopLng, shopName });
+
+        if (isNaN(shopLat) || isNaN(shopLng)) {
+          alert('店舗の位置情報が設定されていません。');
+          console.error('位置情報が無効です');
+          return;
+        }
+
+        // 地図を表示
+        console.log('地図を表示します');
+        showShopMap(shopLat, shopLng, shopName);
+        
+        // 距離を表示
+        console.log('距離を表示します');
+        showDistance(shopLat, shopLng);
+      });
+    });
+  }
+
+  // DOMContentLoadedで初期化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMapButtonEvents);
+  } else {
+    // 既にDOMが読み込まれている場合
+    initMapButtonEvents();
   }
 });
