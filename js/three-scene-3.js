@@ -32,7 +32,7 @@ async function initCanScene(canvasSelector) {
   renderer.useLegacyLights = false;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.9;
+  renderer.toneMappingExposure = 2.5;
 
   const scene = new THREE.Scene();
 
@@ -45,16 +45,16 @@ async function initCanScene(canvasSelector) {
   controls.enablePan = false;
   controls.update();
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.9);
-  hemiLight.position.set(0, 1, 0);
-  scene.add(hemiLight);
+  // const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.3);
+  // hemiLight.position.set(0, 1, 0);
+  // scene.add(hemiLight);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
-  dirLight.position.set(3, 5, 2);
-  scene.add(dirLight);
+  // const dirLight = new THREE.DirectionalLight(0xffffff, 0.4);
+  // dirLight.position.set(3, 5, 2);
+  // scene.add(dirLight);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
-  scene.add(ambientLight);
+  // const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+  // scene.add(ambientLight);
 
   const pmremGenerator = new THREE.PMREMGenerator(renderer);
   pmremGenerator.compileEquirectangularShader();
@@ -76,9 +76,9 @@ async function initCanScene(canvasSelector) {
 
   model.traverse((child) => {
     if (child.isMesh && child.material) {
-      child.material.metalness = 0.5;
-      child.material.roughness = 0.7;
-      child.material.envMapIntensity = 0.8;
+      child.material.metalness = 1.0;
+      child.material.roughness = 1.0;
+      child.material.envMapIntensity = 2.0;
       child.material.needsUpdate = true;
     }
   });
@@ -106,5 +106,4 @@ async function initCanScene(canvasSelector) {
 }
 
 // 初期化実行
-initCanScene('#WebGL-output');
-initCanScene('#WebGL-output-mobile');
+initCanScene('#WebGL-output-3');

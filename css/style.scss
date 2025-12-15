@@ -7,6 +7,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   height: 900px;
   mix-blend-mode: multiply;
   position: relative;
+  overflow: hidden;
 
   @media (max-width: 1150px) {
     height: 800px;
@@ -132,9 +133,55 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 #WebGL-output {
   transform: rotate(17deg);
   position: absolute;
-  display: none;
   width: 542px;
   height: 867px;
+  overflow: hidden;
+  top: 44px;
+  right: 700px;
+
+  @media (max-width: 1300px) {
+    width: 433px;
+    height: 693px;
+    top: 98px;
+    right: 112px;
+  }
+
+  @media (max-width: 1150px) {
+    width: 325px;
+    height: 520px;
+    top: 163px;
+    right: 128px;
+  }
+}
+#WebGL-output-2 {
+  transform: rotate(17deg);
+  position: absolute;
+  width: 542px;
+  height: 867px;
+  overflow: hidden;
+  top: 44px;
+  right: 400px;
+
+  @media (max-width: 1300px) {
+    width: 433px;
+    height: 693px;
+    top: -111px;
+    right: 112px;
+  }
+
+  @media (max-width: 1150px) {
+    width: 325px;
+    height: 520px;
+    top: 163px;
+    right: 128px;
+  }
+}
+#WebGL-output-3 {
+  transform: rotate(17deg);
+  position: absolute;
+  width: 542px;
+  height: 867px;
+  overflow: hidden;
   top: 44px;
   right: 66px;
 
@@ -3090,7 +3137,6 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .data {
-  display: none;
   padding: 120px 0;
   height: 924px;
 
