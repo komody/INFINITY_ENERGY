@@ -29,6 +29,8 @@
     }
   </script>
   <script type="module" src="./js/three-scene.js"></script>
+  <script type="module" src="./js/three-scene-2.js"></script>
+  <script type="module" src="./js/three-scene-3.js"></script>
 </head>
 
 <body>
@@ -42,6 +44,8 @@
         <p class="kv_contents_text"><span class="kv_contents_text_first_line">「In<span class="kv_contents_text_first_line_fi">fi</span>nity Energy」は、無限の活力を提供し、限界を超える</span>力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！</p>
       </div>
       <canvas id="WebGL-output"></canvas>
+      <canvas id="WebGL-output-2"></canvas>
+      <canvas id="WebGL-output-3"></canvas>
     </div>
   </section>
   <section class="kv_mobile">

@@ -9,6 +9,7 @@ body {
   height: 900px;
   mix-blend-mode: multiply;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 1150px) {
   .kv {
@@ -131,11 +132,11 @@ body {
 #WebGL-output {
   transform: rotate(17deg);
   position: absolute;
-  display: none;
   width: 542px;
   height: 867px;
+  overflow: hidden;
   top: 44px;
-  right: 66px;
+  right: 700px;
 }
 @media (max-width: 1300px) {
   #WebGL-output {
@@ -147,6 +148,58 @@ body {
 }
 @media (max-width: 1150px) {
   #WebGL-output {
+    width: 325px;
+    height: 520px;
+    top: 163px;
+    right: 128px;
+  }
+}
+
+#WebGL-output-2 {
+  transform: rotate(17deg);
+  position: absolute;
+  width: 542px;
+  height: 867px;
+  overflow: hidden;
+  top: 44px;
+  right: 400px;
+}
+@media (max-width: 1300px) {
+  #WebGL-output-2 {
+    width: 433px;
+    height: 693px;
+    top: -111px;
+    right: 112px;
+  }
+}
+@media (max-width: 1150px) {
+  #WebGL-output-2 {
+    width: 325px;
+    height: 520px;
+    top: 163px;
+    right: 128px;
+  }
+}
+
+#WebGL-output-3 {
+  transform: rotate(17deg);
+  position: absolute;
+  width: 542px;
+  height: 867px;
+  overflow: hidden;
+  top: 44px;
+  right: 66px;
+}
+@media (max-width: 1300px) {
+  #WebGL-output-3 {
+    width: 433px;
+    height: 693px;
+    top: 98px;
+    right: 112px;
+  }
+}
+@media (max-width: 1150px) {
+  #WebGL-output-3 {
     width: 325px;
     height: 520px;
     top: 163px;
@@ -3037,7 +3090,6 @@ body {
 }
 
 .data {
-  display: none;
   padding: 120px 0;
   height: 924px;
 }

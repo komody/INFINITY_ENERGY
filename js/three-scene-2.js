@@ -45,15 +45,15 @@ async function initCanScene(canvasSelector) {
   controls.enablePan = false;
   controls.update();
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.9);
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.3);
   hemiLight.position.set(0, 1, 0);
   scene.add(hemiLight);
 
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.4);
   dirLight.position.set(3, 5, 2);
   scene.add(dirLight);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
   scene.add(ambientLight);
 
   const pmremGenerator = new THREE.PMREMGenerator(renderer);
@@ -78,7 +78,7 @@ async function initCanScene(canvasSelector) {
     if (child.isMesh && child.material) {
       child.material.metalness = 0.5;
       child.material.roughness = 0.7;
-      child.material.envMapIntensity = 0.8;
+      child.material.envMapIntensity = 0.6;
       child.material.needsUpdate = true;
     }
   });
@@ -106,5 +106,4 @@ async function initCanScene(canvasSelector) {
 }
 
 // 初期化実行
-initCanScene('#WebGL-output');
-initCanScene('#WebGL-output-mobile');
+initCanScene('#WebGL-output-2');
