@@ -296,13 +296,28 @@ document.addEventListener('DOMContentLoaded', function() {
       showSwiper('swiper_aria_hokkaido');
     }
 
+    // 地区ごとにpath要素をグループ化
+    const pathsByRegion = {};
+    allPaths.forEach(({ path, region, swiperClass }) => {
+      if (!pathsByRegion[region]) {
+        pathsByRegion[region] = {
+          paths: [],
+          swiperClass: swiperClass
+        };
+      }
+      pathsByRegion[region].paths.push(path);
+    });
+
     // 全ての地区のpath要素にホバー処理を追加
     allPaths.forEach(({ path, region, swiperClass }) => {
       path.addEventListener('mouseenter', function() {
         // 全てのpath要素からhoverクラスを削除
         allPaths.forEach(({ path: p }) => p.classList.remove('hover'));
-        // ホバーされたpath要素にhoverクラスを追加
-        this.classList.add('hover');
+        // ホバーされたpath要素が属する地区の全てのpath要素にhoverクラスを追加
+        const regionPaths = pathsByRegion[region];
+        if (regionPaths) {
+          regionPaths.paths.forEach(p => p.classList.add('hover'));
+        }
         // 対応するスライダーを表示
         showSwiper(swiperClass);
       });
