@@ -1212,6 +1212,39 @@
     </div>
   </section>
 
+  <section class="sns">
+    <h2 class="sns_title">みんなの<br class="mobile_line_break">インフィニティエナジー</h2>
+    <div class="sns_container">
+      <div class="sns_container_flex">
+        <div class="sns_container_right">
+          <div class="sns_container_right_text">
+            <img src="./img/sns/sns_infinity.png" alt="#">
+          </div>
+          <div class="sns_container_right_cans">
+            <img src="./img/sns/sns_can1.png" alt="#">
+            <img src="./img/sns/sns_can2.png" alt="#">
+            <img src="./img/sns/sns_can3.png" alt="#">
+          </div>
+          <div class="sns_container_right_image">
+            <img src="./img/sns/sns_image1.png" alt="#">
+          </div>
+        </div>
+        <div class="sns_container_left">
+          <div class="sns_container_left_top">
+            <img src="./img/sns/sns_image2.png" alt="#">
+            <img src="./img/sns/sns_image3.png" alt="#">
+            <img src="./img/sns/sns_image4.png" alt="#">
+          </div>
+          <div class="sns_container_left_bottom">
+            <img src="./img/sns/sns_image5.png" alt="#">
+            <img src="./img/sns/sns_image6.png" alt="#">
+            <img src="./img/sns/sns_image7.png" alt="#">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="./js/index.js"></script>
