@@ -1245,6 +1245,83 @@
     </div>
   </section>
 
+  <section class="intake">
+    <h2 class="intake_title">あなたに最適な１日の摂取量</h2>
+    <div class="intake_container">
+      <div class="intake_container_input_aria">
+        <div class="intake_container_input_aria_left">
+          <div class="intake_input_item">
+            <label class="intake_input_label">あなたの年齢</label>
+            <select class="intake_select" id="intake_age">
+              <option value=""></option>
+              <option value="9">9歳未満</option>
+              <option value="10-19">10代</option>
+              <option value="20-29">20代</option>
+              <option value="30-39">30代</option>
+              <option value="40-49">40代</option>
+              <option value="50-59">50代</option>
+              <option value="60+">60代以上</option>
+            </select>
+          </div>
+          <div class="intake_input_item">
+            <label class="intake_input_label">あなたの体重</label>
+            <select class="intake_select" id="intake_weight">
+              <option value=""></option>
+              <option value="40-49">40kg未満</option>
+              <option value="50-59">50kg台</option>
+              <option value="60-69">60kg台</option>
+              <option value="70-79">70kg台</option>
+              <option value="80-89">80kg台</option>
+              <option value="90+">90kg以上</option>
+            </select>
+          </div>
+          <div class="intake_input_item">
+            <label class="intake_input_label">あなたの平均睡眠時間</label>
+            <select class="intake_select" id="intake_sleep">
+              <option value=""></option>
+              <option value="4以下">4時間以下</option>
+              <option value="5">5時間</option>
+              <option value="6">6時間</option>
+              <option value="7">7時間</option>
+              <option value="8">8時間</option>
+              <option value="9以上">9時間以上</option>
+            </select>
+          </div>
+        </div>
+        <div class="intake_container_input_aria_right">
+          <button id="intake_submit_button"><span>診断する</span></button>
+        </div>
+      </div>
+      <div class="intake_container_result">
+        <p class="intake_container_result_text_left">あなたに最適な１日の摂取量は</p>
+        <div class="mobile_line_break">
+          <span id="intake_result_value">-</span>
+          <p class="intake_container_result_text_right">本です。</p>
+        </div>
+      </div>
+    </div>
+    <div class="intake_detail">
+      <p class="intake_detail_top">「インフィニティエナジー」はエネルギー補給に役立つドリンクですが、適切な摂取が重要です。以下の注意事項に従って、健康的かつ安全な利用をお願いいたします。</p>
+      <ul class="intake_detail_list">
+        <li><span class="intake_detail_list_number">1. 1日の摂取量を守ろう</span><br>
+          「インフィニティエナジー」の推奨される1日の摂取量は1〜3本です。これを超えないようにしましょう。過剰な摂取は健康に悪影響を及ぼす可能性があります。</li>
+        <li><span class="intake_detail_list_number">2. 個人の感受性を考慮しよう</span><br>
+          個人差があります。カフェインやその他の成分に対する感受性が高い場合、少ない量でも効果を感じることがあります。体調や状況に応じて調整しましょう。</li>
+        <li><span class="intake_detail_list_number">3. 運動前と後に使う場合</span><br>
+          エナジードリンクは運動前にエネルギーを補給するのに適していますが、摂取のタイミングを適切にコントロールしましょう。過度な摂取は不快感を引き起こすことがあります。</li>
+        <li><span class="intake_detail_list_number">4. 水分補給を忘れずに</span><br>
+          「インフィニティエナジー」はエネルギーを提供しますが、水分補給を忘れないようにしましょう。特に運動中や暑い日には水をこまめに摂りましょう。</li>
+        <li><span class="intake_detail_list_number">5. 年齢制限に従おう</span><br>
+          未成年者や特定の年齢層には制限がある場合があります。年齢制限を守り、未成年者への提供には慎重に対応しましょう。</li>
+        <li><span class="intake_detail_list_number">6. 妊娠中や授乳中の方への注意</span><br>
+          妊娠中や授乳中の場合、医師の指導に従ってください。特にカフェイン摂取には制限が必要かもしれません。</li>
+        <li><span class="intake_detail_list_number">7. 他のカフェイン摂取源との組み合わせ</span><br>
+          他のカフェイン摂取源（コーヒーや紅茶など）と組み合わせた場合、摂取総量に注意しましょう。</li>
+      </ul>
+      <p class="intake_detail_bottom">「インフィニティエナジー」はエネルギー補給の一部として活用できますが、適切な摂取を守り、自身の健康に配慮しましょう。不明点や健康上の懸念がある場合は、医師や専門家に相談することをお勧めします。</p>
+    </div>
+  </section>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="./js/index.js"></script>

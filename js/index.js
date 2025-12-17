@@ -791,3 +791,76 @@ document.addEventListener('DOMContentLoaded', function() {
     initMapButtonEvents();
   }
 });
+
+// 摂取量計算ロジック
+document.addEventListener('DOMContentLoaded', function() {
+  const ageSelect = document.getElementById('intake_age');
+  const weightSelect = document.getElementById('intake_weight');
+  const sleepSelect = document.getElementById('intake_sleep');
+  const resultElement = document.getElementById('intake_result_value');
+
+  function calculateIntake() {
+    const age = ageSelect.value;
+    const weight = weightSelect.value;
+    const sleep = sleepSelect.value;
+
+    // 全て選択されていない場合は結果を表示しない
+    if (!age || !weight || !sleep) {
+      if (resultElement) {
+        resultElement.textContent = '-';
+      }
+      return;
+    }
+
+    let score = 0;
+
+    // 年齢によるスコア（年齢が高いほどスコアが高い）
+    if (age === '9') score += 0;
+    else if (age === '10-19') score += 1;
+    else if (age === '20-29') score += 2;
+    else if (age === '30-39') score += 3;
+    else if (age === '40-49') score += 2;
+    else if (age === '50-59') score += 1;
+    else if (age === '60+') score += 0;
+
+    // 体重によるスコア（体重が重いほどスコアが高い）
+    if (weight === '40-49') score += 1;
+    else if (weight === '50-59') score += 2;
+    else if (weight === '60-69') score += 2;
+    else if (weight === '70-79') score += 3;
+    else if (weight === '80-89') score += 3;
+    else if (weight === '90+') score += 3;
+
+    // 睡眠時間によるスコア（睡眠時間が短いほどスコアが高い）
+    if (sleep === '4以下') score += 0;
+    else if (sleep === '5') score += 1;
+    else if (sleep === '6') score += 2;
+    else if (sleep === '7') score += 2;
+    else if (sleep === '8') score += 3;
+    else if (sleep === '9以上') score += 3;
+
+    // スコアに基づいて摂取量を決定（1〜3本）
+    let intake = 1;
+    if (score >= 7) {
+      intake = 3;
+    } else if (score >= 4) {
+      intake = 2;
+    } else {
+      intake = 1;
+    }
+
+    // 結果を表示
+    if (resultElement) {
+      resultElement.textContent = intake;
+    }
+  }
+
+  // ボタンクリック時に結果を計算・表示
+  const submitButton = document.getElementById('intake_submit_button');
+  if (submitButton) {
+    submitButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      calculateIntake();
+    });
+  }
+});
