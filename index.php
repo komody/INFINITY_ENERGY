@@ -28,9 +28,9 @@
       }
     }
   </script>
-  <script type="module" src="./js/three-scene.js"></script>
+  <!-- <script type="module" src="./js/three-scene.js"></script>
   <script type="module" src="./js/three-scene-2.js"></script>
-  <script type="module" src="./js/three-scene-3.js"></script>
+  <script type="module" src="./js/three-scene-3.js"></script> -->
 </head>
 
 <body>
@@ -43,9 +43,9 @@
         </div>
         <p class="kv_contents_text"><span class="kv_contents_text_first_line">「In<span class="kv_contents_text_first_line_fi">fi</span>nity Energy」は、無限の活力を提供し、限界を超える</span>力を引き出す高エネルギードリンクです。あなたの日常を活性化しましょう！</p>
       </div>
-      <canvas id="WebGL-output"></canvas>
+      <!-- <canvas id="WebGL-output"></canvas>
       <canvas id="WebGL-output-2"></canvas>
-      <canvas id="WebGL-output-3"></canvas>
+      <canvas id="WebGL-output-3"></canvas> -->
     </div>
   </section>
   <section class="kv_mobile">
@@ -1321,6 +1321,135 @@
       <p class="intake_detail_bottom">「インフィニティエナジー」はエネルギー補給の一部として活用できますが、適切な摂取を守り、自身の健康に配慮しましょう。不明点や健康上の懸念がある場合は、医師や専門家に相談することをお勧めします。</p>
     </div>
   </section>
+
+  <section class="report">
+    <h2 class="report_title">インフィニティエナジーを知る</h2>
+    <div class="report_container">
+      <div class="report_container_flex">
+        <div class="report_container_article">
+          <img src="./img/report/report_thumbnail1.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              エナジードリンクの歴史と未来
+            </p>
+            <p class="report_container_article_text">
+              エナジードリンクの進化と未来展望を探ります。
+            </p>
+          </div>
+        </div>
+        <div class="report_container_article">
+          <img src="./img/report/report_thumbnail2.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              ストレス対策にエナジードリンクは役立つか？
+            </p>
+            <p class="report_container_article_text">
+              ストレス軽減にエナジードリンクの可能性を考察。
+            </p>
+          </div>
+        </div>
+        <div class="report_container_article">
+          <img src="./img/report/report_thumbnail3.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              アスリートのためのエナジードリンクの最適な利用法
+            </p>
+            <p class="report_container_article_text">
+              競技者向けのエナジードリンクの最適な使い方。
+            </p>
+          </div>
+        </div>
+        <div class="report_container_article tablet">
+          <img src="./img/report/report_thumbnail1.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              エナジードリンクの歴史と未来
+            </p>
+            <p class="report_container_article_text">
+              エナジードリンクの進化と未来展望を探ります。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="report_container_button">
+        <button class="report_container_button_more">
+          <span>VIEW ALL</span>
+        </button>
+      </div>
+    </div>
+    <div class="report_modal">
+      <div class="report_modal_header">
+        <div class="report_modal_header_title">
+          <picture>
+            <source srcset="./img/report/report_modal_title_mobile.png" media="(max-width: 600px)">
+            <img src="./img/report/report_modal_title.png" alt="#">
+          </picture>
+        </div>
+        <div class="report_modal_header_menu">
+          <div>PRODUCT</div>
+          <div>SHOP</div>
+        </div>
+      </div>
+      <div class="report_modal_content">
+        <div class="report_container_article">
+          <img src="./img/report/report_thumbnail1.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              エナジードリンクの歴史と未来
+            </p>
+            <p class="report_container_article_text">
+              エナジードリンクの進化と未来展望を探ります。
+            </p>
+          </div>
+        </div>
+        <div class="report_container_article stress">
+          <img src="./img/report/report_thumbnail2.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              ストレス対策にエナジードリンクは役立つか？
+            </p>
+            <p class="report_container_article_text">
+              ストレス軽減にエナジードリンクの可能性を考察。
+            </p>
+          </div>
+        </div>
+        <div class="report_container_article athlete">
+          <img src="./img/report/report_thumbnail3.png" alt="#">
+          <div class="report_container_article_detail">
+            <p class="report_container_article_date">
+              2023/00/00
+            </p>
+            <p class="report_container_article_title">
+              アスリートのためのエナジードリンクの最適な利用法
+            </p>
+            <p class="report_container_article_text">
+              競技者向けのエナジードリンクの最適な使い方。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form"></section>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
