@@ -864,3 +864,116 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// 無限スクロール処理（一段目を表示し続ける）
+document.addEventListener('DOMContentLoaded', function() {
+  const reportModalContent = document.querySelector('.report_modal_content');
+  
+  if (!reportModalContent) {
+    return;
+  }
+
+  // 最初の3つの記事要素を取得（一段目）
+  const firstRowArticles = Array.from(reportModalContent.querySelectorAll('.report_container_article')).slice(0, 3);
+  
+  if (firstRowArticles.length === 0) {
+    return;
+  }
+
+  // Intersection Observerの設定
+  const observerOptions = {
+    root: null, // ビューポートをルートとして使用
+    rootMargin: '100px', // 100px手前で発火
+    threshold: 0.1 // 10%表示されたら発火
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 最後の要素が表示領域に入ったら、最初の3つの記事を複製して追加
+        firstRowArticles.forEach(article => {
+          const clonedArticle = article.cloneNode(true);
+          reportModalContent.appendChild(clonedArticle);
+        });
+      }
+    });
+  }, observerOptions);
+
+  // 最後の記事要素を監視対象に設定
+  const allArticles = reportModalContent.querySelectorAll('.report_container_article');
+  if (allArticles.length > 0) {
+    const lastArticle = allArticles[allArticles.length - 1];
+    observer.observe(lastArticle);
+  }
+
+  // 動的に追加された要素も監視するため、MutationObserverを使用
+  const mutationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.addedNodes.length > 0) {
+        // 新しい要素が追加されたら、最後の要素を監視対象に更新
+        const allArticles = reportModalContent.querySelectorAll('.report_container_article');
+        if (allArticles.length > 0) {
+          const lastArticle = allArticles[allArticles.length - 1];
+          // 既に監視中の要素を解除
+          observer.disconnect();
+          // 新しい最後の要素を監視
+          observer.observe(lastArticle);
+        }
+      }
+    });
+  });
+
+  // report_modal_contentの変更を監視
+  mutationObserver.observe(reportModalContent, {
+    childList: true,
+    subtree: true
+  });
+});
+
+// モーダル表示処理
+document.addEventListener('DOMContentLoaded', function() {
+  const viewAllButton = document.querySelector('.report_container_button_more');
+  const reportModal = document.querySelector('.report_modal');
+  const reportModalHeader = document.querySelector('.report_modal_header');
+
+  if (!viewAllButton || !reportModal) {
+    return;
+  }
+
+  // モーダルを表示する関数
+  function openModal() {
+    reportModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 背景のスクロールを無効化
+  }
+
+  // モーダルを閉じる関数
+  function closeModal() {
+    reportModal.style.display = 'none';
+    document.body.style.overflow = ''; // 背景のスクロールを有効化
+  }
+
+  // VIEW ALLボタンをクリックしたときにモーダルを表示
+  viewAllButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal();
+  });
+
+  // モーダルの背景（report_modal）をクリックしたときにモーダルを閉じる
+  reportModal.addEventListener('click', function(e) {
+    // モーダルヘッダー内をクリックした場合は閉じない
+    if (reportModalHeader && reportModalHeader.contains(e.target)) {
+      return;
+    }
+    // モーダルの背景をクリックした場合のみ閉じる
+    if (e.target === reportModal) {
+      closeModal();
+    }
+  });
+
+  // ESCキーでモーダルを閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && reportModal.style.display === 'block') {
+      closeModal();
+    }
+  });
+});
