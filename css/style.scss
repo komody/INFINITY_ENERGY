@@ -3137,9 +3137,17 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .data {
-  display: none;
   padding: 120px 0;
   height: 924px;
+
+  @media (max-width: 900px) {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  @media (max-width: 500px) {
+    padding: 60px 0;
+  }
 
   h2 {
     text-align: center;
@@ -3147,6 +3155,19 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     font-weight: 700;
     margin-bottom: 80px;
     letter-spacing: 0.1em;
+
+    @media (max-width: 500px) {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .mobile_line_break {
+      display: none;
+
+      @media (max-width: 900px) {
+        display: block;
+      }
+    }
   }
 
   .data_container {
@@ -3157,6 +3178,15 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     background: linear-gradient(150deg, #128FCD 5%, #B3D6E0 50%, #DC24B1 95%);
     border-radius: 16px;
 
+    @media (max-width: 900px) {
+      height: auto;
+    }
+
+    @media (max-width: 500px) {
+      border-radius: 0;
+      background: linear-gradient(117deg, #128FCD 5%, #B3D6E0 50%, #DC24B1 95%);
+    }
+
     .data_chart_flex {
       display: flex;
       background-color: #fff;
@@ -3165,10 +3195,23 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       flex-wrap: wrap;
       border-radius: 16px;
 
+      @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .data_pie_chart {
+        position: relative;
+        left: 15px;
         height: 518px;
         background-color: #fff;
         padding: 50px 30px 60px;
+
+        @media (max-width: 500px) {
+          height: 434px;
+          left: -10px;
+          padding: 23px 10px;
+        }
 
         .data_pie_chart_title {
           text-align: center;
@@ -3176,6 +3219,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 700;
           letter-spacing: 0.1em;
           margin-bottom: 46px;
+
+          @media (max-width: 500px) {
+            line-height: 1.6;
+            font-size: 20px;
+            margin-bottom: 23px;
+          }
         }
 
         .data_pie_chart_gender {
@@ -3183,13 +3232,54 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           left: 11px;
           width: 291px;
           height: 291px;
+
+          @media (max-width: 500px) {
+            left: 0;
+          }
+        }
+      }
+
+      .data_container_divider {
+        position: relative;
+        top: 60px;
+        right: 4px;
+        width: 2px;
+        height: 398px;
+        background-color: #F1F1F1;
+
+        @media (max-width: 900px) {
+          display: none;
+        }
+      }
+
+      .data_container_divider_mobile {
+        display: none;
+        width: 80vw;
+        height: 2px;
+        background-color: #F1F1F1;
+
+        @media (max-width: 900px) {
+          display: block;
+        }
+
+        @media (max-width: 500px) {
+          position: relative;
+          right: 10px;
+          width: 295px;
         }
       }
       
       .data_bar_chart {
+        position: relative;
+        right: 16px;
         padding: 51px 11px;
         border-radius: 8px;
         position: relative;
+
+        @media (max-width: 500px) {
+          padding: 23px 22px;
+          right: 10px;
+        }
 
         .data_bar_chart_title {
           text-align: center;
@@ -3197,6 +3287,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 700;
           letter-spacing: 0.1em;
           margin-bottom: 39px;
+
+          @media (max-width: 500px) {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+          }
         }
 
         .data_bar_chart_sales {
@@ -3205,6 +3301,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           left: -8px;
           width: 370px;
           height: 307px;
+
+          @media (max-width: 500px) {
+            width: 312px;
+            height: 259px;
+          }
         }
 
         .data_bar_chart_top {
@@ -3219,6 +3320,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
               left: 19px;
               font-size: 7px;
               font-weight: 700;
+
+              @media (max-width: 500px) {
+                top: 4px;
+                left: 19px;
+                font-size: 5.5px;
+              }
             }
           }
 
@@ -3234,6 +3341,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
               height: 13.5px;
               background-color: #FF0211;
               display: inline-block;
+
+              @media (max-width: 500px) {
+                width: 11px;
+                height: 11px;
+              }
             }
 
             .data_bar_chart_top_right_text {
@@ -3242,6 +3354,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
               font-size: 12px;
               font-weight: 400;
               color: #000;
+
+              @media (max-width: 500px) {
+                font-size: 10px;
+              }
             }
           }
         }
@@ -3280,6 +3396,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400;
           letter-spacing: 0.1em;
           color: #000;
+
+          @media (max-width: 500px) {
+            top: -3px;
+            font-size: 10px;
+          }
         }
 
         .data_bar_chart_memory_8000_line {
@@ -3288,6 +3409,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           width: 307px;
           height: 1px;
           background-color: #B3B3B3;
+
+          @media (max-width: 500px) {
+            top: -3px;
+            right: 4px;
+            width: 257px;
+          }
 
           &::before,
           &::after {
@@ -3329,6 +3456,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400; 
           letter-spacing: 0.1em;
           color: #000;
+
+          @media (max-width: 500px) {
+            top: -13px;
+            font-size: 10px;
+          }
         }
 
         .data_bar_chart_memory_6000_line {
@@ -3337,6 +3469,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           width: 307px;
           height: 1px;
           background-color: #B3B3B3;
+
+          @media (max-width: 500px) {
+            top: -12px;
+            right: 4px;
+            width: 257px;
+          }
 
           &::before,
           &::after {
@@ -3378,6 +3516,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400;
           letter-spacing: 0.1em;
           color: #000;
+
+          @media (max-width: 500px) {
+            top: -23px;
+            font-size: 10px;
+          }
         }
         
         .data_bar_chart_memory_4000_line {
@@ -3386,6 +3529,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           width: 307px;
           height: 1px;
           background-color: #B3B3B3;
+
+          @media (max-width: 500px) {
+            top: -22px;
+            right: 4px;
+            width: 257px;
+          }
         }
 
         .data_bar_chart_memory_4000_line::before,
@@ -3427,6 +3576,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400;
           letter-spacing: 0.1em;
           color: #000;
+
+          @media (max-width: 500px) {
+            top: -33px;
+            font-size: 10px;
+          }
         }
 
         .data_bar_chart_memory_2000_line {
@@ -3435,6 +3589,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           width: 307px;
           height: 1px;
           background-color: #B3B3B3;
+
+          @media (max-width: 500px) {
+            top: -32px;
+            width: 257px;
+          }
         }
 
         .data_bar_chart_memory_2000_line::before,
@@ -3466,6 +3625,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           align-items: center;
           justify-content: space-between;
           margin-bottom: 0;
+
+          @media (max-width: 500px) {
+            bottom: 17px;
+          }
         }
 
         .data_bar_chart_memory_0_text {
@@ -3475,6 +3638,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400;
           letter-spacing: 0.1em;
           color: #000;
+
+          @media (max-width: 500px) {
+            left: 36px;
+            font-size: 10px;
+          }
         }
 
         .data_bar_chart_memory_0_line {
@@ -3483,6 +3651,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           width: 315px;
           height: 1px;
           background-color: #000;
+
+          @media (max-width: 500px) {
+            width: 263px;
+          }
         }
 
         .data_bar_chart_bottom {
@@ -3497,13 +3669,26 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           bottom: -259px;
           left: 18px;
 
+          @media (max-width: 500px) {
+            font-size: 10px;
+            bottom: -216px;
+          }
+
           .data_bar_chart_bottom_text:nth-child(2){
             position: relative;
             left: 6px;
+
+            @media (max-width: 500px) {
+              left: 4px;
+            }
           }
           .data_bar_chart_bottom_text:nth-child(3) {
             position: relative;
             left: 16px;
+
+            @media (max-width: 500px) {
+              left: 12px;
+            }
           }
         }
 
@@ -3540,12 +3725,21 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             align-items: flex-end;
             justify-content: space-around;
 
+            @media (max-width: 500px) {
+              top: -23px;
+              left: 36px;
+            }
+
             .bar_wrapper {
               display: flex;
               flex-direction: column;
               align-items: center;
               flex: 1;
               max-width: 80px;
+
+              @media (max-width: 500px) {
+                display: none;
+              }
 
               .bar {
                 width: 72px;
@@ -3588,6 +3782,60 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             .bar_wrapper:nth-child(3) {
               position: relative;
               right: 28px;
+            }
+
+            .bar_wrapper_mobile {
+              display: none;
+              flex-direction: column;
+              align-items: center;
+              flex: 1;
+              max-width: 80px;
+
+              @media (max-width: 500px) {
+                display: flex;
+              }
+
+              .bar {
+                width: 61px;
+                background-color: #FF0211;
+                position: relative;
+                height: 0;
+                transform-origin: bottom;
+                animation: growBar 2s ease-out forwards;
+                animation-play-state: paused;
+
+                &.animate {
+                  animation-play-state: running;
+                }
+
+                .bar_value {
+                  position: absolute;
+                  top: -20px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #333;
+                  white-space: nowrap;
+                }
+              }
+
+              .bar_label {
+                margin-top: 8px;
+                font-size: 14px;
+                color: #333;
+                text-align: center;
+              }
+            }
+
+            .bar_wrapper_mobile:nth-child(5) {
+              position: relative;
+              right: 13px;
+            }
+
+            .bar_wrapper_mobile:nth-child(6) {
+              position: relative;
+              right: 25px;
             }
           }
         }
