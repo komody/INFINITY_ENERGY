@@ -1449,7 +1449,96 @@
     </div>
   </section>
 
-  <section class="form"></section>
+  <section class="form">
+    <h2 class="form_title">プレゼントキャンペーン<br class="mobile_line_break">開催中</h2>
+    <div class="form_title_detail">
+      <p>エナジーを無限に感じる、インフィニティエナジーが贈る、<br class="PC_line_break">スペシャルな<br class="mobile_line_break">キャンペーンがやってきました！</p>
+      <p class="form_title_detail_chance">このチャンスを逃さず、素晴らしいプレゼントを手に入れましょう！</p>
+    </div>
+    <div class="form_campaign_container">
+      <div class="form_campaign_container_flex">
+        <div class="form_campaign_container_left">
+          <picture>
+            <source srcset="./img/form/form_can_mobile.png" media="(max-width: 550px)">
+            <img src="./img/form/form_can.png" alt="#">
+          </picture>
+        </div>
+        <div class="form_campaign_container_right">
+          <div class="form_campaign_container_prezent">▶ プレゼント内容</div>
+          <div class="form_campaign_container_prezent_detail">
+            インフィニティエナジーの無料引換券や特別エディションボトルなどの素敵な賞品が当たるチャンス！数量限定なのでお早めに応募してください。
+          </div>
+          <hr class="form_campaign_container_divider">
+          <div class="form_campaign_container_period">▶ キャンペーン期間</div>
+          <div class="form_campaign_container_period_detail">
+            2023年 <span class="text_move_right">10</span>月<span>1</span>日〜<br class="mobile_line_break">2024年<span>1</span>月<span>31</span>日まで</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form_contact_container">
+      <div class="form_contact_title">応募フォーム</div>
+      <form action="#" method="POST" class="form_contact_form">
+        <div class="form_row form_row_name">
+          <label for="name" class="form_label">
+            お名前
+            <span class="form_required">*</span><br>
+            <small class="form_note">※フルネーム</small>
+          </label>
+          <input type="text" id="name" name="name" class="form_input" required>
+        </div>
+        <div class="form_row form_row_kana">
+          <label for="kana" class="form_label">
+            お名前
+            <span class="form_required">*</span><br>
+            <small class="form_note">※ふりがな</small>
+          </label>
+          <input type="text" id="kana" name="kana" class="form_input" required>
+        </div>
+        <div class="form_row form_row_email">
+          <label for="email" class="form_label">
+            メールアドレス
+            <span class="form_required">*</span>
+          </label>
+          <input type="email" id="email" name="email" class="form_input" required>
+        </div>
+        <div class="form_row form_row_tel">
+          <label for="tel" class="form_label">
+            電話番号
+            <span class="form_required">*</span>
+          </label>
+          <input type="tel" id="tel" name="tel" class="form_input short" required>
+        </div>
+        <div class="form_row form_row_zipcode">
+          <label for="zipcode" class="form_label">
+            郵便番号
+            <span class="form_required">*</span>
+          </label>
+          <input type="text" id="zipcode" name="zipcode" class="form_input short" inputmode="numeric" required>
+        </div>
+        <div class="form_row form_row_address">
+          <label for="address" class="form_label">
+            住所
+            <span class="form_required">*</span>
+          </label>
+          <input type="text" id="address" name="address" class="form_input" required>
+        </div>
+        <hr class="form_divider">
+        <div class="form_checkbox">
+          <label class="form_checkbox_label">
+            <input type="checkbox" name="privacy" class="form_checkbox_input" required>
+            <p>プライバシーポリシーに同意します。</p>
+          </label>
+        </div>
+        <p class="form_submit_button_text">[送信] ボタンをクリックして応募を完了します。当選者にはメールでお知らせいたします。</p>
+        <div class="form_submit_button_container">
+          <button class="form_submit_button"><span>送信する</span></button>
+          <div class="form_submit_button_shadow"></div>
+        </div>
+        <p class="form_text_privacy_policy">注意: このフォームで提供された情報は、キャンペーンの運営および当選者への連絡にのみ使用されます。プライバ<br class="PC_line_break">シーに関する詳細については、Infinity Energy のプライバシーポリシーをご参照ください。</p>
+      </form>
+    </div>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
