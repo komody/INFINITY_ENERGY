@@ -1539,6 +1539,43 @@
       </form>
     </div>
   </section>
+  <footer class="footer">
+    <h2 class="footer_title">
+      <picture>
+        <source srcset="./img/footer/footer_title_mobile.png" media="(max-width: 550px)">
+        <img src="./img/footer/footer_title.png" alt="#">
+      </picture>
+    </h2>
+    <div class="footer_container">
+      <div class="footer_container_flex">
+        <div class="footer_container_left">
+          <div class="footer_container_left_top">
+            <p>Instagram</p>
+            <p>Twitter</p>
+          </div>
+          <div class="footer_container_left_bottom">
+            <p>YouTube</p>
+            <p>TikTok</p>
+          </div>
+        </div>
+        <div class="footer_container_divider_pc"></div>
+        <hr class="footer_container_divider_mobile">
+        <div class="footer_container_right">
+          <div class="footer_container_right_top">
+            <p>Column</p>
+            <p>Contact</p>
+          </div>
+          <div class="footer_container_right_bottom">
+            <p>Company</p>
+            <p>Privacy Policy</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer_container_bottom">
+        <p>©INFINITY ENERGY, All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
