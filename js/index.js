@@ -620,6 +620,28 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(dataSection);
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+  const targets = document.querySelectorAll('.fade-target');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // 一度だけ
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '100px 0px 0px 0px',
+      threshold: 0
+    }
+  );
+
+  targets.forEach(target => observer.observe(target));
+});
+
   // Googleマップiframeと距離表示の処理
   // 距離を計算する関数（ハーバーサイン公式）
   function calculateDistance(lat1, lon1, lat2, lon2) {

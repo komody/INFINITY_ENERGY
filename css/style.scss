@@ -3854,13 +3854,43 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .flavor {
-  display: none;
+  position: relative;
   padding: 120px 0;
   height: 1794px;
   background-color: #000;
+  z-index: 3;
 
   @media (max-width: 1200px) {
     height: auto;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/flavor/flavor_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+
+    @media (max-width: 600px) {
+      background-image: url(../img/flavor/flavor_bg_mobile.png);
+      background-size: contain;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.84);
+    z-index: -2;
   }
 
   .flavor_title {
@@ -3940,6 +3970,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.1em;
+
+    @media screen and (max-width: 1050px) {
+      display: none;    
+    }
     
     .flavor_flowchart_first_question {
       display: flex;
@@ -4299,6 +4333,15 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         }
       }
     }
+  }
+  .fade-target {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-target.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
