@@ -63,20 +63,20 @@
     <div class="wrapper">
       <div class="kinds_content">
         <div class="kinds_title">
-          <img src="./img/kinds_main.png" alt="INFINITY EMERGY">
+          <img src="./img/kinds/kinds_main.png" alt="INFINITY EMERGY">
         </div>
         <div class="kinds_list">
           <div class="kinds_item">
             <div class="kinds_item_title">
               <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds_Mixed_Berry_Delight_mobile.png">
-                <img src="./img/kinds_Mixed_Berry_Delight.png" alt="ミクストベリーディライト">
+                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Mixed_Berry_Delight_mobile.png">
+                <img src="./img/kinds/kinds_Mixed_Berry_Delight.png" alt="ミクストベリーディライト">
               </picture>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
                 <div class="kinds_item_can kinds_item_mixed_berry_triangle">
-                  <img src="img/kinds_kan1.png" class="can_label" alt="#">
+                  <img src="img/kinds/kinds_kan1.png" class="can_label" alt="#">
                 </div>
               </div>
               <div class="kinds_item_details">
@@ -97,14 +97,14 @@
           <div class="kinds_item">
             <div class="kinds_item_title">
               <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds_Green_Fusion_Blast_mobile.png">
-                <img src="./img/kinds_Green_Fusion_Blast.png" alt="#">
+                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Green_Fusion_Blast_mobile.png">
+                <img src="./img/kinds/kinds_Green_Fusion_Blast.png" alt="#">
               </picture>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
                 <div class="kinds_item_can kinds_item_green_fusion_triangle">
-                  <img src="img/kinds_kan2.png" class="can_label" alt="#">
+                  <img src="img/kinds/kinds_kan2.png" class="can_label" alt="#">
                 </div>
               </div>
               <div class="kinds_item_details">
@@ -125,14 +125,14 @@
           <div class="kinds_item">
             <div class="kinds_item_title">
               <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds_Hot_Blaze_Inferno_mobile.png">
-                <img src="./img/kinds_Hot_Blaze_Inferno.png" alt="#">
+                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Hot_Blaze_Inferno_mobile.png">
+                <img src="./img/kinds/kinds_Hot_Blaze_Inferno.png" alt="#">
               </picture>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
                 <div class="kinds_item_can kinds_item_hot_blaze_triangle">
-                  <img src="img/kinds_kan3.png" class="can_label" alt="#">
+                  <img src="img/kinds/kinds_kan3.png" class="can_label" alt="#">
                 </div>
               </div>
               <div class="kinds_item_details">

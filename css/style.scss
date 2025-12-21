@@ -414,7 +414,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/kinds_bg.png);
+    background-image: url(../img/kinds/kinds_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -423,7 +423,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     z-index: -2;
 
     @media (max-width: 600px) {
-      background-image: url(../img/kinds_bg_mobile.png);
+      background-image: url(../img/kinds/kinds_bg_mobile.png);
       background-size: contain;
     }
   }
@@ -519,7 +519,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           }
         }
       }
-      .kinds_item_title.is-visible {
+      .kinds_item_title.is-visible   {
         opacity: 1;
         transform: translateY(0);
       }
@@ -566,15 +566,15 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         }
         
         &.kinds_item_mixed_berry_triangle::before {
-          background-image: url(../img/kinds_mixed_berry_triangle.png);
+          background-image: url(../img/kinds/kinds_mixed_berry_triangle.png);
         }
   
         &.kinds_item_green_fusion_triangle::before {
-          background-image: url(../img/kinds_green_fusion_triangle.png);
+          background-image: url(../img/kinds/kinds_green_fusion_triangle.png);
         }
   
         &.kinds_item_hot_blaze_triangle::before {
-          background-image: url(../img/kinds_hot_blaze_triangle.png);
+          background-image: url(../img/kinds/kinds_hot_blaze_triangle.png);
         }
   
         img {
