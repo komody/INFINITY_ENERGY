@@ -3778,6 +3778,12 @@ body {
     height: auto;
   }
 }
+@media (max-width: 500px) {
+  .flavor {
+    height: 2306px;
+    padding: 60px 20px;
+  }
+}
 .flavor::before {
   content: "";
   position: absolute;
@@ -3814,6 +3820,12 @@ body {
   margin-bottom: 60px;
   letter-spacing: 0.1em;
 }
+@media (max-width: 500px) {
+  .flavor .flavor_title {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+}
 .flavor .flavor_catchcopy {
   position: relative;
   top: 1px;
@@ -3825,6 +3837,20 @@ body {
   letter-spacing: 0.1em;
   line-height: 1.6;
   margin-bottom: 50px;
+}
+@media (max-width: 500px) {
+  .flavor .flavor_catchcopy {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+}
+.flavor .flavor_catchcopy .PC_line_break {
+  display: block;
+}
+@media (max-width: 500px) {
+  .flavor .flavor_catchcopy .PC_line_break {
+    display: none;
+  }
 }
 .flavor .flavor_yes_sample_flex {
   display: flex;
@@ -3853,6 +3879,11 @@ body {
   position: relative;
   right: 1px;
   margin-bottom: 51px;
+}
+@media (max-width: 500px) {
+  .flavor .flavor_no_sample_flex {
+    margin-bottom: 32px;
+  }
 }
 .flavor .flavor_no_sample_flex .no_arrow_sample {
   position: relative;
@@ -4107,6 +4138,552 @@ body {
 .flavor .flavor_flowchart .flavor_flowchart_flex .flavor_flowchart_right .flavor_flowchart_third_question_flex .flavor_flowchart_third_question .flavor_flowchart_result .flavor_flowchart_result_no img {
   width: 40px;
   height: 109px;
+}
+.flavor .flavor_flowchart_mobile,
+.flavor .flavor_flowchart_mobile_sample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_container,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_container {
+  width: 335px;
+  margin-bottom: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_container .flavor_flowchart_mobile_first_question_text,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_container .flavor_flowchart_mobile_first_question_text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle {
+  background: #9c9c9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  position: relative;
+  --divider-opacity: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle::before,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #00FFE0 0, #00FFE0 4px, transparent 4px, transparent 8px);
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 60%;
+  background-color: #000;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label.toggle_label_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label.toggle_label_yes {
+  border-radius: 4px 0 0 4px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label.toggle_label_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label.toggle_label_no {
+  border-radius: 0 4px 4px 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_yes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A0A0A0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_yes.is-selected::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_yes.is-selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_label .toggle_no {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #808080;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_yes:checked ~ .toggle_label_yes .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_yes:checked ~ .toggle_label_yes .toggle_yes {
+  background-color: #00FFE0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_yes:checked ~ .toggle_label_yes .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_yes:checked ~ .toggle_label_yes .toggle_yes::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_no:checked ~ .toggle_label_no .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_toggle .toggle_input_no:checked ~ .toggle_label_no .toggle_no {
+  background-color: #AD00FF;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_arrows,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_arrows {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_arrows .flavor_flowchart_mobile_first_question_yes_arrow,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_first_question .flavor_flowchart_mobile_first_question_arrows .flavor_flowchart_mobile_first_question_yes_arrow {
+  width: 42px;
+  height: 50px;
+  background: #9C9C9C;
+  clip-path: polygon(0 58.2%, 31% 58.2%, 31% 0, 69% 0, 69% 58.2%, 100% 58.2%, 50% 100%);
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_container,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_container {
+  width: 335px;
+  margin-bottom: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_container .flavor_flowchart_mobile_second_question_text,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_container .flavor_flowchart_mobile_second_question_text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle {
+  background: #9c9c9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  position: relative;
+  --divider-opacity: 0;
+  margin-bottom: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle::before,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #00FFE0 0, #00FFE0 4px, transparent 4px, transparent 8px);
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 60%;
+  background-color: #000;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_yes_2, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_yes_3,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_yes_2,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_yes_3 {
+  border-radius: 4px 0 0 4px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_no_2, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_no_3,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_no_2,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label.toggle_label_no_3 {
+  border-radius: 0 4px 4px 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_yes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A0A0A0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_yes.is-selected::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_yes.is-selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_label .toggle_no {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #808080;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_2:checked ~ .toggle_label_yes_2 .toggle_yes,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_3:checked ~ .toggle_label_yes_3 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_2:checked ~ .toggle_label_yes_2 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_3:checked ~ .toggle_label_yes_3 .toggle_yes {
+  background-color: #00FFE0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_2:checked ~ .toggle_label_yes_2 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_3:checked ~ .toggle_label_yes_3 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_2:checked ~ .toggle_label_yes_2 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_yes_3:checked ~ .toggle_label_yes_3 .toggle_yes::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_no_2:checked ~ .toggle_label_no_2 .toggle_no,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_no_3:checked ~ .toggle_label_no_3 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_no_2:checked ~ .toggle_label_no_2 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_toggle .toggle_input_no_3:checked ~ .toggle_label_no_3 .toggle_no {
+  background-color: #AD00FF;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_arrows,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_arrows {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_arrows .flavor_flowchart_mobile_second_question_yes_arrow,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_second_question .flavor_flowchart_mobile_second_question_arrows .flavor_flowchart_mobile_second_question_yes_arrow {
+  width: 42px;
+  height: 50px;
+  background: #9C9C9C;
+  clip-path: polygon(0 58.2%, 31% 58.2%, 31% 0, 69% 0, 69% 58.2%, 100% 58.2%, 50% 100%);
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_container,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_container {
+  width: 335px;
+  margin-bottom: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_container .flavor_flowchart_mobile_third_question_text,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_container .flavor_flowchart_mobile_third_question_text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle {
+  background: #9c9c9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 335px;
+  position: relative;
+  --divider-opacity: 0;
+  margin-bottom: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle::before,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, #00FFE0 0, #00FFE0 4px, transparent 4px, transparent 8px);
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 60%;
+  background-color: #000;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  opacity: var(--divider-opacity);
+  transition: opacity 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_4, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_5, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_6, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_7,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_4,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_5,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_6,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_yes_7 {
+  border-radius: 4px 0 0 4px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_4, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_5, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_6, .flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_7,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_4,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_5,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_6,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label.toggle_label_no_7 {
+  border-radius: 0 4px 4px 0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_yes {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A0A0A0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_yes.is-selected::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_yes.is-selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_label .toggle_no {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #808080;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_4:checked ~ .toggle_label_yes_4 .toggle_yes,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_5:checked ~ .toggle_label_yes_5 .toggle_yes,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_6:checked ~ .toggle_label_yes_6 .toggle_yes,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_7:checked ~ .toggle_label_yes_7 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_4:checked ~ .toggle_label_yes_4 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_5:checked ~ .toggle_label_yes_5 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_6:checked ~ .toggle_label_yes_6 .toggle_yes,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_7:checked ~ .toggle_label_yes_7 .toggle_yes {
+  background-color: #00FFE0;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_4:checked ~ .toggle_label_yes_4 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_5:checked ~ .toggle_label_yes_5 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_6:checked ~ .toggle_label_yes_6 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_7:checked ~ .toggle_label_yes_7 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_4:checked ~ .toggle_label_yes_4 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_5:checked ~ .toggle_label_yes_5 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_6:checked ~ .toggle_label_yes_6 .toggle_yes::after,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_yes_7:checked ~ .toggle_label_yes_7 .toggle_yes::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #00B8D4;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_4:checked ~ .toggle_label_no_4 .toggle_no,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_5:checked ~ .toggle_label_no_5 .toggle_no,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_6:checked ~ .toggle_label_no_6 .toggle_no,
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_7:checked ~ .toggle_label_no_7 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_4:checked ~ .toggle_label_no_4 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_5:checked ~ .toggle_label_no_5 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_6:checked ~ .toggle_label_no_6 .toggle_no,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_toggle .toggle_input_no_7:checked ~ .toggle_label_no_7 .toggle_no {
+  background-color: #AD00FF;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_arrows,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_arrows {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_arrows .flavor_flowchart_mobile_third_question_yes_arrow,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_third_question .flavor_flowchart_mobile_third_question_arrows .flavor_flowchart_mobile_third_question_yes_arrow {
+  width: 42px;
+  height: 50px;
+  background: #9C9C9C;
+  clip-path: polygon(0 58.2%, 31% 58.2%, 31% 0, 69% 0, 69% 58.2%, 100% 58.2%, 50% 100%);
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_arrow,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_arrow {
+  width: 42px;
+  height: 50px;
+  background: #00FFE0;
+  clip-path: polygon(0 58.2%, 31% 58.2%, 31% 0, 69% 0, 69% 58.2%, 100% 58.2%, 50% 100%);
+  margin-bottom: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content img,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content img {
+  max-width: 100%;
+  height: auto;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text .flavor_flowchart_mobile_result_title,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text .flavor_flowchart_mobile_result_title {
+  font-family: "Orbitron", monospace;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #fff;
+  line-height: 1.2;
+}
+.flavor .flavor_flowchart_mobile .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text .flavor_flowchart_mobile_result_name,
+.flavor .flavor_flowchart_mobile_sample .flavor_flowchart_mobile_result .flavor_flowchart_mobile_result_content .flavor_flowchart_mobile_result_text .flavor_flowchart_mobile_result_name {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #fff;
+  line-height: 1.4;
 }
 .flavor .flavor_detail {
   width: 90%;

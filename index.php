@@ -1060,7 +1060,7 @@
 
   <section class="flavor">
     <h2 class="flavor_title">あなたに合うフレーバーは？</h2>
-    <p class="flavor_catchcopy">インフィニティエナジーでは3種類のフレーバーをご用意♪<br> 今のあなたに合うフレーバーを探っちゃおう！</p>
+    <p class="flavor_catchcopy">インフィニティエナジーでは3種類のフレーバーをご用意♪<br class="PC_line_break"> 今のあなたに合うフレーバーを探っちゃおう！</p>
     <div class="flavor_yes_sample_flex">
       <div class="yes_arrow_sample"></div>
       <div class="yes_sample_text">YES</div>
@@ -1180,16 +1180,104 @@
         </div>
       </div>
     </div>
-    <div class="flavor_flowchart_mobile">
-      <div class="flavor_flowchart_first_question">
-        <div class="flavor_flowchart_first_question_container">
-          <p class="flavor_flowchart_first_question_text">
+    <div class="flavor_flowchart_mobile_sample">
+      <!-- 1問目 -->
+      <div class="flavor_flowchart_mobile_first_question">
+        <div class="flavor_flowchart_mobile_first_question_container">
+          <p class="flavor_flowchart_mobile_first_question_text">
             待ちに待った週末！休日はとにかくテンションを上げたい！
           </p>
         </div>
-        <div class="flavor_flowchart_first_question_arrows">
-          <div class="flavor_flowchart_first_question_yes_arrow"></div>
-          <div class="flavor_flowchart_first_question_no_arrow"></div>
+        <div class="flavor_flowchart_mobile_first_question_toggle">
+          <input type="radio" id="toggle_yes_sample" name="toggle_yesno_sample" class="toggle_input toggle_input_yes">
+          <input type="radio" id="toggle_no_sample" name="toggle_yesno_sample" class="toggle_input toggle_input_no">
+          <label for="toggle_yes_sample" class="toggle_label toggle_label_yes">
+            <span class="toggle_yes">YES</span>
+          </label>
+          <label for="toggle_no_sample" class="toggle_label toggle_label_no">
+            <span class="toggle_no">NO</span>
+          </label>
+        </div>
+        <div class="flavor_flowchart_mobile_first_question_arrows">
+          <div class="flavor_flowchart_mobile_first_question_yes_arrow"></div>
+        </div>
+      </div>
+
+      <!-- 2問目 -->
+      <div class="flavor_flowchart_mobile_second_question">
+        <div class="flavor_flowchart_mobile_second_question_container">
+          <p class="flavor_flowchart_mobile_second_question_text">
+            何かのイベントに参加予定
+          </p>
+        </div>
+        <div class="flavor_flowchart_mobile_second_question_toggle">
+          <input type="radio" id="toggle_yes_2_sample" name="toggle_yesno_2_sample" class="toggle_input toggle_input_yes_2">
+          <input type="radio" id="toggle_no_2_sample" name="toggle_yesno_2_sample" class="toggle_input toggle_input_no_2">
+          <label for="toggle_yes_2_sample" class="toggle_label toggle_label_yes_2">
+            <span class="toggle_yes">YES</span>
+          </label>
+          <label for="toggle_no_2_sample" class="toggle_label toggle_label_no_2">
+            <span class="toggle_no">NO</span>
+          </label>
+        </div>
+        <div class="flavor_flowchart_mobile_second_question_arrows">
+          <div class="flavor_flowchart_mobile_second_question_yes_arrow"></div>
+        </div>
+      </div>
+
+      <!-- 3問目 -->
+      <div class="flavor_flowchart_mobile_third_question">
+        <div class="flavor_flowchart_mobile_third_question_container">
+          <p class="flavor_flowchart_mobile_third_question_text">
+            特に予定はない？
+          </p>
+        </div>
+        <div class="flavor_flowchart_mobile_third_question_toggle">
+          <input type="radio" id="toggle_yes_3_sample" name="toggle_yesno_3_sample" class="toggle_input toggle_input_yes_3">
+          <input type="radio" id="toggle_no_3_sample" name="toggle_yesno_3_sample" class="toggle_input toggle_input_no_3">
+          <label for="toggle_yes_3_sample" class="toggle_label toggle_label_yes_3">
+            <span class="toggle_yes">YES</span>
+          </label>
+          <label for="toggle_no_3_sample" class="toggle_label toggle_label_no_3">
+            <span class="toggle_no">NO</span>
+          </label>
+        </div>
+        <div class="flavor_flowchart_mobile_third_question_arrows">
+          <div class="flavor_flowchart_mobile_third_question_yes_arrow"></div>
+        </div>
+      </div>
+
+      <!-- 結果表示 -->
+      <!-- can1: Mixed Berry Delight -->
+      <div class="flavor_flowchart_mobile_result" id="result_can1" style="display: block;">
+        <div class="flavor_flowchart_mobile_result_content">
+          <div class="flavor_flowchart_mobile_result_text">
+            <div class="flavor_flowchart_mobile_result_title">Mixed Berry Delight</div>
+            <div class="flavor_flowchart_mobile_result_name">ミクストベリーディライト</div>
+          </div>
+          <img src="./img/flavor/flavor_result_can1.png" alt="Mixed Berry Delight">
+        </div>
+      </div>
+
+      <!-- can2: Green Fusion Blast -->
+      <div class="flavor_flowchart_mobile_result" id="result_can2" style="display: none;">
+        <div class="flavor_flowchart_mobile_result_content">
+          <div class="flavor_flowchart_mobile_result_text">
+            <div class="flavor_flowchart_mobile_result_title">Green Fusion Blast</div>
+            <div class="flavor_flowchart_mobile_result_name">グリーンフュージョンブラスト</div>
+          </div>
+          <img src="./img/flavor/flavor_result_can2.png" alt="Green Fusion Blast">
+        </div>
+      </div>
+
+      <!-- can3: Hot Blaze Inferno -->
+      <div class="flavor_flowchart_mobile_result" id="result_can3" style="display: none;">
+        <div class="flavor_flowchart_mobile_result_content">
+          <div class="flavor_flowchart_mobile_result_text">
+            <div class="flavor_flowchart_mobile_result_title">Hot Blaze Inferno</div>
+            <div class="flavor_flowchart_mobile_result_name">ホットブレイズインフェルノ</div>
+          </div>
+          <img src="./img/flavor/flavor_result_can3.png" alt="Hot Blaze Inferno">
         </div>
       </div>
     </div>
