@@ -1071,12 +1071,12 @@
     </div>
     <div class="flavor_flowchart">
       <div class="flavor_flowchart_first_question">
-        <div class="flavor_flowchart_first_question_container">
+        <div class="flavor_flowchart_first_question_container flavor-fade-in">
           <p class="flavor_flowchart_first_question_text">
             待ちに待った週末！休日はとにかくテンションを上げたい！
           </p>
         </div>
-        <div class="flavor_flowchart_first_question_arrows">
+        <div class="flavor_flowchart_first_question_arrows flavor-fade-in">
           <div class="flavor_flowchart_first_question_yes_arrow"></div>
           <div class="flavor_flowchart_first_question_no_arrow"></div>
         </div>
@@ -1084,45 +1084,45 @@
 
       <div class="flavor_flowchart_flex">
         <div class="flavor_flowchart_left">
-          <div class="flavor_flowchart_second_question_container">
+          <div class="flavor_flowchart_second_question_container flavor-fade-in">
             <p class="flavor_flowchart_second_question_text">
               何かのイベントに参加予定
             </p>
           </div>
-          <div class="flavor_flowchart_second_question_arrows">
+          <div class="flavor_flowchart_second_question_arrows flavor-fade-in">
             <div class="flavor_flowchart_second_question_yes_arrow"></div>
             <div class="flavor_flowchart_second_question_no_arrow"></div>
           </div>
           <div class="flavor_flowchart_third_question_flex">
             <div class="flavor_flowchart_third_question">
-              <div class="flavor_flowchart_third_question_container">
+              <div class="flavor_flowchart_third_question_container flavor-fade-in">
                 <p class="flavor_flowchart_third_question_text">
                   彼女と一緒？
                 </p>
               </div>
               <div class="flavor_flowchart_result">
-                <div class="flavor_flowchart_result_yes">
+                <div class="flavor_flowchart_result_yes flavor-fade-in">
                   <div class="flavor_flowchart_third_question_yes_arrow"></div>
                   <img src="./img/flavor/flavor_result_can3.png" alt="#">
                 </div>
-                <div class="flavor_flowchart_result_no">
+                <div class="flavor_flowchart_result_no flavor-fade-in">
                   <div class="flavor_flowchart_third_question_no_arrow"></div>
                   <img src="./img/flavor/flavor_result_can1.png" alt="#">
                 </div>
               </div>
             </div>
             <div class="flavor_flowchart_third_question">
-              <div class="flavor_flowchart_third_question_container">
+              <div class="flavor_flowchart_third_question_container flavor-fade-in">
                 <p class="flavor_flowchart_third_question_text">
                   特に予定はない？
                 </p>
               </div>
               <div class="flavor_flowchart_result">
-                <div class="flavor_flowchart_result_yes">
+                <div class="flavor_flowchart_result_yes flavor-fade-in">
                   <div class="flavor_flowchart_third_question_yes_arrow"></div>
                   <img src="./img/flavor/flavor_result_can1.png" alt="#">
                 </div>
-                <div class="flavor_flowchart_result_no">
+                <div class="flavor_flowchart_result_no flavor-fade-in">
                   <div class="flavor_flowchart_third_question_no_arrow"></div>
                   <img src="./img/flavor/flavor_result_can3.png" alt="#">
                 </div>
@@ -1132,45 +1132,45 @@
 
         </div>
         <div class="flavor_flowchart_right">
-          <div class="flavor_flowchart_second_question_container">
+          <div class="flavor_flowchart_second_question_container flavor-fade-in">
             <p class="flavor_flowchart_second_question_text">
               十分な睡眠は取れてる？
             </p>
           </div>
-          <div class="flavor_flowchart_second_question_arrows">
+          <div class="flavor_flowchart_second_question_arrows flavor-fade-in">
             <div class="flavor_flowchart_second_question_yes_arrow"></div>
             <div class="flavor_flowchart_second_question_no_arrow"></div>
           </div>
           <div class="flavor_flowchart_third_question_flex">
             <div class="flavor_flowchart_third_question">
-              <div class="flavor_flowchart_third_question_container">
+              <div class="flavor_flowchart_third_question_container flavor-fade-in">
                 <p class="flavor_flowchart_third_question_text">
                   精神的に疲れてる？
                 </p>
               </div>
               <div class="flavor_flowchart_result">
-                <div class="flavor_flowchart_result_yes">
+                <div class="flavor_flowchart_result_yes flavor-fade-in">
                   <div class="flavor_flowchart_third_question_yes_arrow"></div>
                   <img src="./img/flavor/flavor_result_can2.png" alt="#">
                 </div>
-                <div class="flavor_flowchart_result_no">
+                <div class="flavor_flowchart_result_no flavor-fade-in">
                   <div class="flavor_flowchart_third_question_no_arrow"></div>
                   <img src="./img/flavor/flavor_result_can1.png" alt="#">
                 </div>
               </div>
             </div>
             <div class="flavor_flowchart_third_question">
-              <div class="flavor_flowchart_third_question_container">
+              <div class="flavor_flowchart_third_question_container flavor-fade-in">
                 <p class="flavor_flowchart_third_question_text">
                   休みは取れてる？
                 </p>
               </div>
               <div class="flavor_flowchart_result">
-                <div class="flavor_flowchart_result_yes">
+                <div class="flavor_flowchart_result_yes flavor-fade-in">
                   <div class="flavor_flowchart_third_question_yes_arrow"></div>
                   <img src="./img/flavor/flavor_result_can3.png" alt="#">
                 </div>
-                <div class="flavor_flowchart_result_no">
+                <div class="flavor_flowchart_result_no flavor-fade-in">
                   <div class="flavor_flowchart_third_question_no_arrow"></div>
                   <img src="./img/flavor/flavor_result_can2.png" alt="#">
                 </div>
@@ -1182,12 +1182,12 @@
     </div>
     <div class="flavor_flowchart_mobile_sample">
       <div class="flavor_flowchart_mobile_first_question">
-        <div class="flavor_flowchart_mobile_first_question_container">
+        <div class="flavor_flowchart_mobile_first_question_container flavor-fade-in">
           <p class="flavor_flowchart_mobile_first_question_text">
             待ちに待った週末！休日はとにかくテンションを上げたい！
           </p>
         </div>
-        <div class="flavor_flowchart_mobile_first_question_toggle">
+        <div class="flavor_flowchart_mobile_first_question_toggle flavor-fade-in">
           <input type="radio" id="toggle_yes_sample" name="toggle_yesno_sample" class="toggle_input toggle_input_yes">
           <input type="radio" id="toggle_no_sample" name="toggle_yesno_sample" class="toggle_input toggle_input_no">
           <label for="toggle_yes_sample" class="toggle_label toggle_label_yes">
@@ -1197,17 +1197,17 @@
             <span class="toggle_no">NO</span>
           </label>
         </div>
-        <div class="flavor_flowchart_mobile_first_question_arrows">
+        <div class="flavor_flowchart_mobile_first_question_arrows flavor-fade-in">
           <div class="flavor_flowchart_mobile_first_question_yes_arrow"></div>
         </div>
       </div>
       <div class="flavor_flowchart_mobile_second_question">
-        <div class="flavor_flowchart_mobile_second_question_container">
+        <div class="flavor_flowchart_mobile_second_question_container flavor-fade-in">
           <p class="flavor_flowchart_mobile_second_question_text">
             何かのイベントに参加予定
           </p>
         </div>
-        <div class="flavor_flowchart_mobile_second_question_toggle">
+        <div class="flavor_flowchart_mobile_second_question_toggle flavor-fade-in">
           <input type="radio" id="toggle_yes_2_sample" name="toggle_yesno_2_sample" class="toggle_input toggle_input_yes_2">
           <input type="radio" id="toggle_no_2_sample" name="toggle_yesno_2_sample" class="toggle_input toggle_input_no_2">
           <label for="toggle_yes_2_sample" class="toggle_label toggle_label_yes_2">
@@ -1217,17 +1217,17 @@
             <span class="toggle_no">NO</span>
           </label>
         </div>
-        <div class="flavor_flowchart_mobile_second_question_arrows">
+        <div class="flavor_flowchart_mobile_second_question_arrows flavor-fade-in">
           <div class="flavor_flowchart_mobile_second_question_yes_arrow"></div>
         </div>
       </div>
       <div class="flavor_flowchart_mobile_third_question">
-        <div class="flavor_flowchart_mobile_third_question_container">
+        <div class="flavor_flowchart_mobile_third_question_container flavor-fade-in">
           <p class="flavor_flowchart_mobile_third_question_text">
             特に予定はない？
           </p>
         </div>
-        <div class="flavor_flowchart_mobile_third_question_toggle">
+        <div class="flavor_flowchart_mobile_third_question_toggle flavor-fade-in">
           <input type="radio" id="toggle_yes_3_sample" name="toggle_yesno_3_sample" class="toggle_input toggle_input_yes_3">
           <input type="radio" id="toggle_no_3_sample" name="toggle_yesno_3_sample" class="toggle_input toggle_input_no_3">
           <label for="toggle_yes_3_sample" class="toggle_label toggle_label_yes_3">
@@ -1237,11 +1237,11 @@
             <span class="toggle_no">NO</span>
           </label>
         </div>
-        <div class="flavor_flowchart_mobile_third_question_arrows">
+        <div class="flavor_flowchart_mobile_third_question_arrows flavor-fade-in">
           <div class="flavor_flowchart_mobile_third_question_yes_arrow"></div>
         </div>
       </div>
-      <div class="flavor_flowchart_mobile_result" id="result_can1" style="display: block;">
+      <div class="flavor_flowchart_mobile_result flavor-fade-in" id="result_can1" style="display: block;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
             <div class="flavor_flowchart_mobile_result_title mixed_berry_title">
@@ -1251,7 +1251,7 @@
           <img src="./img/flavor/flavor_result_can1.png" alt="Mixed Berry Delight">
         </div>
       </div>
-      <div class="flavor_flowchart_mobile_result" id="result_can2" style="display: none;">
+      <div class="flavor_flowchart_mobile_result flavor-fade-in" id="result_can2" style="display: none;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
             <div class="flavor_flowchart_mobile_result_title green_fusion_blast_title">Green<br>Fusion<br>Blast</div>
@@ -1259,7 +1259,7 @@
           <img src="./img/flavor/flavor_result_can2.png" alt="Green Fusion Blast">
         </div>
       </div>
-      <div class="flavor_flowchart_mobile_result" id="result_can3" style="display: none;">
+      <div class="flavor_flowchart_mobile_result flavor-fade-in" id="result_can3" style="display: none;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
             <div class="flavor_flowchart_mobile_result_title hot_blaze_inferno_title">Hot<br>Blaze<br>Inferno</div>
@@ -1268,9 +1268,9 @@
         </div>
       </div>
     </div>
-    <div class="flavor_detail">
+    <div class="flavor_detail flavor-fade-in">
       <div class="flavor_detail_list">
-        <div class="flavor_detail_item">
+        <div class="flavor_detail_item flavor-fade-in">
           <div class="flavor_detail_item_top">
             <div class="flavor_detail_item_title mixed_berry_title">
               Mixed<br>Berry<br>Delight
@@ -1283,7 +1283,7 @@
           <div class="flavor_detail_item_detail">ベリーがブレンドされたフレーバーは、甘さと爽やかさが絶妙に組み合わさり、フルーティーな味わい。気分を落ち着かせ、頭が冴え渡ります。
           </div>
         </div>
-        <div class="flavor_detail_item">
+        <div class="flavor_detail_item flavor-fade-in">
           <div class="flavor_detail_item_top">
             <div class="flavor_detail_item_title green_fusion_blast_title">
               Green<br>Fusion<br>Blast
@@ -1296,7 +1296,7 @@
           <div class="flavor_detail_item_detail">フレッシュなミントと爽やかなライムのフレーバーにより、気分をリフレッシュさせ、生命エネルギーを高めるのに最適です。夏の暑い日の熱中症予防にも◎
           </div>
         </div>
-        <div class="flavor_detail_item">
+        <div class="flavor_detail_item flavor-fade-in">
           <div class="flavor_detail_item_top">
             <div class="flavor_detail_item_title hot_blaze_inferno_title">
               Hot<br>Blaze<br>Inferno

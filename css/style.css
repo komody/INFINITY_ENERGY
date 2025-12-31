@@ -3793,6 +3793,7 @@ body {
   height: 100%;
   background-image: url(../img/flavor/flavor_bg.png);
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: -2;
 }
@@ -3910,6 +3911,21 @@ body {
   font-weight: 400;
   letter-spacing: 0.1em;
   color: #AD00FF;
+}
+.flavor .flavor-fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transform: translateY(100px);
+}
+.flavor .flavor-fade-in.fade-in-from-top {
+  transform: translateY(100px);
+}
+.flavor .flavor-fade-in.fade-in-from-bottom {
+  transform: translateY(100px);
+}
+.flavor .flavor-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .flavor .flavor_flowchart {
   margin: 0 auto 40px;
@@ -4152,10 +4168,16 @@ body {
 }
 .flavor .flavor_flowchart_mobile,
 .flavor .flavor_flowchart_mobile_sample {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 1050px) {
+  .flavor .flavor_flowchart_mobile,
+  .flavor .flavor_flowchart_mobile_sample {
+    display: flex;
+  }
 }
 @media (max-width: 500px) {
   .flavor .flavor_flowchart_mobile,

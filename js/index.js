@@ -1794,3 +1794,63 @@ document.addEventListener('DOMContentLoaded', function() {
     updateToggleState3Sample();
   }
 });
+
+// フレーバーフローチャートとフレーバー詳細のフェードイン処理
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeInElements = document.querySelectorAll('.flavor-fade-in');
+  
+  if (fadeInElements.length === 0) {
+    return;
+  }
+  
+  // 各要素の前回の位置を記録
+  const elementPositions = new Map();
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '100px 0px 0px 0px', // 100px上から表示されたら発火
+    threshold: 0
+  };
+  
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      const element = entry.target;
+      const currentTop = entry.boundingClientRect.top;
+      const previousTop = elementPositions.get(element);
+      
+      if (entry.isIntersecting) {
+        // スクロール方向を判定
+        if (previousTop !== undefined) {
+          if (currentTop < previousTop) {
+            // 上からスクロール（要素が上に移動している = 下からスクロールして要素が上に来た）
+            element.classList.remove('fade-in-from-bottom');
+            element.classList.add('fade-in-from-top');
+          } else {
+            // 下からスクロール（要素が下に移動している = 上からスクロールして要素が下に来た）
+            element.classList.remove('fade-in-from-top');
+            element.classList.add('fade-in-from-bottom');
+          }
+        } else {
+          // 初回表示時は、要素がビューポートの上にあるか下にあるかで判定
+          if (currentTop < window.innerHeight / 2) {
+            element.classList.add('fade-in-from-top');
+          } else {
+            element.classList.add('fade-in-from-bottom');
+          }
+        }
+        element.classList.add('is-visible');
+      } else {
+        element.classList.remove('is-visible', 'fade-in-from-top', 'fade-in-from-bottom');
+      }
+      
+      // 現在の位置を記録
+      elementPositions.set(element, currentTop);
+    });
+  };
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  fadeInElements.forEach(element => {
+    observer.observe(element);
+  });
+});
