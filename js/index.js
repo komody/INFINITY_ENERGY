@@ -999,3 +999,858 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// フレーバーフローチャートのトグルスイッチ制御
+document.addEventListener('DOMContentLoaded', function() {
+  // 1問目の要素
+  const toggleYes = document.getElementById('toggle_yes');
+  const toggleNo = document.getElementById('toggle_no');
+  const toggleLabelYes = document.querySelector('.toggle_label_yes');
+  const toggleLabelNo = document.querySelector('.toggle_label_no');
+  const toggleContainer = document.querySelector('.flavor_flowchart_mobile_first_question_toggle');
+  const arrowElement = document.querySelector('.flavor_flowchart_mobile_first_question_yes_arrow');
+  
+  // 2問目の要素（YES選択時）
+  const secondQuestionYes = document.querySelector('.flavor_flowchart_mobile_second_question_yes');
+  const toggleYes2 = document.getElementById('toggle_yes_2');
+  const toggleNo2 = document.getElementById('toggle_no_2');
+  const toggleLabelYes2 = document.querySelector('.toggle_label_yes_2');
+  const toggleLabelNo2 = document.querySelector('.toggle_label_no_2');
+  const toggleContainer2 = document.querySelector('.flavor_flowchart_mobile_second_question_toggle');
+  const arrowsContainer2 = secondQuestionYes ? secondQuestionYes.querySelector('.flavor_flowchart_mobile_second_question_arrows') : null;
+  const arrowYes2 = arrowsContainer2 ? arrowsContainer2.querySelector('.flavor_flowchart_mobile_second_question_yes_arrow') : null;
+  const arrowNo2 = arrowsContainer2 ? arrowsContainer2.querySelector('.flavor_flowchart_mobile_second_question_no_arrow') : null;
+  
+  // 2問目の要素（NO選択時）
+  const secondQuestionNo = document.querySelector('.flavor_flowchart_mobile_second_question_no');
+  const toggleYes3 = document.getElementById('toggle_yes_3');
+  const toggleNo3 = document.getElementById('toggle_no_3');
+  const toggleLabelYes3 = document.querySelector('.toggle_label_yes_3');
+  const toggleLabelNo3 = document.querySelector('.toggle_label_no_3');
+  const toggleContainer3 = secondQuestionNo ? secondQuestionNo.querySelector('.flavor_flowchart_mobile_second_question_toggle') : null;
+  const arrowsContainer3 = secondQuestionNo ? secondQuestionNo.querySelector('.flavor_flowchart_mobile_second_question_arrows') : null;
+  const arrowYes3 = arrowsContainer3 ? arrowsContainer3.querySelector('.flavor_flowchart_mobile_second_question_yes_arrow') : null;
+  const arrowNo3 = arrowsContainer3 ? arrowsContainer3.querySelector('.flavor_flowchart_mobile_second_question_no_arrow') : null;
+
+  if (!toggleYes || !toggleNo || !toggleLabelYes || !toggleLabelNo || !toggleContainer || !arrowElement) {
+    return;
+  }
+
+  // 1問目のトグルスイッチの状態を更新する関数
+  function updateToggleState() {
+    const isYesChecked = toggleYes.checked;
+    const isNoChecked = toggleNo.checked;
+    const toggleYesSpan = toggleLabelYes.querySelector('.toggle_yes');
+    const toggleNoSpan = toggleLabelNo.querySelector('.toggle_no');
+
+    // 中央の点線とハンドルの表示/非表示
+    if (isYesChecked || isNoChecked) {
+      toggleContainer.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainer.style.setProperty('--divider-opacity', '0');
+    }
+
+    // クラスをリセット
+    toggleYesSpan.classList.remove('is-selected');
+    toggleNoSpan.classList.remove('is-selected');
+    toggleContainer.classList.remove('yes-selected', 'no-selected');
+
+    // YESが選択された場合
+    if (isYesChecked) {
+      toggleYesSpan.style.backgroundColor = '#00FFE0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      toggleYesSpan.classList.add('is-selected');
+      toggleContainer.classList.add('yes-selected');
+      arrowElement.style.backgroundColor = '#00FFE0';
+      
+      // 2問目（YES）を表示
+      if (secondQuestionYes) {
+        secondQuestionYes.style.display = 'block';
+      }
+      // 2問目（NO）を非表示
+      if (secondQuestionNo) {
+        secondQuestionNo.style.display = 'none';
+      }
+    }
+    // NOが選択された場合
+    else if (isNoChecked) {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#AD00FF';
+      toggleNoSpan.classList.add('is-selected');
+      toggleContainer.classList.add('no-selected');
+      arrowElement.style.backgroundColor = '#AD00FF';
+      
+      // 2問目（YES）を非表示
+      if (secondQuestionYes) {
+        secondQuestionYes.style.display = 'none';
+      }
+      // 2問目（NO）を表示
+      if (secondQuestionNo) {
+        secondQuestionNo.style.display = 'block';
+      }
+    }
+    // どちらも選択されていない場合
+    else {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      arrowElement.style.backgroundColor = '#00FFE0'; // デフォルトはターコイズ
+      
+      // 2問目を非表示
+      if (secondQuestionYes) {
+        secondQuestionYes.style.display = 'none';
+      }
+      if (secondQuestionNo) {
+        secondQuestionNo.style.display = 'none';
+      }
+    }
+  }
+
+  // 3問目の要素を取得
+  const thirdQuestionYesYes = document.querySelector('.flavor_flowchart_mobile_third_question_yes_yes');
+  const thirdQuestionYesNo = document.querySelector('.flavor_flowchart_mobile_third_question_yes_no');
+  const thirdQuestionNoYes = document.querySelector('.flavor_flowchart_mobile_third_question_no_yes');
+  const thirdQuestionNoNo = document.querySelector('.flavor_flowchart_mobile_third_question_no_no');
+  
+  // 3問目のトグルスイッチ要素
+  const toggleYes4 = document.getElementById('toggle_yes_4');
+  const toggleNo4 = document.getElementById('toggle_no_4');
+  const toggleYes5 = document.getElementById('toggle_yes_5');
+  const toggleNo5 = document.getElementById('toggle_no_5');
+  const toggleYes6 = document.getElementById('toggle_yes_6');
+  const toggleNo6 = document.getElementById('toggle_no_6');
+  const toggleYes7 = document.getElementById('toggle_yes_7');
+  const toggleNo7 = document.getElementById('toggle_no_7');
+  
+  // 3問目のラベル要素
+  const toggleLabelYes4 = document.querySelector('.toggle_label_yes_4');
+  const toggleLabelNo4 = document.querySelector('.toggle_label_no_4');
+  const toggleLabelYes5 = document.querySelector('.toggle_label_yes_5');
+  const toggleLabelNo5 = document.querySelector('.toggle_label_no_5');
+  const toggleLabelYes6 = document.querySelector('.toggle_label_yes_6');
+  const toggleLabelNo6 = document.querySelector('.toggle_label_no_6');
+  const toggleLabelYes7 = document.querySelector('.toggle_label_yes_7');
+  const toggleLabelNo7 = document.querySelector('.toggle_label_no_7');
+  
+  // 3問目のコンテナ要素
+  const toggleContainer4 = thirdQuestionYesYes ? thirdQuestionYesYes.querySelector('.flavor_flowchart_mobile_third_question_toggle') : null;
+  const toggleContainer5 = thirdQuestionYesNo ? thirdQuestionYesNo.querySelector('.flavor_flowchart_mobile_third_question_toggle') : null;
+  const toggleContainer6 = thirdQuestionNoYes ? thirdQuestionNoYes.querySelector('.flavor_flowchart_mobile_third_question_toggle') : null;
+  const toggleContainer7 = thirdQuestionNoNo ? thirdQuestionNoNo.querySelector('.flavor_flowchart_mobile_third_question_toggle') : null;
+  
+  // 3問目の矢印コンテナ要素
+  const arrowsContainer4 = thirdQuestionYesYes ? thirdQuestionYesYes.querySelector('.flavor_flowchart_mobile_third_question_arrows') : null;
+  const arrowsContainer5 = thirdQuestionYesNo ? thirdQuestionYesNo.querySelector('.flavor_flowchart_mobile_third_question_arrows') : null;
+  const arrowsContainer6 = thirdQuestionNoYes ? thirdQuestionNoYes.querySelector('.flavor_flowchart_mobile_third_question_arrows') : null;
+  const arrowsContainer7 = thirdQuestionNoNo ? thirdQuestionNoNo.querySelector('.flavor_flowchart_mobile_third_question_arrows') : null;
+  
+  // 結果表示要素
+  const resultElements = {
+    'yes-yes-yes': document.querySelector('[data-path="yes-yes-yes"]'),
+    'yes-yes-no': document.querySelector('[data-path="yes-yes-no"]'),
+    'yes-no-yes': document.querySelector('[data-path="yes-no-yes"]'),
+    'yes-no-no': document.querySelector('[data-path="yes-no-no"]'),
+    'no-yes-yes': document.querySelector('[data-path="no-yes-yes"]'),
+    'no-yes-no': document.querySelector('[data-path="no-yes-no"]'),
+    'no-no-yes': document.querySelector('[data-path="no-no-yes"]'),
+    'no-no-no': document.querySelector('[data-path="no-no-no"]')
+  };
+
+  // 全ての結果を非表示にする関数
+  function hideAllResults() {
+    Object.values(resultElements).forEach(el => {
+      if (el) el.style.display = 'none';
+    });
+  }
+
+  // 全ての3問目を非表示にする関数
+  function hideAllThirdQuestions() {
+    [thirdQuestionYesYes, thirdQuestionYesNo, thirdQuestionNoYes, thirdQuestionNoNo].forEach(el => {
+      if (el) el.style.display = 'none';
+    });
+  }
+
+  // 2問目のトグルスイッチの状態を更新する関数（YES選択時）
+  function updateToggleState2() {
+    if (!toggleContainer2) return;
+    
+    const isYesChecked = toggleYes2.checked;
+    const isNoChecked = toggleNo2.checked;
+    const toggleYesSpan2 = toggleLabelYes2.querySelector('.toggle_yes');
+    const toggleNoSpan2 = toggleLabelNo2.querySelector('.toggle_no');
+
+    if (isYesChecked || isNoChecked) {
+      toggleContainer2.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainer2.style.setProperty('--divider-opacity', '0');
+    }
+
+    toggleYesSpan2.classList.remove('is-selected');
+    toggleNoSpan2.classList.remove('is-selected');
+    hideAllThirdQuestions();
+    hideAllResults();
+
+    // 矢印の表示/非表示と色の変更
+    if (isYesChecked) {
+      toggleYesSpan2.style.backgroundColor = '#00FFE0';
+      toggleNoSpan2.style.backgroundColor = '#808080';
+      toggleYesSpan2.classList.add('is-selected');
+      if (arrowYes2) {
+        arrowYes2.style.display = 'block';
+        arrowYes2.style.backgroundColor = '#00FFE0';
+      }
+      if (arrowNo2) {
+        arrowNo2.style.display = 'none';
+      }
+      // 3問目を表示（彼女と一緒？）
+      if (thirdQuestionYesYes) {
+        thirdQuestionYesYes.style.display = 'block';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan2.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan2.style.backgroundColor = '#AD00FF';
+      toggleNoSpan2.classList.add('is-selected');
+      if (arrowYes2) {
+        arrowYes2.style.display = 'none';
+      }
+      if (arrowNo2) {
+        arrowNo2.style.display = 'block';
+        arrowNo2.style.backgroundColor = '#AD00FF';
+      }
+      // 3問目を表示（特に予定はない？）
+      if (thirdQuestionYesNo) {
+        thirdQuestionYesNo.style.display = 'block';
+      }
+    } else {
+      toggleYesSpan2.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan2.style.backgroundColor = '#808080';
+      if (arrowYes2) {
+        arrowYes2.style.display = 'none';
+      }
+      if (arrowNo2) {
+        arrowNo2.style.display = 'none';
+      }
+    }
+  }
+
+  // 2問目のトグルスイッチの状態を更新する関数（NO選択時）
+  function updateToggleState3() {
+    if (!toggleContainer3) return;
+    
+    const isYesChecked = toggleYes3.checked;
+    const isNoChecked = toggleNo3.checked;
+    const toggleYesSpan3 = toggleLabelYes3.querySelector('.toggle_yes');
+    const toggleNoSpan3 = toggleLabelNo3.querySelector('.toggle_no');
+
+    if (isYesChecked || isNoChecked) {
+      toggleContainer3.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainer3.style.setProperty('--divider-opacity', '0');
+    }
+
+    toggleYesSpan3.classList.remove('is-selected');
+    toggleNoSpan3.classList.remove('is-selected');
+    hideAllThirdQuestions();
+    hideAllResults();
+
+    // 矢印の表示/非表示と色の変更
+    if (isYesChecked) {
+      toggleYesSpan3.style.backgroundColor = '#00FFE0';
+      toggleNoSpan3.style.backgroundColor = '#808080';
+      toggleYesSpan3.classList.add('is-selected');
+      if (arrowYes3) {
+        arrowYes3.style.display = 'block';
+        arrowYes3.style.backgroundColor = '#00FFE0';
+      }
+      if (arrowNo3) {
+        arrowNo3.style.display = 'none';
+      }
+      // 3問目を表示（精神的に疲れてる？）
+      if (thirdQuestionNoYes) {
+        thirdQuestionNoYes.style.display = 'block';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan3.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan3.style.backgroundColor = '#AD00FF';
+      toggleNoSpan3.classList.add('is-selected');
+      if (arrowYes3) {
+        arrowYes3.style.display = 'none';
+      }
+      if (arrowNo3) {
+        arrowNo3.style.display = 'block';
+        arrowNo3.style.backgroundColor = '#AD00FF';
+      }
+      // 3問目を表示（休みは取れてる？）
+      if (thirdQuestionNoNo) {
+        thirdQuestionNoNo.style.display = 'block';
+      }
+    } else {
+      toggleYesSpan3.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan3.style.backgroundColor = '#808080';
+      if (arrowYes3) {
+        arrowYes3.style.display = 'none';
+      }
+      if (arrowNo3) {
+        arrowNo3.style.display = 'none';
+      }
+    }
+  }
+
+  // 3問目のトグルスイッチの状態を更新する関数
+  function updateThirdQuestionState(toggleYesEl, toggleNoEl, pathPrefix, toggleContainerEl, toggleLabelYesEl, toggleLabelNoEl, arrowsContainerEl) {
+    const isYesChecked = toggleYesEl.checked;
+    const isNoChecked = toggleNoEl.checked;
+    const toggleYesSpan = toggleLabelYesEl.querySelector('.toggle_yes');
+    const toggleNoSpan = toggleLabelNoEl.querySelector('.toggle_no');
+    const arrowYes = arrowsContainerEl ? arrowsContainerEl.querySelector('.flavor_flowchart_mobile_third_question_yes_arrow') : null;
+    const arrowNo = arrowsContainerEl ? arrowsContainerEl.querySelector('.flavor_flowchart_mobile_third_question_no_arrow') : null;
+    
+    if (isYesChecked || isNoChecked) {
+      if (toggleContainerEl) {
+        toggleContainerEl.style.setProperty('--divider-opacity', '1');
+      }
+    } else {
+      if (toggleContainerEl) {
+        toggleContainerEl.style.setProperty('--divider-opacity', '0');
+      }
+    }
+
+    toggleYesSpan.classList.remove('is-selected');
+    toggleNoSpan.classList.remove('is-selected');
+    hideAllResults();
+    
+    if (isYesChecked) {
+      toggleYesSpan.style.backgroundColor = '#00FFE0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      toggleYesSpan.classList.add('is-selected');
+      if (arrowYes) {
+        arrowYes.style.display = 'block';
+        arrowYes.style.backgroundColor = '#00FFE0';
+      }
+      if (arrowNo) {
+        arrowNo.style.display = 'none';
+      }
+      const resultPath = pathPrefix + '-yes';
+      if (resultElements[resultPath]) {
+        resultElements[resultPath].style.display = 'block';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#AD00FF';
+      toggleNoSpan.classList.add('is-selected');
+      if (arrowYes) {
+        arrowYes.style.display = 'none';
+      }
+      if (arrowNo) {
+        arrowNo.style.display = 'block';
+        arrowNo.style.backgroundColor = '#AD00FF';
+      }
+      const resultPath = pathPrefix + '-no';
+      if (resultElements[resultPath]) {
+        resultElements[resultPath].style.display = 'block';
+      }
+    } else {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      if (arrowYes) {
+        arrowYes.style.display = 'none';
+      }
+      if (arrowNo) {
+        arrowNo.style.display = 'none';
+      }
+    }
+  }
+
+  // イベントリスナーを追加
+  toggleYes.addEventListener('change', updateToggleState);
+  toggleNo.addEventListener('change', updateToggleState);
+  
+  if (toggleYes2 && toggleNo2) {
+    toggleYes2.addEventListener('change', updateToggleState2);
+    toggleNo2.addEventListener('change', updateToggleState2);
+  }
+  
+  if (toggleYes3 && toggleNo3) {
+    toggleYes3.addEventListener('change', updateToggleState3);
+    toggleNo3.addEventListener('change', updateToggleState3);
+  }
+
+  // 3問目のイベントリスナー
+  if (toggleYes4 && toggleNo4 && toggleLabelYes4 && toggleLabelNo4) {
+    toggleYes4.addEventListener('change', () => updateThirdQuestionState(toggleYes4, toggleNo4, 'yes-yes', toggleContainer4, toggleLabelYes4, toggleLabelNo4, arrowsContainer4));
+    toggleNo4.addEventListener('change', () => updateThirdQuestionState(toggleYes4, toggleNo4, 'yes-yes', toggleContainer4, toggleLabelYes4, toggleLabelNo4, arrowsContainer4));
+  }
+  
+  if (toggleYes5 && toggleNo5 && toggleLabelYes5 && toggleLabelNo5) {
+    toggleYes5.addEventListener('change', () => updateThirdQuestionState(toggleYes5, toggleNo5, 'yes-no', toggleContainer5, toggleLabelYes5, toggleLabelNo5, arrowsContainer5));
+    toggleNo5.addEventListener('change', () => updateThirdQuestionState(toggleYes5, toggleNo5, 'yes-no', toggleContainer5, toggleLabelYes5, toggleLabelNo5, arrowsContainer5));
+  }
+  
+  if (toggleYes6 && toggleNo6 && toggleLabelYes6 && toggleLabelNo6) {
+    toggleYes6.addEventListener('change', () => updateThirdQuestionState(toggleYes6, toggleNo6, 'no-yes', toggleContainer6, toggleLabelYes6, toggleLabelNo6, arrowsContainer6));
+    toggleNo6.addEventListener('change', () => updateThirdQuestionState(toggleYes6, toggleNo6, 'no-yes', toggleContainer6, toggleLabelYes6, toggleLabelNo6, arrowsContainer6));
+  }
+  
+  if (toggleYes7 && toggleNo7 && toggleLabelYes7 && toggleLabelNo7) {
+    toggleYes7.addEventListener('change', () => updateThirdQuestionState(toggleYes7, toggleNo7, 'no-no', toggleContainer7, toggleLabelYes7, toggleLabelNo7, arrowsContainer7));
+    toggleNo7.addEventListener('change', () => updateThirdQuestionState(toggleYes7, toggleNo7, 'no-no', toggleContainer7, toggleLabelYes7, toggleLabelNo7, arrowsContainer7));
+  }
+
+  // 初期状態を設定
+  updateToggleState();
+});
+
+// フレーバーフローチャートのトグルスイッチ制御（flavor_flowchart_mobile_sample用）
+document.addEventListener('DOMContentLoaded', function() {
+  const sampleContainer = document.querySelector('.flavor_flowchart_mobile_sample');
+  if (!sampleContainer) return;
+
+  // 1問目の要素
+  const toggleYesSample = sampleContainer.querySelector('#toggle_yes_sample');
+  const toggleNoSample = sampleContainer.querySelector('#toggle_no_sample');
+  const toggleLabelYesSample = sampleContainer.querySelector('.toggle_label_yes');
+  const toggleLabelNoSample = sampleContainer.querySelector('.toggle_label_no');
+  const toggleContainerSample = sampleContainer.querySelector('.flavor_flowchart_mobile_first_question_toggle');
+  const arrowElementSample = sampleContainer.querySelector('.flavor_flowchart_mobile_first_question_yes_arrow');
+  
+  // 2問目の要素
+  const secondQuestionSample = sampleContainer.querySelector('.flavor_flowchart_mobile_second_question');
+  const secondQuestionTextSample = secondQuestionSample ? secondQuestionSample.querySelector('.flavor_flowchart_mobile_second_question_text') : null;
+  const toggleYes2Sample = sampleContainer.querySelector('#toggle_yes_2_sample');
+  const toggleNo2Sample = sampleContainer.querySelector('#toggle_no_2_sample');
+  const toggleLabelYes2Sample = sampleContainer.querySelector('.toggle_label_yes_2');
+  const toggleLabelNo2Sample = sampleContainer.querySelector('.toggle_label_no_2');
+  const toggleContainer2Sample = secondQuestionSample ? secondQuestionSample.querySelector('.flavor_flowchart_mobile_second_question_toggle') : null;
+  const arrowsContainer2Sample = secondQuestionSample ? secondQuestionSample.querySelector('.flavor_flowchart_mobile_second_question_arrows') : null;
+  const arrowYes2Sample = arrowsContainer2Sample ? arrowsContainer2Sample.querySelector('.flavor_flowchart_mobile_second_question_yes_arrow') : null;
+  
+  // 3問目の要素
+  const thirdQuestionSample = sampleContainer.querySelector('.flavor_flowchart_mobile_third_question');
+  const thirdQuestionTextSample = thirdQuestionSample ? thirdQuestionSample.querySelector('.flavor_flowchart_mobile_third_question_text') : null;
+  const toggleYes3Sample = sampleContainer.querySelector('#toggle_yes_3_sample');
+  const toggleNo3Sample = sampleContainer.querySelector('#toggle_no_3_sample');
+  const toggleLabelYes3Sample = sampleContainer.querySelector('.toggle_label_yes_3');
+  const toggleLabelNo3Sample = sampleContainer.querySelector('.toggle_label_no_3');
+  const toggleContainer3Sample = thirdQuestionSample ? thirdQuestionSample.querySelector('.flavor_flowchart_mobile_third_question_toggle') : null;
+  const arrowsContainer3Sample = thirdQuestionSample ? thirdQuestionSample.querySelector('.flavor_flowchart_mobile_third_question_arrows') : null;
+  const arrowYes3Sample = arrowsContainer3Sample ? arrowsContainer3Sample.querySelector('.flavor_flowchart_mobile_third_question_yes_arrow') : null;
+
+  // 結果表示要素
+  const resultCan1 = sampleContainer.querySelector('#result_can1');
+  const resultCan2 = sampleContainer.querySelector('#result_can2');
+  const resultCan3 = sampleContainer.querySelector('#result_can3');
+  
+  // 2問目の質問テキストを更新する関数
+  function updateSecondQuestionText() {
+    if (!secondQuestionTextSample) return;
+    
+    const q1 = toggleYesSample && toggleYesSample.checked ? 'yes' : (toggleNoSample && toggleNoSample.checked ? 'no' : null);
+    
+    if (q1 === 'yes') {
+      secondQuestionTextSample.textContent = '何かのイベントに参加予定';
+    } else if (q1 === 'no') {
+      secondQuestionTextSample.textContent = '十分な睡眠は取れてる？';
+    } else {
+      // 初期状態ではデフォルトのテキストを設定
+      secondQuestionTextSample.textContent = '何かのイベントに参加予定';
+    }
+  }
+  
+  // 3問目の質問テキストを更新する関数
+  function updateThirdQuestionText() {
+    if (!thirdQuestionTextSample) return;
+    
+    const q1 = toggleYesSample && toggleYesSample.checked ? 'yes' : (toggleNoSample && toggleNoSample.checked ? 'no' : null);
+    const q2 = toggleYes2Sample && toggleYes2Sample.checked ? 'yes' : (toggleNo2Sample && toggleNo2Sample.checked ? 'no' : null);
+    
+    if (q1 === 'yes' && q2 === 'yes') {
+      thirdQuestionTextSample.textContent = '彼女と一緒？';
+    } else if (q1 === 'yes' && q2 === 'no') {
+      thirdQuestionTextSample.textContent = '特に予定はない？';
+    } else if (q1 === 'no' && q2 === 'yes') {
+      thirdQuestionTextSample.textContent = '精神的に疲れてる？';
+    } else if (q1 === 'no' && q2 === 'no') {
+      thirdQuestionTextSample.textContent = '休みは取れてる？';
+    } else {
+      // 初期状態ではデフォルトのテキストを設定
+      thirdQuestionTextSample.textContent = '特に予定はない？';
+    }
+  }
+
+  if (!toggleYesSample || !toggleNoSample || !toggleLabelYesSample || !toggleLabelNoSample || !toggleContainerSample || !arrowElementSample) {
+    return;
+  }
+
+  // 選択に応じて結果の缶を更新する関数
+  function updateResultCan() {
+    const q1 = toggleYesSample && toggleYesSample.checked ? 'yes' : (toggleNoSample && toggleNoSample.checked ? 'no' : null);
+    const q2 = toggleYes2Sample && toggleYes2Sample.checked ? 'yes' : (toggleNo2Sample && toggleNo2Sample.checked ? 'no' : null);
+    const q3 = toggleYes3Sample && toggleYes3Sample.checked ? 'yes' : (toggleNo3Sample && toggleNo3Sample.checked ? 'no' : null);
+
+    // 全ての結果を非表示にする
+    if (resultCan1) resultCan1.style.display = 'none';
+    if (resultCan2) resultCan2.style.display = 'none';
+    if (resultCan3) resultCan3.style.display = 'none';
+
+    // 全ての選択が完了している場合のみ結果を変更
+    if (q1 && q2 && q3) {
+      // 選択の組み合わせに応じて缶を決定
+      let canType = 'can1'; // デフォルト
+      
+      if (q1 === 'yes' && q2 === 'yes' && q3 === 'yes') {
+        canType = 'can3';
+      } else if (q1 === 'yes' && q2 === 'yes' && q3 === 'no') {
+        canType = 'can1';
+      } else if (q1 === 'yes' && q2 === 'no' && q3 === 'yes') {
+        canType = 'can1';
+      } else if (q1 === 'yes' && q2 === 'no' && q3 === 'no') {
+        canType = 'can3';
+      } else if (q1 === 'no' && q2 === 'yes' && q3 === 'yes') {
+        canType = 'can2';
+      } else if (q1 === 'no' && q2 === 'yes' && q3 === 'no') {
+        canType = 'can1';
+      } else if (q1 === 'no' && q2 === 'no' && q3 === 'yes') {
+        canType = 'can3';
+      } else if (q1 === 'no' && q2 === 'no' && q3 === 'no') {
+        canType = 'can2';
+      }
+      
+      // 選択された缶を表示
+      if (canType === 'can1' && resultCan1) {
+        resultCan1.style.display = 'block';
+      } else if (canType === 'can2' && resultCan2) {
+        resultCan2.style.display = 'block';
+      } else if (canType === 'can3' && resultCan3) {
+        resultCan3.style.display = 'block';
+      }
+    } else {
+      // 選択が完了していない場合は初期値（can1）を表示
+      if (resultCan1) resultCan1.style.display = 'block';
+    }
+  }
+
+  // 1問目のトグルスイッチの状態を更新する関数
+  function updateToggleStateSample() {
+    const isYesChecked = toggleYesSample.checked;
+    const isNoChecked = toggleNoSample.checked;
+    const toggleYesSpan = toggleLabelYesSample.querySelector('.toggle_yes');
+    const toggleNoSpan = toggleLabelNoSample.querySelector('.toggle_no');
+
+    if (isYesChecked || isNoChecked) {
+      toggleContainerSample.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainerSample.style.setProperty('--divider-opacity', '0');
+    }
+
+    toggleYesSpan.classList.remove('is-selected');
+    toggleNoSpan.classList.remove('is-selected');
+    toggleContainerSample.classList.remove('yes-selected', 'no-selected');
+
+    if (isYesChecked) {
+      toggleYesSpan.style.backgroundColor = '#00FFE0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      toggleYesSpan.classList.add('is-selected');
+      toggleContainerSample.classList.add('yes-selected');
+      if (arrowElementSample) {
+        arrowElementSample.style.backgroundColor = '#00FFE0';
+      }
+      // NOテキストを非表示
+      if (toggleNoSpan) {
+        toggleNoSpan.style.display = 'none';
+      }
+      // YESテキストを表示
+      if (toggleYesSpan) {
+        toggleYesSpan.style.display = 'flex';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#AD00FF';
+      toggleNoSpan.classList.add('is-selected');
+      toggleContainerSample.classList.add('no-selected');
+      if (arrowElementSample) {
+        arrowElementSample.style.backgroundColor = '#AD00FF';
+      }
+      // YESテキストを非表示
+      if (toggleYesSpan) {
+        toggleYesSpan.style.display = 'none';
+      }
+      // NOテキストを表示
+      if (toggleNoSpan) {
+        toggleNoSpan.style.display = 'flex';
+      }
+    } else {
+      toggleYesSpan.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan.style.backgroundColor = '#808080';
+      if (arrowElementSample) {
+        arrowElementSample.style.backgroundColor = '#9C9C9C';
+      }
+      // 両方のテキストを表示
+      if (toggleYesSpan) {
+        toggleYesSpan.style.display = 'flex';
+      }
+      if (toggleNoSpan) {
+        toggleNoSpan.style.display = 'flex';
+      }
+    }
+    
+    // 2問目の質問テキストを更新
+    updateSecondQuestionText();
+    // 3問目の質問テキストを更新
+    updateThirdQuestionText();
+    // 結果を更新
+    updateResultCan();
+  }
+
+  // 2問目のトグルスイッチの状態を更新する関数
+  function updateToggleState2Sample() {
+    if (!toggleContainer2Sample) return;
+    
+    const isYesChecked = toggleYes2Sample.checked;
+    const isNoChecked = toggleNo2Sample.checked;
+    const toggleYesSpan2 = toggleLabelYes2Sample.querySelector('.toggle_yes');
+    const toggleNoSpan2 = toggleLabelNo2Sample.querySelector('.toggle_no');
+
+    if (isYesChecked || isNoChecked) {
+      toggleContainer2Sample.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainer2Sample.style.setProperty('--divider-opacity', '0');
+    }
+
+    toggleYesSpan2.classList.remove('is-selected');
+    toggleNoSpan2.classList.remove('is-selected');
+
+    if (isYesChecked) {
+      toggleYesSpan2.style.backgroundColor = '#00FFE0';
+      toggleNoSpan2.style.backgroundColor = '#808080';
+      toggleYesSpan2.classList.add('is-selected');
+      if (arrowYes2Sample) {
+        arrowYes2Sample.style.backgroundColor = '#00FFE0';
+      }
+      // NOテキストを非表示
+      if (toggleNoSpan2) {
+        toggleNoSpan2.style.display = 'none';
+      }
+      // YESテキストを表示
+      if (toggleYesSpan2) {
+        toggleYesSpan2.style.display = 'flex';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan2.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan2.style.backgroundColor = '#AD00FF';
+      toggleNoSpan2.classList.add('is-selected');
+      if (arrowYes2Sample) {
+        arrowYes2Sample.style.backgroundColor = '#AD00FF';
+      }
+      // YESテキストを非表示
+      if (toggleYesSpan2) {
+        toggleYesSpan2.style.display = 'none';
+      }
+      // NOテキストを表示
+      if (toggleNoSpan2) {
+        toggleNoSpan2.style.display = 'flex';
+      }
+    } else {
+      toggleYesSpan2.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan2.style.backgroundColor = '#808080';
+      if (arrowYes2Sample) {
+        arrowYes2Sample.style.backgroundColor = '#9C9C9C';
+      }
+      // 両方のテキストを表示
+      if (toggleYesSpan2) {
+        toggleYesSpan2.style.display = 'flex';
+      }
+      if (toggleNoSpan2) {
+        toggleNoSpan2.style.display = 'flex';
+      }
+    }
+    
+    // 3問目の質問テキストを更新
+    updateThirdQuestionText();
+    // 結果を更新
+    updateResultCan();
+  }
+
+  // 3問目のトグルスイッチの状態を更新する関数
+  function updateToggleState3Sample() {
+    if (!toggleContainer3Sample) return;
+    
+    const isYesChecked = toggleYes3Sample.checked;
+    const isNoChecked = toggleNo3Sample.checked;
+    const toggleYesSpan3 = toggleLabelYes3Sample.querySelector('.toggle_yes');
+    const toggleNoSpan3 = toggleLabelNo3Sample.querySelector('.toggle_no');
+
+    if (isYesChecked || isNoChecked) {
+      toggleContainer3Sample.style.setProperty('--divider-opacity', '1');
+    } else {
+      toggleContainer3Sample.style.setProperty('--divider-opacity', '0');
+    }
+
+    toggleYesSpan3.classList.remove('is-selected');
+    toggleNoSpan3.classList.remove('is-selected');
+
+    if (isYesChecked) {
+      toggleYesSpan3.style.backgroundColor = '#00FFE0';
+      toggleNoSpan3.style.backgroundColor = '#808080';
+      toggleYesSpan3.classList.add('is-selected');
+      if (arrowYes3Sample) {
+        arrowYes3Sample.style.backgroundColor = '#00FFE0';
+      }
+      // NOテキストを非表示
+      if (toggleNoSpan3) {
+        toggleNoSpan3.style.display = 'none';
+      }
+      // YESテキストを表示
+      if (toggleYesSpan3) {
+        toggleYesSpan3.style.display = 'flex';
+      }
+    } else if (isNoChecked) {
+      toggleYesSpan3.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan3.style.backgroundColor = '#AD00FF';
+      toggleNoSpan3.style.color = '#fff';
+      toggleNoSpan3.classList.add('is-selected');
+      if (arrowYes3Sample) {
+        arrowYes3Sample.style.backgroundColor = '#AD00FF';
+      }
+      // YESテキストを非表示
+      if (toggleYesSpan3) {
+        toggleYesSpan3.style.display = 'none';
+      }
+      // NOテキストを表示
+      if (toggleNoSpan3) {
+        toggleNoSpan3.style.display = 'flex';
+      }
+    } else {
+      toggleYesSpan3.style.backgroundColor = '#A0A0A0';
+      toggleNoSpan3.style.backgroundColor = '#808080';
+      if (arrowYes3Sample) {
+        arrowYes3Sample.style.backgroundColor = '#9C9C9C';
+      }
+      // 両方のテキストを表示
+      if (toggleYesSpan3) {
+        toggleYesSpan3.style.display = 'flex';
+      }
+      if (toggleNoSpan3) {
+        toggleNoSpan3.style.display = 'flex';
+      }
+    }
+    
+    // 結果を更新
+    updateResultCan();
+  }
+
+  // イベントリスナーを追加
+  toggleYesSample.addEventListener('change', updateToggleStateSample);
+  toggleNoSample.addEventListener('change', updateToggleStateSample);
+  
+  if (toggleYes2Sample && toggleNo2Sample) {
+    toggleYes2Sample.addEventListener('change', updateToggleState2Sample);
+    toggleNo2Sample.addEventListener('change', updateToggleState2Sample);
+  }
+  
+  if (toggleYes3Sample && toggleNo3Sample) {
+    toggleYes3Sample.addEventListener('change', updateToggleState3Sample);
+    toggleNo3Sample.addEventListener('change', updateToggleState3Sample);
+  }
+
+  // 初期状態を設定
+  updateToggleStateSample();
+  
+  // 初期状態で結果を表示（can1）
+  if (resultCan1) {
+    resultCan1.style.display = 'block';
+  }
+  if (resultCan2) {
+    resultCan2.style.display = 'none';
+  }
+  if (resultCan3) {
+    resultCan3.style.display = 'none';
+  }
+  
+  // 初期状態で質問テキストを設定（デフォルトは1問目がYESの場合）
+  if (secondQuestionTextSample) {
+    secondQuestionTextSample.textContent = '何かのイベントに参加予定';
+  }
+  if (thirdQuestionTextSample) {
+    thirdQuestionTextSample.textContent = '特に予定はない？';
+  }
+  
+  // 初期状態で1問目の矢印を灰色に設定
+  if (arrowElementSample) {
+    arrowElementSample.style.backgroundColor = '#9C9C9C';
+  }
+  
+  // 初期状態で2問目と3問目の矢印を灰色に設定
+  if (arrowYes2Sample) {
+    arrowYes2Sample.style.backgroundColor = '#9C9C9C';
+  }
+  if (arrowYes3Sample) {
+    arrowYes3Sample.style.backgroundColor = '#9C9C9C';
+  }
+  
+  // 初期状態で2問目と3問目のトグル状態を設定
+  if (toggleYes2Sample && toggleNo2Sample) {
+    updateToggleState2Sample();
+  }
+  if (toggleYes3Sample && toggleNo3Sample) {
+    updateToggleState3Sample();
+  }
+});
+
+// フレーバーフローチャートとフレーバー詳細のフェードイン処理
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeInElements = document.querySelectorAll('.flavor-fade-in');
+  
+  if (fadeInElements.length === 0) {
+    return;
+  }
+  
+  // 各要素の前回の位置を記録
+  const elementPositions = new Map();
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '100px 0px 0px 0px', // 100px上から表示されたら発火
+    threshold: 0
+  };
+  
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      const element = entry.target;
+      const currentTop = entry.boundingClientRect.top;
+      const previousTop = elementPositions.get(element);
+      
+      if (entry.isIntersecting) {
+        // スクロール方向を判定
+        if (previousTop !== undefined) {
+          if (currentTop < previousTop) {
+            // 上からスクロール（要素が上に移動している = 下からスクロールして要素が上に来た）
+            element.classList.remove('fade-in-from-bottom');
+            element.classList.add('fade-in-from-top');
+          } else {
+            // 下からスクロール（要素が下に移動している = 上からスクロールして要素が下に来た）
+            element.classList.remove('fade-in-from-top');
+            element.classList.add('fade-in-from-bottom');
+          }
+        } else {
+          // 初回表示時は、要素がビューポートの上にあるか下にあるかで判定
+          if (currentTop < window.innerHeight / 2) {
+            element.classList.add('fade-in-from-top');
+          } else {
+            element.classList.add('fade-in-from-bottom');
+          }
+        }
+        element.classList.add('is-visible');
+      } else {
+        element.classList.remove('is-visible', 'fade-in-from-top', 'fade-in-from-bottom');
+      }
+      
+      // 現在の位置を記録
+      elementPositions.set(element, currentTop);
+    });
+  };
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  fadeInElements.forEach(element => {
+    observer.observe(element);
+  });
+});
