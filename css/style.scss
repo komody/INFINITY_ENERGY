@@ -3865,7 +3865,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   }
 
   @media (max-width: 500px) {
-    height: 2306px;
+    height: 2340px;
     padding: 60px 20px;
   }
 
@@ -3924,15 +3924,25 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     line-height: 1.6;
     margin-bottom: 50px;
 
+    @media (max-width: 800px) {
+     width: 60%;
+     text-align: left;
+     margin: 0 auto 40px;
+    }
+
     @media (max-width: 500px) {
-      font-size: 16px;
-      margin-bottom: 32px;
+      top: 0;
+      left: 0;
+      width: 337px;
+      font-size: 18px;
+      margin-bottom: 36px;
+      line-height: 1.66;
     }
 
     .PC_line_break {
       display: block;
 
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         display: none;
       }
     }
@@ -3970,7 +3980,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     margin-bottom: 51px;
 
     @media (max-width: 500px) {
-      margin-bottom: 32px;
+      margin-bottom: 26px;
     }
 
     .no_arrow_sample {
@@ -4274,17 +4284,30 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
     margin-bottom: 40px;
 
+    @media (max-width: 500px) {
+      margin-bottom: 36px;
+    }
+
     .flavor_flowchart_mobile_first_question {
+      width: 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .flavor_flowchart_mobile_first_question_container {
+      @media (max-width: 500px) {
         width: 335px;
+      }
+
+      .flavor_flowchart_mobile_first_question_container {
+        width: 100%;
         margin-bottom: 20px;
+        text-align: center;
+
+        @media (max-width: 500px) {
+          margin-bottom: 11px;
+        }
 
         .flavor_flowchart_mobile_first_question_text {
           color: #fff;
@@ -4292,15 +4315,21 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 700;
           letter-spacing: 0.1em;
           line-height: 1.55;
+
+          @media (max-width: 500px) {
+            width: 337px;
+            line-height: 1.8;
+          }
         }
       }
 
       .flavor_flowchart_mobile_first_question_toggle {
+        margin-bottom: 20px;
         background: #9c9c9c;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 335px;
+        width: 100%;
         position: relative;
         --divider-opacity: 0;
 
@@ -4311,81 +4340,26 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           height: 0;
         }
 
-        &::before {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 0;
-          bottom: 0;
-          width: 1px;
-          background: repeating-linear-gradient(
-            to bottom,
-            #00FFE0 0,
-            #00FFE0 4px,
-            transparent 4px,
-            transparent 8px
-          );
-          transform: translateX(-50%);
-          z-index: 2;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 2px;
-          height: 60%;
-          background-color: #000;
-          transform: translate(-50%, -50%);
-          z-index: 3;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
-
         .toggle_label {
           position: relative;
           display: flex;
           flex: 1;
           height: 50px;
-          border-radius: 4px;
           cursor: pointer;
           overflow: hidden;
-
-          &.toggle_label_yes {
-            border-radius: 4px 0 0 4px;
-          }
-
-          &.toggle_label_no {
-            border-radius: 0 4px 4px 0;
-          }
 
           .toggle_yes {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #A0A0A0;
+            background-color: #EEEEEE;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             position: relative;
             transition: background-color 0.3s ease;
-
-            &.is-selected {
-              &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background-color: #00B8D4;
-              }
-            }
           }
 
           .toggle_no {
@@ -4393,10 +4367,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #808080;
+            background-color: #DADADA;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             transition: background-color 0.3s ease;
           }
@@ -4405,22 +4379,13 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         .toggle_input_yes:checked ~ .toggle_label_yes {
           .toggle_yes {
             background-color: #00FFE0;
-            
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              height: 2px;
-              background-color: #00B8D4;
-            }
           }
         }
 
         .toggle_input_no:checked ~ .toggle_label_no {
           .toggle_no {
             background-color: #AD00FF;
+            color: #fff;
           }
         }
       }
@@ -4430,6 +4395,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         margin-bottom: 20px;
         display: flex;
         justify-content: center;
+
+        @media (max-width: 500px) {
+          margin-bottom: 12px;
+        }
 
         .flavor_flowchart_mobile_first_question_yes_arrow {
           width: 42px;
@@ -4441,16 +4410,27 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     }
 
     .flavor_flowchart_mobile_second_question {
+      width: 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+
+      @media (max-width: 500px) {
+        width: 335px;
+      }
 
       .flavor_flowchart_mobile_second_question_container {
-        width: 335px;
+        width: 100%;
+        text-align: center;
         margin-bottom: 20px;
 
+        @media (max-width: 500px) {
+          margin-bottom: 14px;
+        }
+
         .flavor_flowchart_mobile_second_question_text {
+          position: relative;
+          left: 1px;
           color: #fff;
           font-size: 18px;
           font-weight: 700;
@@ -4464,44 +4444,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 335px;
+        width: 100%;
         position: relative;
         --divider-opacity: 0;
-        margin-bottom: 0;
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 0;
-          bottom: 0;
-          width: 1px;
-          background: repeating-linear-gradient(
-            to bottom,
-            #00FFE0 0,
-            #00FFE0 4px,
-            transparent 4px,
-            transparent 8px
-          );
-          transform: translateX(-50%);
-          z-index: 2;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 2px;
-          height: 60%;
-          background-color: #000;
-          transform: translate(-50%, -50%);
-          z-index: 3;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
+        margin-bottom: 20px;
 
         .toggle_input {
           position: absolute;
@@ -4515,44 +4461,21 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           display: flex;
           flex: 1;
           height: 50px;
-          border-radius: 4px;
           cursor: pointer;
           overflow: hidden;
-
-          &.toggle_label_yes_2,
-          &.toggle_label_yes_3 {
-            border-radius: 4px 0 0 4px;
-          }
-
-          &.toggle_label_no_2,
-          &.toggle_label_no_3 {
-            border-radius: 0 4px 4px 0;
-          }
 
           .toggle_yes {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #A0A0A0;
+            background-color: #EEEEEE;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             position: relative;
             transition: background-color 0.3s ease;
-
-            &.is-selected {
-              &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background-color: #00B8D4;
-              }
-            }
           }
 
           .toggle_no {
@@ -4560,10 +4483,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #808080;
+            background-color: #DADADA;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             transition: background-color 0.3s ease;
           }
@@ -4573,30 +4496,23 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         .toggle_input_yes_3:checked ~ .toggle_label_yes_3 {
           .toggle_yes {
             background-color: #00FFE0;
-            
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              height: 2px;
-              background-color: #00B8D4;
-            }
           }
         }
 
         .toggle_input_no_2:checked ~ .toggle_label_no_2,
         .toggle_input_no_3:checked ~ .toggle_label_no_3 {
           .toggle_no {
+            position: relative;
+            left: 1px;
             background-color: #AD00FF;
+            color: #fff;
           }
         }
       }
 
       .flavor_flowchart_mobile_second_question_arrows {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 11px;
         display: flex;
         justify-content: center;
 
@@ -4610,14 +4526,26 @@ body { font-family: 'Noto Sans JP', sans-serif; }
     }
 
     .flavor_flowchart_mobile_third_question {
+      width: 60%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+
+      @media (max-width: 500px) {
+        width: 335px;
+      }
 
       .flavor_flowchart_mobile_third_question_container {
-        width: 335px;
+        width: 100%;
+        text-align: center;
         margin-bottom: 20px;
+
+        @media (max-width: 500px) {
+          position: relative;
+          top: 1px;
+          left: 1px;
+          margin-bottom: 14px;
+        }
 
         .flavor_flowchart_mobile_third_question_text {
           color: #fff;
@@ -4633,44 +4561,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 335px;
+        width: 100%;
         position: relative;
         --divider-opacity: 0;
-        margin-bottom: 0;
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 0;
-          bottom: 0;
-          width: 1px;
-          background: repeating-linear-gradient(
-            to bottom,
-            #00FFE0 0,
-            #00FFE0 4px,
-            transparent 4px,
-            transparent 8px
-          );
-          transform: translateX(-50%);
-          z-index: 2;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 2px;
-          height: 60%;
-          background-color: #000;
-          transform: translate(-50%, -50%);
-          z-index: 3;
-          opacity: var(--divider-opacity);
-          transition: opacity 0.3s ease;
-        }
+        margin-bottom: 20px;
 
         .toggle_input {
           position: absolute;
@@ -4684,23 +4578,8 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           display: flex;
           flex: 1;
           height: 50px;
-          border-radius: 4px;
           cursor: pointer;
           overflow: hidden;
-
-          &.toggle_label_yes_4,
-          &.toggle_label_yes_5,
-          &.toggle_label_yes_6,
-          &.toggle_label_yes_7 {
-            border-radius: 4px 0 0 4px;
-          }
-
-          &.toggle_label_no_4,
-          &.toggle_label_no_5,
-          &.toggle_label_no_6,
-          &.toggle_label_no_7 {
-            border-radius: 0 4px 4px 0;
-          }
 
           .toggle_yes {
             width: 100%;
@@ -4709,23 +4588,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             justify-content: center;
             background-color: #A0A0A0;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             position: relative;
             transition: background-color 0.3s ease;
-
-            &.is-selected {
-              &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background-color: #00B8D4;
-              }
-            }
           }
 
           .toggle_no {
@@ -4735,8 +4602,8 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             justify-content: center;
             background-color: #808080;
             color: #000;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.1em;
             transition: background-color 0.3s ease;
           }
@@ -4761,11 +4628,15 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           }
         }
 
+        .toggle_input_no_3:checked ~ .toggle_label_no_3,
         .toggle_input_no_4:checked ~ .toggle_label_no_4,
         .toggle_input_no_5:checked ~ .toggle_label_no_5,
         .toggle_input_no_6:checked ~ .toggle_label_no_6,
         .toggle_input_no_7:checked ~ .toggle_label_no_7 {
           .toggle_no {
+            position: relative;
+            left: 1px;
+            color: #fff;
             background-color: #AD00FF;
           }
         }
@@ -4790,7 +4661,6 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
 
       .flavor_flowchart_mobile_result_arrow {
         width: 42px;
@@ -4808,6 +4678,13 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         img {
           max-width: 100%;
           height: auto;
+
+          @media (max-width: 500px) {
+            position: relative;
+            top: -2px;
+            width: 44px;
+            height: 120px;
+          }
         }
 
         .flavor_flowchart_mobile_result_text {
@@ -4816,12 +4693,35 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           gap: 8px;
 
           .flavor_flowchart_mobile_result_title {
+            position: relative;
+            right: 2px;
             font-family: "Orbitron", monospace;
-            font-size: 24px;
+            font-size: 37px;
             font-weight: 400;
+            line-height: 1.08;
             letter-spacing: 0.1em;
-            color: #fff;
-            line-height: 1.2;
+            padding-bottom: 4px;
+
+            &.mixed_berry_title{
+              background: linear-gradient(to right, #128FCD, #B3D6E0, #DC24B1 80%);
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &.green_fusion_blast_title{
+              background: linear-gradient(to right, #03B10F, #3CFFB9, #E7F91B );
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &.hot_blaze_inferno_title{
+              background: linear-gradient(to right, #B00202 , #FF8A00 , #E83A54);
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
           }
 
           .flavor_flowchart_mobile_result_name {
@@ -4848,6 +4748,12 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       height: auto;
     }
 
+    @media (max-width: 500px) {
+      width: 335px;
+      height: 1205px;
+      border-radius: 16px;
+    }
+
     .flavor_detail_list {
       padding: 73px;
       display: flex;
@@ -4859,6 +4765,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
         justify-content: space-around;
       }
 
+      @media (max-width: 500px) {
+        padding: 32px 42px;
+      }
+
       .flavor_detail_item {
         width: 250px;
 
@@ -4866,11 +4776,19 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           margin: 10px;
         }
 
+        @media (max-width: 500px) {
+          margin: 0 0 27px;
+        }
+
         .flavor_detail_item_top {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 29px;
+
+          @media (max-width: 500px) {
+            margin-bottom: 18px;
+          }
 
           .flavor_detail_item_title {
             font-family: 'Orbitron', 
@@ -4881,7 +4799,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             letter-spacing: 0.1em;
 
             &.mixed_berry_title{
-              background: linear-gradient(to right, #128FCD, #B3D6E0, #DC24B1);
+              position: relative;
+              top: 2px;
+              padding-bottom: 4px;
+              background: linear-gradient(to right, #128FCD, #B3D6E0, #DC24B1 80%);
               -webkit-background-clip: text;
               background-clip: text;
               -webkit-text-fill-color: transparent;
@@ -4913,10 +4834,19 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-size: 16px;
           font-weight: 700;
           letter-spacing: 0.1em;
+
+          @media (max-width: 500px) {
+            font-size: 14px;
+            margin-bottom: 18px;
+          }
         }
 
         &:nth-child(3) .flavor_detail_item_name {
           letter-spacing: 0.04em;
+
+          @media (max-width: 500px) {
+            letter-spacing: 0.1em;
+          }
         }
 
         .flavor_detail_item_detail {
@@ -4924,6 +4854,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           font-weight: 400;
           line-height: 1.55;
           letter-spacing: 0.1em;
+
+          @media (max-width: 500px) {
+            font-size: 14px;
+          }
         }
       }
     }

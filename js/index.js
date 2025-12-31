@@ -1705,6 +1705,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (isNoChecked) {
       toggleYesSpan3.style.backgroundColor = '#A0A0A0';
       toggleNoSpan3.style.backgroundColor = '#AD00FF';
+      toggleNoSpan3.style.color = '#fff';
       toggleNoSpan3.classList.add('is-selected');
       if (arrowYes3Sample) {
         arrowYes3Sample.style.backgroundColor = '#AD00FF';

@@ -1060,7 +1060,7 @@
 
   <section class="flavor">
     <h2 class="flavor_title">あなたに合うフレーバーは？</h2>
-    <p class="flavor_catchcopy">インフィニティエナジーでは3種類のフレーバーをご用意♪<br class="PC_line_break"> 今のあなたに合うフレーバーを探っちゃおう！</p>
+    <p class="flavor_catchcopy">インフィニティエナジーでは3種類のフレーバーをご用意♪<br class="PC_line_break">今のあなたに合うフレーバーを探っちゃおう！</p>
     <div class="flavor_yes_sample_flex">
       <div class="yes_arrow_sample"></div>
       <div class="yes_sample_text">YES</div>
@@ -1181,7 +1181,6 @@
       </div>
     </div>
     <div class="flavor_flowchart_mobile_sample">
-      <!-- 1問目 -->
       <div class="flavor_flowchart_mobile_first_question">
         <div class="flavor_flowchart_mobile_first_question_container">
           <p class="flavor_flowchart_mobile_first_question_text">
@@ -1202,8 +1201,6 @@
           <div class="flavor_flowchart_mobile_first_question_yes_arrow"></div>
         </div>
       </div>
-
-      <!-- 2問目 -->
       <div class="flavor_flowchart_mobile_second_question">
         <div class="flavor_flowchart_mobile_second_question_container">
           <p class="flavor_flowchart_mobile_second_question_text">
@@ -1224,8 +1221,6 @@
           <div class="flavor_flowchart_mobile_second_question_yes_arrow"></div>
         </div>
       </div>
-
-      <!-- 3問目 -->
       <div class="flavor_flowchart_mobile_third_question">
         <div class="flavor_flowchart_mobile_third_question_container">
           <p class="flavor_flowchart_mobile_third_question_text">
@@ -1246,36 +1241,28 @@
           <div class="flavor_flowchart_mobile_third_question_yes_arrow"></div>
         </div>
       </div>
-
-      <!-- 結果表示 -->
-      <!-- can1: Mixed Berry Delight -->
       <div class="flavor_flowchart_mobile_result" id="result_can1" style="display: block;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
-            <div class="flavor_flowchart_mobile_result_title">Mixed Berry Delight</div>
-            <div class="flavor_flowchart_mobile_result_name">ミクストベリーディライト</div>
+            <div class="flavor_flowchart_mobile_result_title mixed_berry_title">
+              Mixed<br>Berry<br>Delight
+            </div>
           </div>
           <img src="./img/flavor/flavor_result_can1.png" alt="Mixed Berry Delight">
         </div>
       </div>
-
-      <!-- can2: Green Fusion Blast -->
       <div class="flavor_flowchart_mobile_result" id="result_can2" style="display: none;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
-            <div class="flavor_flowchart_mobile_result_title">Green Fusion Blast</div>
-            <div class="flavor_flowchart_mobile_result_name">グリーンフュージョンブラスト</div>
+            <div class="flavor_flowchart_mobile_result_title green_fusion_blast_title">Green<br>Fusion<br>Blast</div>
           </div>
           <img src="./img/flavor/flavor_result_can2.png" alt="Green Fusion Blast">
         </div>
       </div>
-
-      <!-- can3: Hot Blaze Inferno -->
       <div class="flavor_flowchart_mobile_result" id="result_can3" style="display: none;">
         <div class="flavor_flowchart_mobile_result_content">
           <div class="flavor_flowchart_mobile_result_text">
-            <div class="flavor_flowchart_mobile_result_title">Hot Blaze Inferno</div>
-            <div class="flavor_flowchart_mobile_result_name">ホットブレイズインフェルノ</div>
+            <div class="flavor_flowchart_mobile_result_title hot_blaze_inferno_title">Hot<br>Blaze<br>Inferno</div>
           </div>
           <img src="./img/flavor/flavor_result_can3.png" alt="Hot Blaze Inferno">
         </div>
