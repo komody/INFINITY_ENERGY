@@ -1579,14 +1579,17 @@
     </div>
     <div class="form_contact_container">
       <div class="form_contact_title">応募フォーム</div>
-      <form action="#" method="POST" class="form_contact_form">
+      <form action="#" method="POST" class="form_contact_form" novalidate>
         <div class="form_row form_row_name">
           <label for="name" class="form_label">
             お名前
             <span class="form_required">*</span><br>
             <small class="form_note">※フルネーム</small>
           </label>
-          <input type="text" id="name" name="name" class="form_input" required>
+          <div class="form_input_wrapper">
+            <input type="text" id="name" name="name" class="form_input" required>
+            <div class="form_error" id="name_error"></div>
+          </div>
         </div>
         <div class="form_row form_row_kana">
           <label for="kana" class="form_label">
@@ -1594,35 +1597,50 @@
             <span class="form_required">*</span><br>
             <small class="form_note">※ふりがな</small>
           </label>
-          <input type="text" id="kana" name="kana" class="form_input" required>
+          <div class="form_input_wrapper">
+            <input type="text" id="kana" name="kana" class="form_input" required>
+            <div class="form_error" id="kana_error"></div>
+          </div>
         </div>
         <div class="form_row form_row_email">
           <label for="email" class="form_label">
             メールアドレス
             <span class="form_required">*</span>
           </label>
-          <input type="email" id="email" name="email" class="form_input" required>
+          <div class="form_input_wrapper">
+            <input type="email" id="email" name="email" class="form_input" required>
+            <div class="form_error" id="email_error"></div>
+          </div>
         </div>
         <div class="form_row form_row_tel">
           <label for="tel" class="form_label">
             電話番号
             <span class="form_required">*</span>
           </label>
-          <input type="tel" id="tel" name="tel" class="form_input short" required>
+          <div class="form_input_wrapper">
+            <input type="tel" id="tel" name="tel" class="form_input short" required>
+            <div class="form_error" id="tel_error"></div>
+          </div>
         </div>
         <div class="form_row form_row_zipcode">
           <label for="zipcode" class="form_label">
             郵便番号
             <span class="form_required">*</span>
           </label>
-          <input type="text" id="zipcode" name="zipcode" class="form_input short" inputmode="numeric" required>
+          <div class="form_input_wrapper">
+            <input type="text" id="zipcode" name="zipcode" class="form_input short" inputmode="numeric" required>
+            <div class="form_error" id="zipcode_error"></div>
+          </div>
         </div>
         <div class="form_row form_row_address">
           <label for="address" class="form_label">
             住所
             <span class="form_required">*</span>
           </label>
-          <input type="text" id="address" name="address" class="form_input" required>
+          <div class="form_input_wrapper">
+            <input type="text" id="address" name="address" class="form_input" required>
+            <div class="form_error" id="address_error"></div>
+          </div>
         </div>
         <hr class="form_divider">
         <div class="form_checkbox">

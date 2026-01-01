@@ -6020,6 +6020,17 @@ body {
     left: 17px;
   }
 }
+.form .form_contact_container .form_contact_form .form_row .form_input_wrapper {
+  position: relative;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1050px) {
+  .form .form_contact_container .form_contact_form .form_row .form_input_wrapper {
+    width: 100%;
+  }
+}
 .form .form_contact_container .form_contact_form .form_row .form_input {
   width: 600px;
   height: 50px;
@@ -6027,6 +6038,10 @@ body {
   border: 1px solid #DCDCDC;
   border-radius: 6px;
   background-color: #FFFFFF;
+  transition: border-color 0.3s ease;
+}
+.form .form_contact_container .form_contact_form .form_row .form_input.error {
+  border-color: #FF0000;
 }
 @media (max-width: 1050px) {
   .form .form_contact_container .form_contact_form .form_row .form_input {
@@ -6040,7 +6055,21 @@ body {
 @media (max-width: 1050px) {
   .form .form_contact_container .form_contact_form .form_row .form_input.short {
     width: 100%;
+    margin-right: 0;
   }
+}
+.form .form_contact_container .form_contact_form .form_row .form_error {
+  display: none;
+  color: #FF0000;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  position: absolute;
+  top: 54px;
+  left: 0;
+  white-space: nowrap;
+}
+.form .form_contact_container .form_contact_form .form_row .form_error.show {
+  display: block;
 }
 .form .form_contact_container .form_contact_form .form_divider {
   position: relative;
