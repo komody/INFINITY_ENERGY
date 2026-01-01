@@ -906,6 +906,10 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       background-repeat: no-repeat;
       background-position: center;
 
+      @media (min-width: 1500px) {
+        height: 120px;
+      }
+
       @media (max-width: 500px) {
         background-image: url(../img/now_you/now_you_INFINITY_ENERGY_mobile.png);
         top: -9px;
@@ -6554,6 +6558,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 }
 
 .popup {
+  display: none;
 
   .popup_overlay {
     position: fixed;
@@ -6884,6 +6889,7 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       }
     }
     .popup_modal_step2 {
+      display: none;
       position: relative;
       top: 81px;
       left: 50%;
