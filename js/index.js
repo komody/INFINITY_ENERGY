@@ -952,54 +952,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// モーダル表示処理
-document.addEventListener('DOMContentLoaded', function() {
-  const viewAllButton = document.querySelector('.report_container_button_more');
-  const reportModal = document.querySelector('.report_modal');
-  const reportModalHeader = document.querySelector('.report_modal_header');
-
-  if (!viewAllButton || !reportModal) {
-    return;
-  }
-
-  // モーダルを表示する関数
-  function openModal() {
-    reportModal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // 背景のスクロールを無効化
-  }
-
-  // モーダルを閉じる関数
-  function closeModal() {
-    reportModal.style.display = 'none';
-    document.body.style.overflow = ''; // 背景のスクロールを有効化
-  }
-
-  // VIEW ALLボタンをクリックしたときにモーダルを表示
-  viewAllButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    openModal();
-  });
-
-  // モーダルの背景（report_modal）をクリックしたときにモーダルを閉じる
-  reportModal.addEventListener('click', function(e) {
-    // モーダルヘッダー内をクリックした場合は閉じない
-    if (reportModalHeader && reportModalHeader.contains(e.target)) {
-      return;
-    }
-    // モーダルの背景をクリックした場合のみ閉じる
-    if (e.target === reportModal) {
-      closeModal();
-    }
-  });
-
-  // ESCキーでモーダルを閉じる
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && reportModal.style.display === 'block') {
-      closeModal();
-    }
-  });
-});
-
 // フレーバーフローチャートのトグルスイッチ制御
 document.addEventListener('DOMContentLoaded', function() {
   // 1問目の要素
@@ -1705,7 +1657,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (isNoChecked) {
       toggleYesSpan3.style.backgroundColor = '#A0A0A0';
       toggleNoSpan3.style.backgroundColor = '#AD00FF';
-      toggleNoSpan3.style.color = '#fff';
       toggleNoSpan3.classList.add('is-selected');
       if (arrowYes3Sample) {
         arrowYes3Sample.style.backgroundColor = '#AD00FF';
@@ -1795,62 +1746,113 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// フレーバーフローチャートとフレーバー詳細のフェードイン処理
+// 離脱防止モーダル（ブラウザバック時）
 document.addEventListener('DOMContentLoaded', function() {
-  const fadeInElements = document.querySelectorAll('.flavor-fade-in');
+  const popupSection = document.querySelector('.popup');
+  const popupOverlay = document.querySelector('.popup_overlay');
+  const popupModalStep1 = document.querySelector('.popup_modal_step1');
+  const popupModalStep2 = document.querySelector('.popup_modal_step2');
+  const closeBtn = document.querySelectorAll('.close-btn');
+  const popupNextPageButtonNext = document.querySelector('.popup_next_page_button_next');
+  const popupNextPageButtonClose = document.querySelector('.popup_next_page_button_close');
   
-  if (fadeInElements.length === 0) {
+  if (!popupSection || !popupOverlay || !popupModalStep1) {
     return;
   }
-  
-  // 各要素の前回の位置を記録
-  const elementPositions = new Map();
-  
-  const observerOptions = {
-    root: null,
-    rootMargin: '100px 0px 0px 0px', // 100px上から表示されたら発火
-    threshold: 0
-  };
-  
-  const observerCallback = (entries) => {
-    entries.forEach(entry => {
-      const element = entry.target;
-      const currentTop = entry.boundingClientRect.top;
-      const previousTop = elementPositions.get(element);
-      
-      if (entry.isIntersecting) {
-        // スクロール方向を判定
-        if (previousTop !== undefined) {
-          if (currentTop < previousTop) {
-            // 上からスクロール（要素が上に移動している = 下からスクロールして要素が上に来た）
-            element.classList.remove('fade-in-from-bottom');
-            element.classList.add('fade-in-from-top');
-          } else {
-            // 下からスクロール（要素が下に移動している = 上からスクロールして要素が下に来た）
-            element.classList.remove('fade-in-from-top');
-            element.classList.add('fade-in-from-bottom');
-          }
-        } else {
-          // 初回表示時は、要素がビューポートの上にあるか下にあるかで判定
-          if (currentTop < window.innerHeight / 2) {
-            element.classList.add('fade-in-from-top');
-          } else {
-            element.classList.add('fade-in-from-bottom');
-          }
-        }
-        element.classList.add('is-visible');
-      } else {
-        element.classList.remove('is-visible', 'fade-in-from-top', 'fade-in-from-bottom');
+
+  // 初期状態でモーダルを非表示
+  popupSection.style.display = 'none';
+  popupOverlay.style.display = 'block';
+  popupModalStep1.style.display = 'none';
+  if (popupModalStep2) {
+    popupModalStep2.style.display = 'none';
+  }
+
+  let isModalShown = false;
+  let currentStep = 1;
+
+  // モーダルを表示する関数（step1）
+  function showModal() {
+    if (!isModalShown) {
+      popupSection.style.display = 'block';
+      popupOverlay.style.display = 'block';
+      popupModalStep1.style.display = 'block';
+      if (popupModalStep2) {
+        popupModalStep2.style.display = 'none';
       }
-      
-      // 現在の位置を記録
-      elementPositions.set(element, currentTop);
+      document.body.style.overflow = 'hidden';
+      isModalShown = true;
+      currentStep = 1;
+    }
+  }
+
+  // モーダルを閉じる関数
+  function closeModal() {
+    popupSection.style.display = 'none';
+    popupOverlay.style.display = 'block';
+    popupModalStep1.style.display = 'none';
+    if (popupModalStep2) {
+      popupModalStep2.style.display = 'none';
+    }
+    document.body.style.overflow = '';
+    isModalShown = false;
+    currentStep = 1;
+  }
+
+  // step1からstep2に進む関数
+  function goToStep2() {
+    if (popupModalStep2) {
+      popupModalStep1.style.display = 'none';
+      popupModalStep2.style.display = 'block';
+      currentStep = 2;
+    }
+  }
+
+  // step2からstep1に戻る関数
+  function goToStep1() {
+    popupModalStep1.style.display = 'block';
+    if (popupModalStep2) {
+      popupModalStep2.style.display = 'none';
+    }
+    currentStep = 1;
+  }
+
+  // マウスがページ外に出た時にモーダルを表示
+  document.addEventListener('mouseleave', function(e) {
+    // マウスがページ上部外に出た時のみ発火
+    if (e.clientY <= 0 && !isModalShown) {
+      showModal();
+    }
+  });
+
+  // 閉じるボタンのイベントリスナー
+  closeBtn.forEach(btn => {
+    btn.addEventListener('click', function() {
+      closeModal();
     });
-  };
-  
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
-  fadeInElements.forEach(element => {
-    observer.observe(element);
+  });
+
+  // 「続ける」ボタンのイベントリスナー
+  if (popupNextPageButtonNext) {
+    popupNextPageButtonNext.addEventListener('click', function() {
+      if (currentStep === 1) {
+        goToStep2();
+      }
+      // step2の場合はフォーム送信などの処理を追加可能
+    });
+  }
+
+  // 「後で」ボタンのイベントリスナー
+  if (popupNextPageButtonClose) {
+    popupNextPageButtonClose.addEventListener('click', function() {
+      closeModal();
+    });
+  }
+
+  // ESCキーでモーダルを閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isModalShown) {
+      closeModal();
+    }
   });
 });

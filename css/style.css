@@ -908,6 +908,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+@media (min-width: 1500px) {
+  .now_you .now_you_title::before {
+    height: 120px;
+  }
+}
 @media (max-width: 500px) {
   .now_you .now_you_title::before {
     background-image: url(../img/now_you/now_you_INFINITY_ENERGY_mobile.png);
@@ -6437,6 +6442,9 @@ body {
   }
 }
 
+.popup {
+  display: none;
+}
 .popup .popup_overlay {
   position: fixed;
   top: 0;
@@ -6764,6 +6772,7 @@ body {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 .popup .popup_overlay .popup_modal_step2 {
+  display: none;
   position: relative;
   top: 81px;
   left: 50%;
