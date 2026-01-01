@@ -6139,6 +6139,17 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           }
         }
 
+        .form_input_wrapper {
+          position: relative;
+          width: 600px;
+          display: flex;
+          flex-direction: column;
+
+          @media (max-width: 1050px) {
+            width: 100%;
+          }
+        }
+
         .form_input {
           width: 600px;
           height: 50px;
@@ -6146,6 +6157,11 @@ body { font-family: 'Noto Sans JP', sans-serif; }
           border: 1px solid #DCDCDC;
           border-radius: 6px;
           background-color: #FFFFFF;
+          transition: border-color 0.3s ease;
+
+          &.error {
+            border-color: #FF0000;
+          }
 
           @media (max-width: 1050px) {
             width: 100%;
@@ -6158,6 +6174,22 @@ body { font-family: 'Noto Sans JP', sans-serif; }
 
           @media (max-width: 1050px) {
             width: 100%;
+            margin-right: 0;
+          }
+        }
+
+        .form_error {
+          display: none;
+          color: #FF0000;
+          font-size: 12px;
+          letter-spacing: 0.1em;
+          position: absolute;
+          top: 54px;
+          left: 0;
+          white-space: nowrap;
+
+          &.show {
+            display: block;
           }
         }
       }

@@ -1746,6 +1746,82 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// モーダル表示処理
+document.addEventListener('DOMContentLoaded', function() {
+  const viewAllButton = document.querySelector('.report_container_button_more');
+  const reportModal = document.querySelector('.report_modal');
+  const reportModalHeader = document.querySelector('.report_modal_header');
+  const reportModalHeaderTitle = document.querySelector('.report_modal_header_title');
+  const reportModalHeaderTitlePicture = reportModalHeaderTitle ? reportModalHeaderTitle.querySelector('picture') : null;
+
+  if (!viewAllButton || !reportModal) {
+    return;
+  }
+
+  // モーダルを表示する関数
+  function openModal() {
+    reportModal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // 背景のスクロールを無効化
+  }
+
+  // モーダルを閉じる関数
+  function closeModal() {
+    reportModal.style.display = 'none';
+    document.body.style.overflow = ''; // 背景のスクロールを有効化
+  }
+
+  // VIEW ALLボタンをクリックしたときにモーダルを表示
+  viewAllButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    openModal();
+  });
+
+  // モーダルヘッダータイトルのpicture要素をクリックしたときにモーダルを閉じる
+  if (reportModalHeaderTitlePicture) {
+    reportModalHeaderTitlePicture.addEventListener('click', function() {
+      closeModal();
+    });
+  }
+
+  // ESCキーでモーダルを閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && reportModal.style.display === 'block') {
+      closeModal();
+    }
+  });
+});
+
+// フレーバーフローチャートとフレーバー詳細のフェードイン処理
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeInElements = document.querySelectorAll('.flavor-fade-in');
+  
+  if (fadeInElements.length === 0) {
+    return;
+  }
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '100px 0px 0px 0px', // 100px上から表示されたら発火
+    threshold: 0
+  };
+  
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      } else {
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  };
+  
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  
+  fadeInElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
 // 離脱防止モーダル（ブラウザバック時）
 document.addEventListener('DOMContentLoaded', function() {
   const popupSection = document.querySelector('.popup');
@@ -1853,6 +1929,230 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && isModalShown) {
       closeModal();
+    }
+  });
+});
+
+// フォームバリデーション
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.form_contact_form');
+  if (!form) return;
+
+  const nameInput = document.getElementById('name');
+  const kanaInput = document.getElementById('kana');
+  const emailInput = document.getElementById('email');
+  const telInput = document.getElementById('tel');
+  const zipcodeInput = document.getElementById('zipcode');
+  const addressInput = document.getElementById('address');
+  const privacyCheckbox = document.querySelector('.form_checkbox_input');
+
+  const nameError = document.getElementById('name_error');
+  const kanaError = document.getElementById('kana_error');
+  const emailError = document.getElementById('email_error');
+  const telError = document.getElementById('tel_error');
+  const zipcodeError = document.getElementById('zipcode_error');
+  const addressError = document.getElementById('address_error');
+
+  // エラーメッセージを表示する関数
+  function showError(errorElement, message) {
+    if (errorElement) {
+      errorElement.textContent = message;
+      errorElement.classList.add('show');
+    }
+  }
+
+  // エラーメッセージを非表示にする関数
+  function hideError(errorElement) {
+    if (errorElement) {
+      errorElement.textContent = '';
+      errorElement.classList.remove('show');
+    }
+  }
+
+  // 入力フィールドにエラークラスを追加/削除する関数
+  function setInputError(input, hasError) {
+    if (input) {
+      if (hasError) {
+        input.classList.add('error');
+      } else {
+        input.classList.remove('error');
+      }
+    }
+  }
+
+  // バリデーション関数
+  function validateName() {
+    const value = nameInput.value.trim();
+    if (!value) {
+      showError(nameError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(nameInput, true);
+      return false;
+    }
+    hideError(nameError);
+    setInputError(nameInput, false);
+    return true;
+  }
+
+  function validateKana() {
+    const value = kanaInput.value.trim();
+    if (!value) {
+      showError(kanaError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(kanaInput, true);
+      return false;
+    }
+    // ひらがなまたはカタカナのチェック
+    const kanaPattern = /^[ぁ-んァ-ヶー]+$/;
+    if (!kanaPattern.test(value)) {
+      showError(kanaError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(kanaInput, true);
+      return false;
+    }
+    hideError(kanaError);
+    setInputError(kanaInput, false);
+    return true;
+  }
+
+  function validateEmail() {
+    const value = emailInput.value.trim();
+    if (!value) {
+      showError(emailError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(emailInput, true);
+      return false;
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(value)) {
+      showError(emailError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(emailInput, true);
+      return false;
+    }
+    hideError(emailError);
+    setInputError(emailInput, false);
+    return true;
+  }
+
+  function validateTel() {
+    const value = telInput.value.trim();
+    if (!value) {
+      showError(telError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(telInput, true);
+      return false;
+    }
+    // 電話番号の形式チェック（ハイフンあり/なし、10桁または11桁）
+    const telPattern = /^[0-9-]{10,14}$/;
+    if (!telPattern.test(value)) {
+      showError(telError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(telInput, true);
+      return false;
+    }
+    hideError(telError);
+    setInputError(telInput, false);
+    return true;
+  }
+
+  function validateZipcode() {
+    const value = zipcodeInput.value.trim();
+    if (!value) {
+      showError(zipcodeError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(zipcodeInput, true);
+      return false;
+    }
+    // 郵便番号の形式チェック（7桁の数字、ハイフンあり/なし）
+    const zipcodePattern = /^[0-9]{7}$|^[0-9]{3}-[0-9]{4}$/;
+    if (!zipcodePattern.test(value)) {
+      showError(zipcodeError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(zipcodeInput, true);
+      return false;
+    }
+    hideError(zipcodeError);
+    setInputError(zipcodeInput, false);
+    return true;
+  }
+
+  function validateAddress() {
+    const value = addressInput.value.trim();
+    if (!value) {
+      showError(addressError, '※※※※※※※※※※※※※※※※※※※※※');
+      setInputError(addressInput, true);
+      return false;
+    }
+    hideError(addressError);
+    setInputError(addressInput, false);
+    return true;
+  }
+
+  // リアルタイムバリデーション
+  nameInput.addEventListener('blur', validateName);
+  nameInput.addEventListener('input', function() {
+    if (nameInput.classList.contains('error')) {
+      validateName();
+    }
+  });
+
+  kanaInput.addEventListener('blur', validateKana);
+  kanaInput.addEventListener('input', function() {
+    if (kanaInput.classList.contains('error')) {
+      validateKana();
+    }
+  });
+
+  emailInput.addEventListener('blur', validateEmail);
+  emailInput.addEventListener('input', function() {
+    if (emailInput.classList.contains('error')) {
+      validateEmail();
+    }
+  });
+
+  telInput.addEventListener('blur', validateTel);
+  telInput.addEventListener('input', function() {
+    if (telInput.classList.contains('error')) {
+      validateTel();
+    }
+  });
+
+  zipcodeInput.addEventListener('blur', validateZipcode);
+  zipcodeInput.addEventListener('input', function() {
+    if (zipcodeInput.classList.contains('error')) {
+      validateZipcode();
+    }
+  });
+
+  addressInput.addEventListener('blur', validateAddress);
+  addressInput.addEventListener('input', function() {
+    if (addressInput.classList.contains('error')) {
+      validateAddress();
+    }
+  });
+
+  // フォーム送信時のバリデーション
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const isValidName = validateName();
+    const isValidKana = validateKana();
+    const isValidEmail = validateEmail();
+    const isValidTel = validateTel();
+    const isValidZipcode = validateZipcode();
+    const isValidAddress = validateAddress();
+    const isValidPrivacy = privacyCheckbox && privacyCheckbox.checked;
+
+    if (isValidName && isValidKana && isValidEmail && isValidTel && isValidZipcode && isValidAddress && isValidPrivacy) {
+      // すべてのバリデーションが通った場合、フォームを送信
+      form.submit();
+    } else {
+      // エラーがある場合、最初のエラーフィールドにフォーカス
+      if (!isValidName) {
+        nameInput.focus();
+      } else if (!isValidKana) {
+        kanaInput.focus();
+      } else if (!isValidEmail) {
+        emailInput.focus();
+      } else if (!isValidTel) {
+        telInput.focus();
+      } else if (!isValidZipcode) {
+        zipcodeInput.focus();
+      } else if (!isValidAddress) {
+        addressInput.focus();
+      }
     }
   });
 });
