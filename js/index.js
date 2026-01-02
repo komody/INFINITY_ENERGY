@@ -1893,13 +1893,37 @@ document.addEventListener('DOMContentLoaded', function() {
     currentStep = 1;
   }
 
-  // マウスがページ外に出た時にモーダルを表示
-  document.addEventListener('mouseleave', function(e) {
-    // マウスがページ上部外に出た時のみ発火
-    if (e.clientY <= 0 && !isModalShown) {
-      showModal();
-    }
-  });
+  // jQueryのbeforeunloadイベントでモーダルを表示
+  if (typeof jQuery !== 'undefined') {
+    // ページ遷移を検出するためにhistory.pushStateを使用
+    jQuery(window).on('beforeunload', function(e) {
+      if (!isModalShown) {
+        // モーダルを表示
+        showModal();
+        
+        // ページ遷移を防ぐためにブラウザのデフォルト動作をキャンセル
+        e.preventDefault();
+        e.returnValue = '';
+        
+        // ブラウザのデフォルト確認ダイアログを表示
+        return '';
+      }
+    });
+    
+    // ページ遷移を検出するためにhistory.pushStateを使用
+    history.pushState(null, null, location.href);
+    
+    // popstateイベントでブラウザバックを検出
+    jQuery(window).on('popstate', function(e) {
+      if (!isModalShown) {
+        // ブラウザバックを防ぐために再度pushState
+        history.pushState(null, null, location.href);
+        
+        // モーダルを表示
+        showModal();
+      }
+    });
+  }
 
   // 閉じるボタンのイベントリスナー
   closeBtn.forEach(btn => {
