@@ -2123,6 +2123,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+
+
   // フォーム送信時のバリデーション
   form.addEventListener('submit', function(e) {
     e.preventDefault();
