@@ -2133,7 +2133,232 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // モバイル用の郵便番号入力・住所検索機能
+  const zipcodeInputModal = document.getElementById('zipcode_input_modal');
+  const addressSearchModal = document.getElementById('address_search_modal');
+  const zipcodeInputField = document.getElementById('zipcode_input_field');
+  const zipcodeInputBackBtn = document.getElementById('zipcode_input_back_btn');
+  const addressSearchBackBtn = document.getElementById('address_search_back_btn');
+  const addressSearchModalCity = document.getElementById('address_search_modal_city');
+  const addressSearchModalList = document.getElementById('address_search_modal_list');
+
+  // モバイル表示判定（600px以下）
+  function isMobile() {
+    return window.innerWidth <= 600;
+  }
+
+  // 郵便番号入力モーダルを開く
+  function openZipcodeInputModal() {
+    if (zipcodeInputModal) {
+      zipcodeInputModal.style.display = 'flex';
+      zipcodeInputField.value = zipcodeInput.value;
+      zipcodeInputField.focus();
+    }
+  }
+
+  // 郵便番号入力モーダルを閉じる
+  function closeZipcodeInputModal() {
+    if (zipcodeInputModal) {
+      zipcodeInputModal.style.display = 'none';
+    }
+  }
+
+  // 住所検索結果モーダルを開く
+  function openAddressSearchModal(addressData, zipcode) {
+    if (addressSearchModal && addressData && addressData.length > 0) {
+      const firstAddress = addressData[0];
+      // 都道府県 + 市区町村
+      const cityName = firstAddress.address1 + firstAddress.address2;
+      // 町域（address3）を取得（丁目が含まれている場合は除去）
+      let townName = '';
+      if (firstAddress.address3) {
+        // address3から「○丁目」のパターンを除去
+        townName = firstAddress.address3.replace(/\d+丁目/g, '').trim();
+      }
+      
+      // 表示用の市区町村名（町域を含む）
+      const displayCityName = cityName + (townName ? townName : '');
+      addressSearchModalCity.textContent = displayCityName;
+
+      // リストをクリア
+      addressSearchModalList.innerHTML = '';
+
+      // 丁目を1~4と「その他」で選択可能にする
+      const chomeOptions = ['1丁目', '2丁目', '3丁目', '4丁目', 'その他'];
+
+          chomeOptions.forEach((chome, index) => {
+      // 外側のラッパーを作成
+      const itemWrapper = document.createElement('div');
+      itemWrapper.className = 'address_search_modal_item_wrapper';
+      
+      // 数字を抽出（「その他」の場合は表示しない）
+      const number = chome.replace('丁目', '');
+      
+      // HTML構造を作成
+      if (chome === 'その他') {
+        // 「その他」の場合は数字なし
+        itemWrapper.innerHTML = `
+          <div class="address_search_modal_item">
+            <div class="address_search_modal_item_text">${chome}</div>
+          </div>
+        `;
+      } else {
+        // 数字を外側に、テキストをボックス内に配置
+        itemWrapper.innerHTML = `
+          <div class="address_search_modal_item_number">${number}</div>
+          <div class="address_search_modal_item">
+            <div class="address_search_modal_item_text">${chome}</div>
+          </div>
+        `;
+      }
+      
+      // クリックイベントはボックス全体に設定
+      const addressItem = itemWrapper.querySelector('.address_search_modal_item');
+      if (addressItem) {
+        addressItem.addEventListener('click', function() {
+          let fullAddress;
+          if (chome === 'その他') {
+            fullAddress = cityName + (townName ? townName : '');
+          } else {
+            fullAddress = cityName + (townName ? townName : '') + chome;
+          }
+          addressInput.value = fullAddress;
+          validateAddress();
+          closeAddressSearchModal();
+          closeZipcodeInputModal();
+        });
+      }
+      
+      // ラッパーをリストに追加（重要：addressItemではなくitemWrapperを追加）
+      addressSearchModalList.appendChild(itemWrapper);
+    });
+
+      addressSearchModal.style.display = 'flex';
+    }
+  }
+
+  // 住所検索結果モーダルを閉じる
+  function closeAddressSearchModal() {
+    if (addressSearchModal) {
+      addressSearchModal.style.display = 'none';
+    }
+  }
+
+  // モバイル表示時に郵便番号フィールドをクリック/フォーカスしたらモーダルを開く
+  if (zipcodeInput) {
+    zipcodeInput.addEventListener('focus', function(e) {
+      if (isMobile()) {
+        e.preventDefault();
+        zipcodeInput.blur(); // フォーカスを外す
+        openZipcodeInputModal();
+      }
+    });
+    
+    zipcodeInput.addEventListener('click', function(e) {
+      if (isMobile()) {
+        e.preventDefault();
+        openZipcodeInputModal();
+      }
+    });
+  }
+
+  // ウィンドウリサイズ時にモーダルを閉じる（PC表示に切り替わった場合）
+  window.addEventListener('resize', function() {
+    if (!isMobile()) {
+      closeZipcodeInputModal();
+      closeAddressSearchModal();
+    }
+  });
+
+  // モーダルの背景をクリックしたら閉じる
+  if (zipcodeInputModal) {
+    zipcodeInputModal.addEventListener('click', function(e) {
+      if (e.target === zipcodeInputModal) {
+        closeZipcodeInputModal();
+      }
+    });
+  }
+
+  if (addressSearchModal) {
+    addressSearchModal.addEventListener('click', function(e) {
+      if (e.target === addressSearchModal) {
+        closeAddressSearchModal();
+      }
+    });
+  }
+
+  // 郵便番号入力フィールドのイベント
+  if (zipcodeInputField) {
+    zipcodeInputField.addEventListener('keyup', function() {
+      const zipcodeValue = zipcodeInputField.value.replace(/[^0-9]/g, '');
+      if (zipcodeValue.length === 7) {
+        // zipcloud APIを使用して住所を取得
+        fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zipcodeValue}`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 200 && data.results && data.results.length > 0) {
+              // 郵便番号フィールドに値を設定
+              zipcodeInput.value = zipcodeInputField.value;
+              validateZipcode();
+              // 住所検索結果モーダルを開く
+              openAddressSearchModal(data.results, zipcodeValue);
+            } else {
+              alert('郵便番号が見つかりませんでした');
+            }
+          })
+          .catch(error => {
+            console.error('住所検索エラー:', error);
+            alert('住所検索中にエラーが発生しました');
+          });
+      }
+    });
+  }
+
+  // 戻るボタンのイベント
+  if (zipcodeInputBackBtn) {
+    zipcodeInputBackBtn.addEventListener('click', function() {
+      closeZipcodeInputModal();
+    });
+  }
+
+  if (addressSearchBackBtn) {
+    addressSearchBackBtn.addEventListener('click', function() {
+      closeAddressSearchModal();
+      zipcodeInputField.focus();
+    });
+  }
+
+  // PC表示時は通常の動作（郵便番号入力で自動入力）
   zipcodeInput.addEventListener('blur', validateZipcode);
+  if (!isMobile()) {
+    zipcodeInput.addEventListener('keyup', function() {
+      if (zipcodeInput.classList.contains('error')) {
+        validateZipcode();
+      }
+      // 郵便番号が7桁入力されたら住所を自動入力
+      const zipcodeValue = zipcodeInput.value.replace(/[^0-9]/g, ''); // ハイフンを除去
+      if (zipcodeValue.length === 7) {
+        // zipcloud APIを使用して住所を取得
+        fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zipcodeValue}`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 200 && data.results && data.results.length > 0) {
+              const result = data.results[0];
+              // 都道府県 + 市区町村 + 町域を結合して住所フィールドに設定
+              const fullAddress = result.address1 + result.address2 + result.address3;
+              addressInput.value = fullAddress;
+              // バリデーションを実行
+              validateAddress();
+            } else {
+              console.log('郵便番号が見つかりませんでした');
+            }
+          })
+          .catch(error => {
+            console.error('住所検索エラー:', error);
+          });
+      }
+    });
+  }
   zipcodeInput.addEventListener('input', function() {
     if (zipcodeInput.classList.contains('error')) {
       validateZipcode();
