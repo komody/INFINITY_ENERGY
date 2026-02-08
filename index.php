@@ -1657,6 +1657,36 @@
         <p class="form_text_privacy_policy">注意: このフォームで提供された情報は、キャンペーンの運営および当選者への連絡にのみ使用されます。プライバ<br class="PC_line_break">シーに関する詳細については、Infinity Energy のプライバシーポリシーをご参照ください。</p>
       </form>
     </div>
+
+    <div class="zipcode_input_modal" id="zipcode_input_modal">
+      <div class="zipcode_input_modal_content">
+        <div class="zipcode_input_modal_header">
+          <button class="zipcode_input_modal_back_btn" id="zipcode_input_back_btn">
+            <span class="zipcode_input_modal_back_icon">&lt;</span>
+          </button>
+          <h2 class="zipcode_input_modal_title">郵便番号入力</h2>
+        </div>
+        <div class="zipcode_input_modal_body">
+          <p class="zipcode_input_modal_instruction">郵便番号を入力してください</p>
+          <input type="text" id="zipcode_input_field" class="zipcode_input_field" inputmode="numeric" placeholder="入力してください" maxlength="8">
+        </div>
+      </div>
+    </div>
+
+    <div class="address_search_modal" id="address_search_modal">
+      <div class="address_search_modal_content">
+        <div class="address_search_modal_header">
+          <button class="address_search_modal_back_btn" id="address_search_back_btn">
+            <span class="address_search_modal_back_icon">&lt;</span>
+          </button>
+          <h2 class="address_search_modal_title">住所検索</h2>
+        </div>
+        <div class="address_search_modal_body">
+          <div class="address_search_modal_city" id="address_search_modal_city"></div>
+          <div class="address_search_modal_list" id="address_search_modal_list"></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
