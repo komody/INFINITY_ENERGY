@@ -449,6 +449,14 @@ body { font-family: 'Noto Sans JP', sans-serif; }
   .kinds_content {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 400px) {
+      justify-content: space-between;
+    }
   }
 
   .kinds_title {
@@ -495,15 +503,21 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       }
 
       .kinds_item_title {
-        padding-top: 4px;
-        padding-right: 32px;
+        padding-right: 21px;
         opacity: 0;
         transform: translateY(50px);
         transition: opacity 0.8s ease, transform 0.8s ease;
 
+        @media (max-width: 1100px) {
+          padding-right: 8px;
+        }
+        
+        @media (max-width: 900px) {
+          margin: 0 auto;
+        }
+
         @media (max-width: 400px) {
-          padding-top: 2px;
-          padding-right: 21px;
+          padding-right: 15px;
         }
   
         img {
@@ -518,7 +532,63 @@ body { font-family: 'Noto Sans JP', sans-serif; }
             height: 446px;
           }
         }
+
+        .kinds_item_title_text {
+          width: 258px;
+          font-family: 'Orbitron', monospace;
+          writing-mode: vertical-rl;
+          text-align: left;
+          font-size: 77px;
+          color: #fff;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          line-height: 1.09;
+
+          @media (max-width: 1100px) {
+            width: 200px;
+            font-size: 60px;
+          }
+
+          @media (max-width: 900px) {
+            width: 80px;
+          }
+
+          @media (max-width: 600px) {
+            font-size: 36px;
+            width: 42px;
+          }
+
+          .PC_line_break {
+            display: block;
+
+            @media (max-width: 900px) {
+              display: none;
+            }
+          }
+          
+          &.mixed_berry_title {
+            background: linear-gradient(to bottom, #128FCD, #B3D6E0, #DC24B1 55%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &.green_fusion_blast_title {
+            background: linear-gradient(to bottom, #03B10F, #3CFFB9, #E7F91B 55%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          &.hot_blaze_inferno_title {
+            background: linear-gradient(to bottom, #B00202, #FF8A00, #E83A54 55%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
       }
+
       .kinds_item_title.is-visible   {
         opacity: 1;
         transform: translateY(0);
@@ -723,8 +793,6 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       }
 
       .kinds_item_title {
-        position: relative;
-        left: 18px;
 
         @media (max-width: 600px) {
           left: 10px;
@@ -799,8 +867,6 @@ body { font-family: 'Noto Sans JP', sans-serif; }
       }
 
       .kinds_item_title {
-        position: relative;
-        left: 18px;
 
         @media (max-width: 600px) {
           left: 9px;

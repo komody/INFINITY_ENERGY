@@ -468,6 +468,16 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 900px) {
+  .kinds .kinds_content {
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  .kinds .kinds_content {
+    justify-content: space-between;
+  }
+}
 .kinds .kinds_title {
   margin-top: 50px;
   height: 690px;
@@ -514,16 +524,24 @@ body {
   }
 }
 .kinds .kinds_list .kinds_item .kinds_item_title {
-  padding-top: 4px;
-  padding-right: 32px;
+  padding-right: 21px;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+@media (max-width: 1100px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title {
+    padding-right: 8px;
+  }
+}
+@media (max-width: 900px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 400px) {
   .kinds .kinds_list .kinds_item .kinds_item_title {
-    padding-top: 2px;
-    padding-right: 21px;
+    padding-right: 15px;
   }
 }
 .kinds .kinds_list .kinds_item .kinds_item_title img {
@@ -539,6 +557,60 @@ body {
     width: 37px;
     height: 446px;
   }
+}
+.kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text {
+  width: 258px;
+  font-family: "Orbitron", monospace;
+  writing-mode: vertical-rl;
+  text-align: left;
+  font-size: 77px;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.09;
+}
+@media (max-width: 1100px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text {
+    width: 200px;
+    font-size: 60px;
+  }
+}
+@media (max-width: 900px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text {
+    width: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text {
+    font-size: 36px;
+    width: 42px;
+  }
+}
+.kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text .PC_line_break {
+  display: block;
+}
+@media (max-width: 900px) {
+  .kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text .PC_line_break {
+    display: none;
+  }
+}
+.kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text.mixed_berry_title {
+  background: linear-gradient(to bottom, #128FCD, #B3D6E0, #DC24B1 55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text.green_fusion_blast_title {
+  background: linear-gradient(to bottom, #03B10F, #3CFFB9, #E7F91B 55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.kinds .kinds_list .kinds_item .kinds_item_title .kinds_item_title_text.hot_blaze_inferno_title {
+  background: linear-gradient(to bottom, #B00202, #FF8A00, #E83A54 55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .kinds .kinds_list .kinds_item .kinds_item_title.is-visible {
   opacity: 1;
@@ -736,10 +808,6 @@ body {
     margin-top: 25px;
   }
 }
-.kinds .kinds_list .kinds_item:nth-child(2) .kinds_item_title {
-  position: relative;
-  left: 18px;
-}
 @media (max-width: 600px) {
   .kinds .kinds_list .kinds_item:nth-child(2) .kinds_item_title {
     left: 10px;
@@ -807,10 +875,6 @@ body {
     margin-top: 25px;
     padding-top: 25px;
   }
-}
-.kinds .kinds_list .kinds_item:nth-child(3) .kinds_item_title {
-  position: relative;
-  left: 18px;
 }
 @media (max-width: 600px) {
   .kinds .kinds_list .kinds_item:nth-child(3) .kinds_item_title {

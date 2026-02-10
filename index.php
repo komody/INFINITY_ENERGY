@@ -31,6 +31,7 @@
   <!-- <script type="module" src="./js/three-scene.js"></script>
   <script type="module" src="./js/three-scene-2.js"></script> -->
   <script type="module" src="./js/three-scene-3.js"></script>
+  <script type="module" src="./js/three-scene-mobile.js"></script>
 </head>
 
 <body>
@@ -68,10 +69,7 @@
         <div class="kinds_list">
           <div class="kinds_item">
             <div class="kinds_item_title">
-              <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Mixed_Berry_Delight_mobile.png">
-                <img src="./img/kinds/kinds_Mixed_Berry_Delight.png" alt="ミクストベリーディライト">
-              </picture>
+              <div class="kinds_item_title_text mixed_berry_title">Mixed <br class="PC_line_break">Berry <br class="PC_line_break">Delight</div>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
@@ -96,10 +94,7 @@
 
           <div class="kinds_item">
             <div class="kinds_item_title">
-              <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Green_Fusion_Blast_mobile.png">
-                <img src="./img/kinds/kinds_Green_Fusion_Blast.png" alt="#">
-              </picture>
+              <div class="kinds_item_title_text green_fusion_blast_title">Green <br class="PC_line_break">Fusion <br class="PC_line_break">Blast</div>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
@@ -124,10 +119,7 @@
 
           <div class="kinds_item">
             <div class="kinds_item_title">
-              <picture>
-                <source media="(max-width: 400px)" srcset="./img/kinds/kinds_Hot_Blaze_Inferno_mobile.png">
-                <img src="./img/kinds/kinds_Hot_Blaze_Inferno.png" alt="#">
-              </picture>
+              <div class="kinds_item_title_text hot_blaze_inferno_title">Hot <br class="PC_line_break">Blaze <br class="PC_line_break">Inferno</div>
             </div>
             <div class="kinds_item_info">
               <div class="kinds_item_can_container">
